@@ -204,8 +204,49 @@
         "capital": "資本金",
         "capitalValue": "50,000,000 MMK",
         "business": "事業内容",
-        "businessValue": "外国人材派遣、教育、日本での就労サポート"
+        "businessValue": "外国人材派遣、教育、日本での就労サポート",
+        "company1": "Traism Co.,Ltd.",
+        "companyvalue1" : "Traism Co., Ltd.",
+        "addressValue1" : "3rd floor, Horikawa Building, 1-2-10 Minato, Chuo-ku, Tokyo",
+        "director" : "Representative Director",
+        "name" : "Hiroshi Sato"
       }
+    },
+    "presentation" : {
+        "heading" : "Company Profile",
+        "title" : "Message from company",
+        "copy" : "The value of working in Japan goes beyond income.The knowledge, skills, and experience people gain can return with them to Myanmar—creating new opportunities,strengthening communities, and contributing to a better future."
+    },
+    "ceo" : {
+        "ceoTitle" : "代表メッセージ",
+        "ceoMessage" : "Myanmar GSS Co., Ltd.に関心をお寄せくださる皆様、",
+        "ceoMessage1" : "そして私たちを信頼してくださる若者とご家族、",
+        "ceoParagraph" : "日本の受入れ企業、関係機関の皆様に、心よりご挨拶申し上げます。私は若い頃、日本で学校に通いながら働き、6年間にわたり生活しました。その間、学校での学びに加え、仕事や日々の暮らしを通じて、多くの知識と経験を得ることができました。特に、仕事への責任感、時間を守る姿勢、互いを尊重すること、信頼を積み重ねること、そして人と人とのつながりの大切さを学びました。ミャンマーへ帰国後は、日本で得た知識や経験、築いてきた人脈と信頼関係を活かし、自分にできる事業を通じて、お客様のお役に立つこと、共に働く仲間が幸せで充実した人生を築けること、そして社会に貢献することを目指してまいりました。Myanmar GSSは、その思いを人材育成と送り出しの分野で実現するために設立した会社です。私自身、海外で学びながら働いた経験から、言葉や文化、生活習慣が異なる国で働くためには、渡航前の準備が非常に重要であると実感しています。そのため、私たちは日本語に加え、職場のルールや責任感、協調性、日本の文化や日常生活のマナーを丁寧に伝えることを大切にしています。こうした準備を通じて、若者が工場や介護施設など、それぞれの職場で自信を持って仕事に取り組み、受入れ企業の皆様にとっても、安心して共に働ける存在へと成長してほしいと願っています。互いを理解し、尊重しながら、長く協力できる関係を築くことが、私たちの大切な役割です。私が敬愛し、学び続けている稲盛和夫氏の教えである「利他の心」と「人間として何が正しいのか」という判断基準を、事業に向き合ううえでのよりどころとしています。若者、ご家族、受入れ企業、そして共に働く仲間の立場を思いやり、誠実さと責任感を持って、一つひとつの仕事に取り組んでまいります。私の長期的な願いは、日本で学び、経験を積んだ若者が、自分と家族の暮らしを豊かにすることです。そして将来、その知識や技術を母国ミャンマーでも活かし、それぞれの専門分野から社会の発展と国づくりに貢献できる人材となることを願っています。一人ひとりの夢と未来を大切にし、皆様からお寄せいただく信頼に、責任ある行動で応えてまいります。ミャンマーと日本の双方にとって価値ある未来を、皆様と共に築いてまいります",
+        "name" : "NI HTWE",
+        "position" : "最高経営責任者（CEO）",
+        "company" : "Myanmar GSS Co., Ltd."
+    },
+    "purpose" : {
+        "title" : "OUR PURPOSE",
+        "h1" : "Vision & Mission"
+    },
+    "vision" : {
+        "label" : "私たちが目指す未来",
+        "title" : "ミャンマーの若者の可能性を育み、日本の長期的な人材ニーズに応える、信頼されるパートナーを目指します。",
+        "text" : "日本で培った知識・技術・経験を、一人ひとりの豊かな人生と母国ミャンマーの発展につなげ、人材育成を通じて両国のより良い未来を共に築きます。"
+    },
+    "mission" : {
+      "label" : "私たちの使命",
+      "title1" : "① 渡航前の総合的な教育",
+      "text1" : "日本語教育に加え、職場のルール、安全意識、責任感、時間を守る姿勢、報告・連絡・相談、チームワークを身につけられるよう指導します。また、日本の文化や伝統、暮らしの仕組み、社会生活で求められる基本的なマナーや習慣を丁寧に伝え、仕事と生活の両面から渡航に備えます。",
+      "title2" : "② 人材と職場の適切なマッチング",
+      "text2" : "一人ひとりの能力や目標と、受入れ企業のニーズを丁寧に把握し、適切な就労機会につなげます。工場や介護施設など、それぞれの職場で円滑に業務に取り組み、信頼される一員として貢献できるよう準備を支援します。",
+      "title3" : "③ 誠実で責任ある送り出しと連携",
+      "text3" : "就労条件、費用、手続きを分かりやすく説明し、働く人の尊厳と権利を尊重します。日本の受入れ企業や関係機関と連携し、私たちが担う役割に責任を持って、円滑な就労と生活を支えます。",
+      "title4" : "④ 将来につながる学びと成長",
+      "text4" : "日本で働く期間を通じて学び続け、専門性と責任感を高められるよう後押しします。身につけた知識・技術・経験を、自らの生活の向上と、将来のミャンマーの発展や国づくりに活かせる人材を育成します。",
+      "title5" : "⑤ 利他の心に基づく信頼関係",
+      "text5" : "若者、ご家族、受入れ企業、関係機関、そして共に働く仲間の立場を思いやり、誠実さと相互理解を大切にします。関わる人々が共に成長できる、長期的な信頼関係を築きます。"
     },
     "message": {
       "eyebrow": "代表メッセージ",
@@ -600,6 +641,48 @@
       }
     },
     "viewDetails": "詳細を見る"
+  },
+  "workCondition": {
+    "note": {
+      "wc": "Work Condition"
+    },
+    "hero": {
+      "title": "Worker's work conditions"
+    },
+    "modal": {
+      "close": "Close"
+    },
+    "hotel": {
+      "title": "Hotel",
+      "subtitle": "Professional Hospitality Environment",
+      "description": "Professional hospitality environment with customer-focused service, teamwork, and well-organized working conditions."
+    },
+    "kaigo": {
+      "title": "Caregiving(Kaigo)",
+      "subtitle": "Compassionate Caregiving Environment",
+      "description": "Safe and supportive care environment focused on respect, teamwork, compassion, and quality of life."
+    },
+    "airport": {
+      "title": "Airport Ground Handling Services",
+      "subtitle": "Safe & Efficient Airport Operations or Efficient Airport Ground Services",
+      "description": "Dynamic airport environment with strict safety standards, teamwork, and efficient operations."
+    },
+    "food": {
+      "title": "Professional Food Production Environment",
+      "subtitle": "Clean and hygienic workplace."
+    },
+    "beverage": {
+      "title": "Food & Beverage Service/ Safe & Hygienic Food Service",
+      "subtitle": "Clean and energetic workplace with strong hygiene standards and teamwork."
+    },
+    "construction": {
+      "title": "Professional Construction & Technical Environment",
+      "description": "An active and organized workplace focused on safety, technical skills, reliable operations, and teamwork."
+    },
+    "accommodation": {
+      "title": "Worker Accommodation & Support/",
+      "title1": "Safe & Supportive Living Environment"
+    }
   },
   "process": {
     "hero": {
