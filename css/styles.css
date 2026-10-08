@@ -3046,7 +3046,7 @@ video {
     display: inline-block;
     margin-bottom: 0.75rem;
     color: var(--red, #c8102e);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
 }

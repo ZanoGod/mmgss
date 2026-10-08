@@ -139,6 +139,10 @@ button {
   color: #f18aa0;
 }
 
+.white {
+  color: #fff8ef;
+}
+
 .hero-highlights {
   max-width: 720px;
   margin: 0;
