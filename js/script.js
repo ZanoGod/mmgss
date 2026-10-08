@@ -96,6 +96,7 @@
   })();
 
   const CLEAN_ROUTES = new Set([
+    "index",
     "about",
     "services",
     "recruitment",
