@@ -108,7 +108,8 @@ button {
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
-  color: #ffb6c7;
+  /* color: #ffb6c7; */
+  color: #fff;
   font-size: 12px;
   font-weight: 800;
   line-height: 1.2;
@@ -120,7 +121,8 @@ button {
   content: "";
   width: 42px;
   height: 2px;
-  background: #ff9fb7;
+  /* background: #ff9fb7; */
+  background: #fff;
   flex: 0 0 auto;
 }
 
@@ -140,7 +142,7 @@ button {
 }
 
 .white {
-  color: #fff8ef;
+  color: #ffff;
 }
 
 .hero-highlights {
@@ -249,7 +251,7 @@ button {
   border: 1px solid rgba(92, 53, 55, .16);
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 14px 34px rgba(67, 34, 31, .08);
+  box-shadow: 0 14px 34px rgba(67, 34, 31, 0.205);
 }
 
 .service-card .number {
@@ -474,7 +476,7 @@ premium-carousel .dot.is-active {
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  background: rgba(24, 15, 23, 0.48);
+  background: rgba(24, 15, 23, 0.478);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);

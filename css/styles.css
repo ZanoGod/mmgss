@@ -1848,10 +1848,10 @@ body {
   pointer-events: none;
   background:
     linear-gradient(90deg,
-      rgba(10, 0, 4, .90) 0%,
-      rgba(10, 0, 4, .76) 34%,
-      rgba(10, 0, 4, .42) 68%,
-      rgba(10, 0, 4, .12) 100%);
+      rgba(10, 0, 4, 0.550) 0%,
+      rgba(10, 0, 4, 0.450) 34%,
+      rgba(10, 0, 4, 0.23) 68%,
+      rgba(10, 0, 4, 0) 100%);
 }
 
 .hero-grid {
@@ -3130,6 +3130,3 @@ video {
         font-size: 2rem;
     }
 }
-
-/* UNUSED: legacy declarations above are retained during the compatibility pass;
-   remove only after page-by-page visual and interaction regression testing. */
