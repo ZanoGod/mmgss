@@ -104,6 +104,7 @@
     "activities",
     "contact",
     "workerCondition",
+    "work",
   ]);
 
   function siteUrl(path = "") {
