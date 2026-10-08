@@ -38,156 +38,30 @@
   });
 
   /* =========================================================
-     ENVIRONMENT-AWARE INTERNAL LINKS
+     INTERNAL LINKS
 
-     Clean URLs are used everywhere:
-       /about
-       /services
-       /recruitment
-       /process
-       /activities
-       /contact
-       /workerCondition
+     Use the real .html files directly.
 
-     Apache handles these paths with .htaccess.
-     GitHub Pages and Live Server use matching route directories
-     containing index.html.
+     Examples:
+       index.html
+       about.html
+       services.html
+       recruitment.html
+       process.html
+       activities.html
+       contact.html
+       workerCondition.html
 
-     The site base is detected from this script's own URL, so the
-     same source works at:
-       https://myanmargss.com/
-       http://127.0.0.1:5500/
-       https://zanogod.github.io/MMGSS-WEB/
+     This works with:
+       - Live Server
+       - Local Apache
+       - Production Apache
+       - GitHub Pages
+
+     IMPORTANT:
+     Do not use clean routes such as /about or /contact here.
+     Browser refreshes on those paths require server-side routing.
      ========================================================= */
-
-  const SITE_BASE = (() => {
-    const currentScript =
-      document.currentScript ||
-      [...document.scripts].find((script) =>
-        /(?:^|\/)script\.js(?:[?#].*)?$/i.test(script.src || ""),
-      );
-
-    if (currentScript?.src) {
-      try {
-        return new URL("../", currentScript.src);
-      } catch {
-        // Fall through.
-      }
-    }
-
-    return new URL(".", location.href);
-  })();
-
-  // Directory-based static hosting may add a trailing slash to route
-  // directories. Remove it after the page has loaded so the visible URL
-  // remains /about, /services, etc.
-  (() => {
-    if (!location.pathname.endsWith("/")) return;
-
-    const basePath = new URL(SITE_BASE).pathname.replace(/\/+$/, "");
-    const relative = location.pathname.slice(basePath.length).replace(/^\/+|\/+$/g, "");
-    if (relative && relative.indexOf("/") === -1) {
-      const route = relative.split("/")[0];
-      const clean = new URL(route, SITE_BASE);
-      clean.search = location.search;
-      clean.hash = location.hash;
-      history.replaceState({}, "", clean.pathname + clean.search + clean.hash);
-    }
-  })();
-
-  const CLEAN_ROUTES = new Set([
-    "index",
-    "about",
-    "services",
-    "recruitment",
-    "process",
-    "activities",
-    "contact",
-    "workerCondition",
-    "work",
-  ]);
-
-  function siteUrl(path = "") {
-    return new URL(path.replace(/^\/+/, ""), SITE_BASE).href;
-  }
-
-  function normalizeInternalLinks(root = document) {
-    root.querySelectorAll("a[href]").forEach((link) => {
-      const rawHref = link.getAttribute("href");
-      if (!rawHref || rawHref.startsWith("#")) return;
-      if (/^(mailto:|tel:|javascript:|https?:)/i.test(rawHref)) return;
-
-      let url;
-      try {
-        url = new URL(rawHref, location.href);
-      } catch {
-        return;
-      }
-
-      if (url.origin !== location.origin) return;
-
-      // Shared components such as footer.html are fetched from the site
-      // root but inserted into nested route pages. Resolve their simple
-      // clean-route links against the detected site base.
-      const simpleRoute = rawHref.replace(/^\/+|\/+$/g, "").split(/[?#]/)[0];
-      if (CLEAN_ROUTES.has(simpleRoute)) {
-        link.setAttribute("href", siteUrl(simpleRoute) + url.search + url.hash);
-        return;
-      }
-
-      if (rawHref === "./" || rawHref === "../" || rawHref === "/") {
-        link.setAttribute("href", SITE_BASE.pathname);
-        return;
-      }
-
-      const path = url.pathname.replace(/^\/+|\/+$/g, "");
-      const basePath = new URL(SITE_BASE).pathname.replace(/^\/+|\/+$/g, "");
-
-      // Convert root links such as "/" and "/about" into links that
-      // include the GitHub Pages project base when required.
-      if (rawHref === "/" || rawHref.startsWith("/")) {
-        const route = path
-          .replace(new RegExp(`^${basePath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/?`), "")
-          .replace(/^\/+/, "");
-
-        if (!route) {
-          link.setAttribute("href", SITE_BASE.pathname);
-          return;
-        }
-
-        const routeName = route.split("/")[0];
-        if (CLEAN_ROUTES.has(routeName)) {
-          link.setAttribute("href", siteUrl(routeName) + url.search + url.hash);
-        } else {
-          link.setAttribute("href", siteUrl(route) + url.search + url.hash);
-        }
-      }
-    });
-  }
-
-  normalizeInternalLinks();
-
-  document.addEventListener("componentLoaded", (event) => {
-    normalizeInternalLinks(event.target || document);
-  });
-
-  // Redirect old .html URLs to the clean URL on all HTTP deployments.
-  // This is a client-side fallback for GitHub Pages; Apache performs
-  // the preferred server-side redirect in .htaccess.
-  if (location.protocol.startsWith("http")) {
-    const currentPath = location.pathname;
-    const match = currentPath.match(/\/([^/]+)\.html$/i);
-
-    if (match && match[1].toLowerCase() !== "index") {
-      const route = match[1];
-      if (CLEAN_ROUTES.has(route)) {
-        const clean = new URL(siteUrl(route), location.href);
-        clean.search = location.search;
-        clean.hash = location.hash;
-        history.replaceState({}, "", clean.pathname + clean.search + clean.hash);
-      }
-    }
-  }
 
   /* =========================================================
      ACTIVE NAVIGATION
@@ -208,50 +82,65 @@
   });
 
   /* =========================================================
-   LANGUAGE SELECTOR
-   ========================================================= */
+     LANGUAGE SELECTOR
+     ========================================================= */
 
   function initLanguageSelector() {
     const selector = document.querySelector(".language-selector");
     const pill = document.querySelector(".language-pill-bg");
+
     if (!selector || !pill) return;
 
     const buttons = selector.querySelectorAll(".language-btn");
 
     function updatePillPosition(activeBtn) {
       if (!activeBtn) return;
+
       pill.style.width = activeBtn.offsetWidth + "px";
       pill.style.transform = "translateX(" + activeBtn.offsetLeft + "px)";
     }
 
     function setActiveLanguage(btn) {
       buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+
       btn.setAttribute("aria-pressed", "true");
+
       updatePillPosition(btn);
     }
 
     const initial =
       selector.querySelector('.language-btn[aria-pressed="true"]') ||
       buttons[0];
-    if (initial) setActiveLanguage(initial);
+
+    if (initial) {
+      setActiveLanguage(initial);
+    }
 
     window.addEventListener("resize", function () {
       const active = selector.querySelector(
         '.language-btn[aria-pressed="true"]',
       );
-      if (active) updatePillPosition(active);
+
+      if (active) {
+        updatePillPosition(active);
+      }
     });
 
-    return { updatePillPosition, setActiveLanguage };
+    return {
+      updatePillPosition,
+      setActiveLanguage,
+    };
   }
 
   function syncLanguageSelectorFromI18n() {
     const selector = document.querySelector(".language-selector");
+
     if (!selector) return;
 
     const activeBtn = selector.querySelector(
       '.language-btn[aria-pressed="true"]',
     );
+
     if (activeBtn && window.languageSelector) {
       window.languageSelector.setActiveLanguage(activeBtn);
     }
@@ -261,29 +150,36 @@
     window.languageSelector = initLanguageSelector();
   });
 
-  document.addEventListener("i18n:languagechanged", function (e) {
+  document.addEventListener("i18n:languagechanged", function () {
     syncLanguageSelectorFromI18n();
+
     if (window.languageSelector) {
       const selector = document.querySelector(".language-selector");
+
       const activeBtn = selector?.querySelector(
         '.language-btn[aria-pressed="true"]',
       );
+
       if (activeBtn) {
         window.languageSelector.updatePillPosition(activeBtn);
       }
     }
   });
+
   /* =========================================================
      MOBILE NAVIGATION
      ========================================================= */
 
   function closeNavigation() {
     navLinks?.classList.remove("open");
+
     navToggle?.setAttribute("aria-expanded", "false");
+
     navToggle?.setAttribute(
       "aria-label",
       translate("common.openNavigation", undefined, "Open navigation"),
     );
+
     body.classList.remove("menu-open");
   }
 
@@ -539,7 +435,9 @@
 
   const jobTypeKeys = {
     professional: "recruitment.types.professional",
+
     ssw: "recruitment.types.ssw",
+
     "technical-intern": "recruitment.types.intern",
   };
 
@@ -960,26 +858,29 @@
   });
 
   /* =========================================================
-   INITIALIZE HERO CAROUSEL
-   ========================================================= */
+     INITIALIZE HERO CAROUSEL
+     ========================================================= */
 
   showSlide(0);
   startCarousel();
 
   /* =========================================================
-   COMPANY IMAGE CAROUSEL
-   ========================================================= */
+     COMPANY IMAGE CAROUSEL
+     ========================================================= */
 
   const companyCarousel = $(".company-carousel");
 
   if (companyCarousel) {
     const companySlides = $$(".company-slide", companyCarousel);
+
     const companyDots = $$(".company-carousel-dot", companyCarousel);
 
     const companyPrev = $(".company-prev", companyCarousel);
+
     const companyNext = $(".company-next", companyCarousel);
 
     let companySlideIndex = 0;
+
     let companyCarouselTimer = null;
 
     const COMPANY_AUTOPLAY_DELAY = 5000;
@@ -1012,26 +913,27 @@
       });
     }
 
-    //For CEO message
+    // For CEO message
     const revealElements = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
-    (entries) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.15
-    }
-);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
 
-revealElements.forEach((element) => {
-    observer.observe(element);
-});
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
 
     /* -------------------------------------------------------
      Stop autoplay
