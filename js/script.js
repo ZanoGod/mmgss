@@ -342,7 +342,7 @@
 
   const filters = $$(".filter[data-filter]");
 
-  const jobs = $$(".job-item");
+  const jobs = $$(".jobs-grid .job-item");
 
   const count = $("#roleCount");
 
@@ -390,6 +390,38 @@
 
   if (jobs.length) {
     applyFilter("all");
+  }
+
+  /* =========================================================
+     PAST INTAKE / CLOSED FILTER
+     ========================================================= */
+
+  const pastFilters = $$(".past-filter[data-past-filter]");
+
+  const pastJobs = $$(".past-intake-grid .past-intake-item");
+
+  function applyPastFilter(type) {
+    pastJobs.forEach((job) => {
+      const show = type === "all" || job.dataset.pastType === type;
+
+      job.hidden = !show;
+    });
+  }
+
+  pastFilters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      pastFilters.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      filter.classList.add("active");
+
+      applyPastFilter(filter.dataset.pastFilter);
+    });
+  });
+
+  if (pastFilters.length) {
+    applyPastFilter("all");
   }
 
   /* =========================================================
@@ -451,33 +483,34 @@
     }
 
     const job = button.closest(".job-item");
-
+    const pastJob = button.closest(".past-intake-item");
     const jobId = button.dataset.job || job?.dataset.jobId || "";
+    const pastJobId = button.dataset.pastJob || pastJob?.dataset.pastId || "";
 
     /* Role */
 
     if (modalRole) {
-      modalRole.textContent = jobId
-        ? translate(`recruitment.jobs.${jobId}.role`)
-        : translate(
-            "recruitment.modal.fallbackRole",
-            undefined,
-            "Role details",
-          );
+      modalRole.textContent = pastJobId
+        ? translate(`recruitment.pastJobs.${pastJobId}.role`, undefined, "Previous recruitment round")
+        : jobId
+          ? translate(`recruitment.jobs.${jobId}.role`)
+          : translate("recruitment.modal.fallbackRole", undefined, "Role details");
     }
 
     /* Type */
 
     if (modalType) {
-      const typeKey = job ? jobTypeKeys[job.dataset.type] : null;
+      const typeKey = job
+        ? jobTypeKeys[job.dataset.type]
+        : pastJob
+          ? jobTypeKeys[pastJob.dataset.pastType]
+          : null;
 
-      modalType.textContent = typeKey
-        ? translate(typeKey)
-        : translate(
-            "recruitment.modal.eyebrow",
-            undefined,
-            "Recruitment opportunity",
-          );
+      modalType.textContent = pastJobId
+        ? translate("recruitment.pastJobs.closed", undefined, "Closed")
+        : typeKey
+          ? translate(typeKey)
+          : translate("recruitment.modal.eyebrow", undefined, "Recruitment opportunity");
     }
 
     /* Modal information */
@@ -489,17 +522,25 @@
         return;
       }
 
-      const value = jobId
-        ? translate(`recruitment.jobs.${jobId}.${jobValueKeys[field]}`)
-        : "";
+      let value = "";
+
+      if (pastJobId) {
+        const pastFieldKeys = {
+          Location: "detailsLocation",
+          Salary: "detailsSalary",
+          Language: "detailsLanguage",
+          Duration: "detailsDuration",
+          Summary: "detailsOverview",
+          Requirements: "detailsRequirements",
+        };
+        value = translate(`recruitment.pastJobs.${pastFieldKeys[field]}`, undefined, "");
+      } else if (jobId) {
+        value = translate(`recruitment.jobs.${jobId}.${jobValueKeys[field]}`);
+      }
 
       element.textContent =
         value ||
-        translate(
-          "common.detailsOnRequest",
-          undefined,
-          "Details available on request",
-        );
+        translate("common.detailsOnRequest", undefined, "Details available on request");
     });
 
     /* Show modal */
@@ -558,7 +599,7 @@
      Open buttons
      --------------------------------------------------------- */
 
-  $$("[data-job]").forEach((button) => {
+  $$("[data-job], [data-past-job]").forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
 

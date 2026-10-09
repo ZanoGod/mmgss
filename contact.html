@@ -20,7 +20,7 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body id="top">
+<body id="top" class="contact-page">
 
   <div class="page-loader" id="pageLoader" aria-hidden="true">
     <div class="loader-inner">
@@ -50,16 +50,11 @@
         <a class="nav-link" data-page="activities.html" href="activities.html" data-i18n="nav.activities">Activities</a>
         <a class="nav-link nav-contact" data-page="contact.html" href="contact.html" data-i18n="nav.contact">Contact</a>
 
-        <div class="language-selector" id="languageSelector" role="group" aria-label="Change language"
-          data-i18n-aria-label="common.changeLanguage">
-          <span class="language-pill-bg" id="languagePill" aria-hidden="true"></span>
-
-          <button class="language-btn" type="button" data-language="ja" aria-pressed="true"><span class="language-code">JP</span><span class="language-name" aria-hidden="true">日本語</span></button>
-
-
-          <button class="language-btn" type="button" data-language="en" aria-pressed="false"><span class="language-code">EN</span><span class="language-name" aria-hidden="true">English</span></button>
-          <!-- <button class="language-btn" type="button" data-language="my" aria-pressed="false"><span class="language-code">MM</span><span class="language-name" aria-hidden="true">မြန်မာ</span></button> -->
-        </div>
+        <div class="language-selector" id="languageSelector" role="group" aria-label="Change language" data-i18n-aria-label="common.changeLanguage">
+  <span class="language-pill-bg" id="languagePill" aria-hidden="true"></span>
+  <button class="language-btn" type="button" data-language="ja" aria-pressed="false"><span class="language-code">JP</span><span class="language-name" aria-hidden="true">日本語</span></button>
+  <button class="language-btn" type="button" data-language="en" aria-pressed="true"><span class="language-code">EN</span><span class="language-name" aria-hidden="true">English</span></button>
+</div>
         
       </nav>
     </div>
@@ -103,9 +98,38 @@
       </div>
     </section>
 
+
+    <section class="section contact-location-section" aria-labelledby="contact-location-title">
+      <div class="container">
+        <div class="contact-location-heading">
+          <div class="eyebrow" data-i18n="contact.map.eyebrow">FIND OUR OFFICE</div>
+          <h2 id="contact-location-title" class="section-title" data-i18n="contact.map.title">Visit Myanmar GSS</h2>
+          <p class="section-copy" data-i18n="contact.map.copy">Our office is located in Kyaukkone, Yankin Township, Yangon, Myanmar.</p>
+        </div>
+        <div class="contact-map-card">
+          <div class="contact-map-frame">
+            <iframe
+              title="Map showing Myanmar GSS office in Yangon"
+              src="https://maps.google.com/maps?q=No.%2038%28A%29%2C%20Boe%20Yar%20Zar%20Street%2C%20Kyaukkone%2C%20Yankin%20Township%2C%20Yangon%2C%20Myanmar&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-map-caption">
+            <div>
+              <strong data-i18n="contact.map.addressTitle">Myanmar GSS Co., Ltd.</strong>
+              <p data-i18n="contact.map.address">No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township, Yangon, Myanmar</p>
+            </div>
+            <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&amp;query=No.+38%28A%29,+Boe+Yar+Zar+Street,+Kyaukkone,+Yankin+Township,+Yangon,+Myanmar" target="_blank" rel="noopener" data-i18n="contact.map.open">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 three">
           <div class="col">
             <div class="card-clean">
               <div class="eyebrow" data-i18n="contact.cards.employers.eyebrow">Employers</div>
@@ -148,7 +172,7 @@
               </div>
               <div class="form-field">
                 <label for="company">Company Name</label>
-                <input id="company" name="companyName" type="text" autocomplete="companyName" required placeholder="Your company name">
+                <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Your company name">
               </div>
               <div class="form-field">
                 <label for="contactEmail">Email</label>
@@ -164,24 +188,15 @@
                   <option value="" disabled selected>
                     Please select an option
                   </option>
-                  <option value="travel-industry-worker">Travel Industry Worker</option>
-                  <option value="engineering">Engineering</option>
-                  <option value="it-industry">IT Industry</option>
-                  <option value="factory-work">Factory Work</option>
-                  <option value="hotel-operations">Hotel Operations</option>
-                  <option value="caregiving">Caregiving</option>
-                  <option value="food-=services">Food Services</option>
-                  <option value="food-manufacturing">Food Manufacturing</option>
-                  <option value="airport-ground-handling-services">Airport Ground Handling Services</option>
-                  <option value="infrastructure-&-equipment">Infrastructure & Equipment</option>
-                  <option value="garment-manufacturing">Garment Manufacturing</option>
-                  <option value="construction-&-scaffolding">Construction & Scaffolding</option>
-                  <option value="meal-preparation-&-food-service">Meal Preparation & Food Service</option>
-                  <option value="bread-&-bakery-production">Bread & Bakery Production</option>
-                  <option value="bento-&-confectionery-production">Bento & Confectionery Production</option>
-                  <option value="machine-processing-&-electrical-control-panels">Machine Processing & Electrical Control Panels</option>
+                  <option value="Work Visa - Professional Talent">Work Visa - Professional Talent</option>
+                  <option value="Specified Skilled Worker - Tokutei Visa">Specified Skilled Worker - Tokutei Visa</option>
+                  <option value="Technical Intern Trainee - Training Visa">Technical Intern Trainee - Training Visa</option>
                   <option value="other">Other</option>
                 </select>
+              </div>
+              <div class="form-field contact-message-field">
+                <label for="contactMessage" data-i18n="contact.form.message">Message</label>
+                <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell us how we can help." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
               </div>
               <button class="btn btn-red" type="submit">Send inquiry</button>
               <p class="form-note">Your inquiry will be sent securely to Myanmar GSS. Please provide accurate contact details.</p>

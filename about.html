@@ -16,6 +16,8 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 
 <body id="top" class="about-page">
@@ -51,19 +53,15 @@
           data-i18n="nav.recruitment">Recruitment</a>
         <a class="nav-link" data-page="process.html" href="process.html" data-i18n="nav.process">Process</a>
         <a class="nav-link" data-page="activities.html" href="activities.html" data-i18n="nav.activities">Activities</a>
-        <a class="nav-link nav-contact" data-page="contact.html" href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a class="nav-link" data-page="contact.html" href="contact.html" data-i18n="nav.contact">Contact</a>
 
         <div class="language-selector" id="languageSelector" role="group" aria-label="Change language"
           data-i18n-aria-label="common.changeLanguage">
           <span class="language-pill-bg" id="languagePill" aria-hidden="true"></span>
-
-          <button class="language-btn" type="button" data-language="ja" aria-pressed="true"><span
+          <button class="language-btn" type="button" data-language="ja" aria-pressed="false"><span
               class="language-code">JP</span><span class="language-name" aria-hidden="true">日本語</span></button>
-
-
-          <button class="language-btn" type="button" data-language="en" aria-pressed="false"><span
+          <button class="language-btn" type="button" data-language="en" aria-pressed="true"><span
               class="language-code">EN</span><span class="language-name" aria-hidden="true">English</span></button>
-          <!-- <button class="language-btn" type="button" data-language="my" aria-pressed="false"><span class="language-code">MM</span><span class="language-name" aria-hidden="true">မြန်မာ</span></button> -->
         </div>
 
       </nav>
@@ -84,251 +82,188 @@
         </p>
       </div>
     </section>
-    <section class="section">
+
+    <!-- COMPANY PROFILES SECTION -->
+    <section class="section company-profiles-section">
       <div class="container">
-        <div class="row g-5">
-          <div class="col reveal">
-            <div class="eyebrow" data-i18n="company.profile.eyebrow">Company profile</div>
-            <div class="fact-grid">
-              <div class="fact"><small data-i18n="company.profile.facts.focus">Focus</small><strong
-                  data-i18n="company.profile.facts.focusValue">Talent placement & support</strong></div>
-              <div class="fact"><small data-i18n="company.profile.facts.preparation">Preparation</small><strong
-                  data-i18n="company.profile.facts.preparationValue">Language & skills education</strong></div>
-              <div class="fact"><small data-i18n="company.profile.facts.support">Support</small><strong
-                  data-i18n="company.profile.facts.supportValue">Visa & employment process</strong></div>
-              <div class="fact"><small data-i18n="company.profile.facts.connection">Connection</small><strong
-                  data-i18n="company.profile.facts.connectionValue">Myanmar ↔ Japan</strong></div>
-            </div>
-          </div>
-            <div class="col reveal delay-1 show">
-              <div class="profile">
-                <div class="profile-head"><strong data-i18n="company.profile.card.heading">Overseas Employment
-                    Agency</strong><span data-i18n="company.profile.card.company">Myanmar GSS Co., Ltd.</span></div>
-                <div class="profile-body">
-                  <div class="profile-row">
-                    <div class="profile-label" data-i18n="company.profile.card.companyLabel">Company name</div>
-                    <div class="profile-value" data-i18n="company.profile.card.companyValue">Myanmar GSS Co., Ltd.
-                      (Licence No. 066/2026)</div>
-                  </div>
-                  <div class="profile-row">
-                    <div class="profile-label" data-i18n="company.profile.card.established">Established</div>
-                    <div class="profile-value" data-i18n="company.profile.card.establishedValue">8 February 2023</div>
-                  </div>
-                  <div class="profile-row">
-                    <div class="profile-label" data-i18n="company.profile.card.address">Address</div>
-                    <div class="profile-value" data-i18n="company.profile.card.addressValue">No. 38(A), Boe Yar Zar
-                      Street, Kyaukkone, Yankin Township, Yangon, Myanmar
-                    </div>
-                  </div>
-                  <div class="profile-row">
-                    <div class="profile-label" data-i18n="company.profile.card.capital">Capital</div>
-                    <div class="profile-value" data-i18n="company.profile.card.capitalValue">MMK 50,000,000</div>
-                  </div>
-                  <div class="profile-row">
-                    <div class="profile-label" data-i18n="company.profile.card.business">Business</div>
-                    <div class="profile-value" data-i18n="company.profile.card.businessValue">Foreign talent placement,
-                      education and employment support for Japan</div>
-                  </div>
-                </div>
+        <div class="section-header company-profile-heading reveal">
+          <div class="eyebrow" data-i18n="company.profile.eyebrow">Company profile</div>
+        </div>
+
+        <div class="company-profiles-grid company-profiles-grid-single">
+          <!-- CARD A: MAIN AGENCY - Hero Profile Card -->
+          <article class="profile-card hero-profile reveal">
+            <div class="profile-card-header">
+
+              <div class="profile-icon-wrapper">
+                <img src="assets/logo.png" alt="Myanmar GSS Co., Ltd. logo" class="profile-logo">
+              </div>
+
+              <div class="profile-card-title">
+                <strong data-i18n="company.profile.card.company">Myanmar GSS Co., Ltd.</strong>
+                <span data-i18n="company.profile.card.heading">Overseas Employment Agency</span>
               </div>
             </div>
+            <div class="profile-card-body">
+              <div class="profile-row">
+                <div class="profile-label" data-i18n="company.profile.card.companyLabel">Company name</div>
+                <div class="profile-value" data-i18n="company.profile.card.companyValue">Myanmar GSS Co., Ltd. (Licence
+                  No. 066/2026)</div>
+              </div>
+              <div class="profile-row">
+                <div class="profile-label" data-i18n="company.profile.card.established">Established</div>
+                <div class="profile-value" data-i18n="company.profile.card.establishedValue">8 February 2023</div>
+              </div>
+              <div class="profile-row">
+                <div class="profile-label" data-i18n="company.profile.card.address">Address</div>
+                <div class="profile-value" data-i18n="company.profile.card.addressValue">No. 38(A), Boe Yar Zar Street,
+                  Kyaukkone, Yankin Township, Yangon, Myanmar</div>
+              </div>
+              <div class="profile-row">
+                <div class="profile-label" data-i18n="company.profile.card.capital">Capital</div>
+                <div class="profile-value" data-i18n="company.profile.card.capitalValue">MMK 50,000,000</div>
+              </div>
+              <div class="profile-row">
+                <div class="profile-label" data-i18n="company.profile.card.business">Business</div>
+                <div class="profile-value" data-i18n="company.profile.card.businessValue">Foreign talent placement,
+                  education and employment support for Japan</div>
+              </div>
+            </div>
+          </article>
+
         </div>
+
       </div>
     </section>
+    <!-- CEO MESSAGE & PURPOSE SECTION -->
     <section class="ceo-purpose-section">
-        <div class="container">
-            <div class="container">
-              <div class="row g-5 align-items-center">
-                <div class="col reveal">
-                  <div class="eyebrow" data-i18n="company.presentation.heading">Company Profile</div>
-                  <h2 data-i18n="company.presentation.title">Message from company</h2>
-                  <!-- <p class="section-copy" data-i18n="company.presentation.copy">The value of working in Japan goes beyond income.
-                      The knowledge, skills, and experience people gain can return with them to Myanmar—creating new opportunities,
-                      strengthening communities, and contributing to a better future.</p> -->
+      <div class="container">
+
+        <!-- CEO MESSAGE - Executive Highlight Card -->
+        <article class="ceo-executive-card reveal">
+          <div class="ceo-card-accent-bar" aria-hidden="true"></div>
+          <div class="ceo-card-content">
+            <div class="ceo-card-header">
+              <div class="ceo-heading-copy">
+                <span class="eyebrow" data-i18n="company.ceo.ceoTitle">MESSAGE FROM THE CEO</span>
+              </div>
+            </div>
+            <div class="ceo-message-layout">
+              <aside class="ceo-visual-column" aria-label="Chief Executive Officer">
+                <div class="ceo-portrait ceo-portrait-large">
+                  <img src="assets/images/company/company_4.webp" alt="CEO of Myanmar GSS Co., Ltd.">
+                </div>
+                <div class="ceo-visual-caption">
+                  <strong data-i18n="company.ceo.name">NI HTWE</strong>
+                  <span data-i18n="company.ceo.position">Chief Executive Officer</span>
+                  <span data-i18n="company.ceo.company">Myanmar GSS Co., Ltd.</span>
+                </div>
+              </aside>
+              <div class="ceo-message-copy">
+                <blockquote class="ceo-quote" data-i18n="company.ceo.ceoMessage">
+                  <p>Warm greetings to everyone taking an interest in Myanmar GSS Co., Ltd.,</p>
+                  <p>and to the young people, families, employers in Japan and partner organizations who place their
+                    trust in us.</p>
+                </blockquote>
+                <div class="ceo-message-body" data-i18n="company.ceo.ceoParagraph">
+                  <p>When I was young, I lived in Japan for six years, working while attending school. During that time,
+                    I gained knowledge and experience not only through my studies, but also through work and everyday
+                    life. In particular, I learned the importance of responsibility, punctuality, mutual respect,
+                    earning trust and building meaningful relationships.</p>
+                  <p>After returning to Myanmar, I drew on the knowledge, experience and relationships I had gained in
+                    Japan to develop businesses through which I could serve our customers, help my colleagues build
+                    happy and fulfilling lives, and contribute to society. I established Myanmar GSS to put these
+                    aspirations into practice through people development and overseas employment.</p>
+                  <p>Having studied and worked abroad myself, I understand how important preparation is when moving to a
+                    country with a different language, culture and way of life. This is why we place great importance on
+                    preparing young people in Japanese language, workplace rules, responsibility, teamwork, Japanese
+                    culture and everyday etiquette before they leave for Japan.</p>
+                  <p>Through this preparation, we want young people to work with confidence in factories, elderly care
+                    facilities and other workplaces, and to become colleagues whom Japanese employers can trust and
+                    value. Helping both sides build lasting working relationships based on mutual understanding and
+                    respect is an important part of our role.</p>
+                  <p>My approach to business is guided by the teachings of Kazuo Inamori, whom I deeply respect and
+                    continue to learn from. In particular, I value his emphasis on caring about the welfare of others
+                    and making decisions based on what is right as a human being. We seek to put these principles into
+                    practice by treating young people, their families, employers and our colleagues with consideration,
+                    integrity and responsibility.</p>
+                  <p>My long-term hope is that young people who learn and gain experience in Japan will build better
+                    lives for themselves and their families. I also hope that, in time, they will apply their knowledge
+                    and professional skills in Myanmar, contributing in their respective fields to the country's
+                    development and nation-building.</p>
+                  <p>We value each person's dreams and future, and we will respond to the trust placed in us through
+                    responsible action. Together with all of you, we will work to build a future that brings lasting
+                    value to both Myanmar and Japan.</p>
                 </div>
               </div>
             </div>
+          </div>
+        </article>
 
-            <!-- CEO MESSAGE -->
-            <div class="ceo-message reveal">
+        <!-- PURPOSE: VISION & MISSION - 3-Column Card Grid -->
+        <div class="purpose-section reveal delay-1">
+          <header class="purpose-header">
+            <span class="eyebrow" data-i18n="company.purpose.title">OUR PURPOSE</span>
+            <h2 data-i18n="company.purpose.h1">Vision & Mission</h2>
+          </header>
 
-                <div class=" col">
-                    <img class="ceo-image"
-                        src="assets/images/company/company_4.webp"
-                        alt="CEO of Myanmar GSS Co., Ltd."
-                    ><br>
-                    <img class="ceo-image"
-                        src="assets/images/company/company_3.webp"
-                        alt="CEO of Myanmar GSS Co., Ltd."
-                    >
+          <div class="purpose-grid-3col">
+            <!-- VISION CARD -->
+            <article class="purpose-card-3col vision-card">
+              <div class="purpose-card-icon"><img src="assets/images/about/vision.png" alt="" aria-hidden="true" loading="lazy"></div>
+              <div class="purpose-card-number">01</div>
+              <div class="purpose-card-content">
+                <span class="purpose-label" data-i18n="company.vision.label">VISION</span>
+                <h3 data-i18n="company.vision.title">To be a trusted partner in meeting Japan's long-term workforce
+                  needs by developing the potential of Myanmar's young people.</h3>
+                <p data-i18n="company.vision.text">Through people development, we aim to turn the knowledge, skills and
+                  experience gained in Japan into more fulfilling lives and meaningful contributions to Myanmar's
+                  development, building a better future for both countries.</p>
+              </div>
+            </article>
 
-                </div>
-                
-                <div class="ceo-content">
-                    <span class="eyebrow" data-i18n="company.ceo.ceoTitle">MESSAGE FROM THE CEO</span>
+            <!-- MISSION CARD 1: PREPARATION & MATCHING -->
+            <article class="purpose-card-3col mission-card">
+              <div class="purpose-card-icon"><img src="assets/images/about/target.png" alt="" aria-hidden="true" loading="lazy"></div>
+              <div class="purpose-card-number">02</div>
+              <div class="purpose-card-content">
+                <span class="purpose-label" data-i18n="company.mission.label">MISSION</span>
+                <h3 data-i18n="company.mission.title1">Comprehensive Preparation & Matching</h3>
+                <p data-i18n="company.mission.text1">Provide preparation in Japanese language, workplace rules, safety
+                  awareness, responsibility, punctuality, reporting, communication, consultation and teamwork. We also
+                  teach Japanese culture, traditions, daily living practices, social expectations and everyday customs
+                  to help young people prepare for both work and life in Japan.</p>
+                <p data-i18n="company.mission.text2">Understand each candidate's abilities and goals alongside the needs
+                  of employers, and connect them with suitable employment opportunities. We help candidates prepare to
+                  work effectively and become trusted team members in their respective workplaces.</p>
+              </div>
+            </article>
 
-                    <h3 data-i18n="company.ceo.ceoMessage">Warm greetings to everyone taking <br data-i18n="company.ceo.ceoMessage1">an interest in Myanmar GSS Co., Ltd.,</h3>
-                    <p data-i18n="company.ceo.ceoParagraph">and to the young people, families, employers in Japan and partner organizations who place their trust in us.
-                        When I was young, I lived in Japan for six years, working while attending school. During that time, I gained knowledge and experience not only through my studies, but also through work and everyday life. In particular, I learned the importance of responsibility, punctuality, mutual respect, earning trust and building meaningful relationships.
-                        After returning to Myanmar, I drew on the knowledge, experience and relationships I had gained in Japan to develop businesses through which I could serve our customers, help my colleagues build happy and fulfilling lives, and contribute to society. I established Myanmar GSS to put these aspirations into practice through people development and overseas employment.
-                        Having studied and worked abroad myself, I understand how important preparation is when moving to a country with a different language, culture and way of life. This is why we place great importance on preparing young people in Japanese language, workplace rules, responsibility, teamwork, Japanese culture and everyday etiquette before they leave for Japan.
-                        Through this preparation, we want young people to work with confidence in factories, elderly care facilities and other workplaces, and to become colleagues whom Japanese employers can trust and value. Helping both sides build lasting working relationships based on mutual understanding and respect is an important part of our role.
-                        My approach to business is guided by the teachings of Kazuo Inamori, whom I deeply respect and continue to learn from. In particular, I value his emphasis on caring about the welfare of others and making decisions based on what is right as a human being. We seek to put these principles into practice by treating young people, their families, employers and our colleagues with consideration, integrity and responsibility.
-                        My long-term hope is that young people who learn and gain experience in Japan will build better lives for themselves and their families. I also hope that, in time, they will apply their knowledge and professional skills in Myanmar, contributing in their respective fields to the country’s development and nation-building.
-                        We value each person’s dreams and future, and we will respond to the trust placed in us through responsible action. Together with all of you, we will work to build a future that brings lasting value to both Myanmar and Japan.
-                    </p>
-
-                    <div class="ceo-signature">
-                        <strong data-i18n="company.ceo.name">NI HTWE</strong>
-                        <span data-i18n="company.ceo.position">Chief Executive Officer</span>
-                        <span data-i18n="company.ceo.company">Myanmar GSS Co., Ltd.</span>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- VISION & MISSION -->
-            <div class="purpose-header reveal">
-                <span class="eyebrow" data-i18n="company.purpose.title">OUR PURPOSE</span>
-                <h2 data-i18n="company.purpose.h1">Vision &amp; Mission</h2>
-                <!-- <p>
-                    Building meaningful connections and creating opportunities
-                    for people and businesses between Myanmar and Japan.
-                </p> -->
-            </div>
-
-
-            <div class="purpose-grid">
-
-                <!-- VISION -->
-                <article class="purpose-card vision-card reveal">
-                    <div class="purpose-icon">
-                        <span>01</span>
-                    </div>
-
-                    <div>
-                        <span class="purpose-label" data-i18n="company.vision.label">VISION</span>
-
-                        <h4 data-i18n="company.vision.title">
-                            To be a trusted partner in meeting Japan’s long-term workforce needs by developing the potential of Myanmar’s young people.
-                        </h4>
-
-                        <p data-i18n="company.vision.text">
-                            Through people development, we aim to turn the knowledge, skills and experience gained in Japan into more fulfilling lives
-                             and meaningful contributions to Myanmar’s development, building a better future for both countries.
-                        </p><br><br><br>
-
-                        <div class=" col ">
-                          <img class="ceo-image"
-                              src="assets/images/company/company_7.webp"
-                              alt="CEO of Myanmar GSS Co., Ltd."
-                          ><br>
-                          <img class="ceo-image"
-                              src="assets/images/company/company_2.webp"
-                              alt="CEO of Myanmar GSS Co., Ltd."
-                          ><br>
-                          <img class="ceo-image"
-                              src="assets/images/company/company_5.webp"
-                              alt="CEO of Myanmar GSS Co., Ltd."
-                          >
-                        </div>
-                    </div>
-                </article>
-
-
-                <!-- MISSION -->
-                <article class="purpose-card mission-card reveal delay-1">
-                    <div class="purpose-icon">
-                        <span>02</span>
-                    </div>
-
-                    <div>
-                        <span class="purpose-label" data-i18n="company.mission.label">MISSION</span>
-
-                        <h4 data-i18n="company.mission.title1">
-                            ① Comprehensive Preparation Before Departure
-                        </h4>
-                        <p data-i18n="company.mission.text1">
-                            Provide preparation in Japanese language, workplace rules, safety awareness, responsibility,
-                             punctuality, reporting, communication, consultation and teamwork.We also teach Japanese culture, traditions, daily living practices, social expectations and everyday customs to help young people prepare for both work and life in Japan.
-                        </p><br>
-
-                        <h4 data-i18n="company.mission.title2">
-                            ② Matching People with Suitable Workplaces
-                        </h4>
-                        <p data-i18n="company.mission.text2">
-                            Understand each candidate’s abilities and goals alongside the needs of employers,
-                             and connect them with suitable employment opportunities. We help candidates prepare to work effectively and become trusted team members in their respective workplaces, including factories and elderly care facilities.
-                        </p><br>
-
-                        <h4 data-i18n="company.mission.title3">
-                            ③ Responsible Recruitment and Collaboration
-                        </h4>
-                        <p data-i18n="company.mission.text3">
-                            Explain employment conditions, costs and procedures clearly, while respecting workers’ dignity and rights.
-                             We work with employers and partner organizations in Japan and take responsibility for our role in supporting a smooth transition to work and daily life.
-                        </p><br>
-
-                        <h4 data-i18n="company.mission.title4">
-                            ④ Learning and Growth for the Future
-                        </h4>
-                        <p data-i18n="company.mission.text4">
-                            Encourage continuous learning, professional development and responsibility throughout each person’s employment in Japan.
-                             We aim to nurture people who can use their knowledge, skills and experience to improve their lives and contribute to Myanmar’s future development and nation-building.
-                        </p><br>
-
-                        <h4 data-i18n="company.mission.title5">
-                            ⑤ Trust Built on Care for Others
-                        </h4>
-                        <p data-i18n="company.mission.text5">
-                            Consider the perspectives of young people, their families, employers, partner organizations and our colleagues. 
-                            Through integrity and mutual understanding, we build lasting relationships in which everyone involved has the opportunity to grow.
-                        </p>
-
-                    </div>
-                </article>
-
-            </div>
-
+            <!-- MISSION CARD 2: RESPONSIBLE RECRUITMENT & GROWTH -->
+            <article class="purpose-card-3col mission-card">
+              <div class="purpose-card-icon"><img src="assets/images/about/goals.png" alt="" aria-hidden="true" loading="lazy"></div>
+              <div class="purpose-card-number">03</div>
+              <div class="purpose-card-content">
+                <span class="purpose-label" data-i18n="company.mission.label">MISSION</span>
+                <h3 data-i18n="company.mission.title3">Responsible Recruitment, Growth & Trust</h3>
+                <p data-i18n="company.mission.text3">Explain employment conditions, costs and procedures clearly, while
+                  respecting workers' dignity and rights. We work with employers and partner organizations in Japan and
+                  take responsibility for supporting a smooth transition to work and daily life.</p>
+                <p data-i18n="company.mission.text4">Encourage continuous learning, professional development and
+                  responsibility throughout each person's employment in Japan. We aim to nurture people who can use
+                  their knowledge, skills and experience to improve their lives and contribute to Myanmar's future
+                  development and nation-building.</p>
+                <p data-i18n="company.mission.text5">Consider the perspectives of young people, their families,
+                  employers, partner organizations and our colleagues. Through integrity and mutual understanding, we
+                  build lasting relationships in which everyone involved has the opportunity to grow.</p>
+              </div>
+            </article>
+          </div>
         </div>
+
+      </div>
     </section>
-    <section class="section">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col reveal delay-1 show">
-                <div class="profile">
-                  <div class="profile-head">
-                    <strong data-i18n="company.profile.card.partnership">Our corporate partner</strong>
-                    <span data-i18n="company.profile.card.company1">Traism Co.,Ltd.</span>
-                  </div>
-                  <div class="profile-body">
-                    <div class="profile-row">
-                      <div class="profile-label" data-i18n="company.profile.card.companyLabel">Company name</div>
-                      <div class="profile-value" data-i18n="company.profile.card.companyValue1">Traism Co., Ltd.
-                      </div>
-                    </div>
-                    <div class="profile-row">
-                      <div class="profile-label" data-i18n="company.profile.card.address">Address</div>
-                      <div class="profile-value" data-i18n="company.profile.card.addressValue1">3rd floor, Horikawa Building,
-                        1-2-10 Minato, Chuo-ku, Tokyo
-                      </div>
-                    </div>
-                    <div class="profile-row">
-                      <div class="profile-label" data-i18n="company.profile.card.director">Representative Director</div>
-                      <div class="profile-value" data-i18n="company.profile.card.name">Hiroshi Sato</div>
-                    </div>
-                    <div class="profile-row">
-                      <div class="profile-label" data-i18n="company.profile.card.business">Business</div>
-                      <div class="profile-value" data-i18n="company.profile.card.businessValue">Foreign talent placement,
-                        education and employment support for Japan</div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>  
-        </div>
-    </section>
+
 
   </main>
 
@@ -341,7 +276,7 @@
   <script src="js/vendor/i18next.min.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
-  
+
 </body>
 
 </html>

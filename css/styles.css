@@ -268,9 +268,16 @@ body.cursor-ready .cursor-glow {
   height: 40px;
   padding: 0 12px;
   font-size: 0.84rem;
-  font-weight: 750;
+  font-weight: 600;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.01em;
   color: #4a4d50;
   line-height: 1;
+  transition: color 0.2s var(--ease);
+}
+
+.nav-link:hover {
+  color: var(--red);
 }
 
 
@@ -1361,61 +1368,50 @@ body.modal-open {
 }
 
 /* =========================================================
-   LANGUAGE SELECTOR — ALIGNED SEGMENTED CONTROL
+   LANGUAGE SELECTOR — MATCH HOME / ABOUT GLASS SWITCH
    ========================================================= */
 .language-selector {
-  --lang-padding: 3px;
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
+  align-items: center;
   flex: 0 0 auto;
-  width: 100px;
+  width: 104px;
   height: 40px;
-  margin-left: 8px;
-  padding: var(--lang-padding);
-  border: 1px solid #dfe3e6;
+  margin-left: 12px;
+  padding: 3px;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 999px;
-  background: #f4f5f6;
-  box-shadow:
-    inset 0 1px 2px rgba(0, 0, 0, 0.045),
-    0 2px 7px rgba(0, 0, 0, 0.035);
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 5px 18px rgba(48, 17, 28, 0.10);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   isolation: isolate;
   overflow: hidden;
   -webkit-user-select: none;
   user-select: none;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .language-selector:hover {
-  border-color: #cdd2d6;
-  box-shadow:
-    inset 0 1px 2px rgba(0, 0, 0, 0.045),
-    0 5px 14px rgba(0, 0, 0, 0.07);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 7px 22px rgba(48, 17, 28, 0.14);
 }
 
-/* Active red pill: JP is the first/primary language. */
 .language-pill-bg {
   position: absolute;
   z-index: 1;
-  top: var(--lang-padding);
-  bottom: var(--lang-padding);
-  left: var(--lang-padding);
-  width: calc(50% - var(--lang-padding));
-  height: calc(100% - (var(--lang-padding) * 2));
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
   border-radius: 999px;
-  background: var(--red);
-  box-shadow:
-    0 4px 12px rgba(185, 11, 11, 0.24),
-    0 1px 3px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #b20b3b, #850023);
+  box-shadow: 0 5px 14px rgba(169, 0, 47, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  transition:
-    transform 0.28s cubic-bezier(0.34, 1.42, 0.64, 1),
-    width 0.2s ease;
+  transition: transform 0.28s cubic-bezier(0.34, 1.42, 0.64, 1), width 0.2s ease;
 }
 
 .language-btn {
@@ -1423,76 +1419,40 @@ body.modal-open {
   z-index: 2;
   appearance: none;
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: #62686d;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 32px;
+  min-width: 0;
+  margin: 0;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #514b50;
   cursor: pointer;
-  font-family:
-    "IBM Plex Sans",
-    "Noto Sans JP",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    Arial,
-    sans-serif;
-  font-size: 0.68rem;
-  font-weight: 750;
+  font-family: var(--font-sans, "Roboto", "Noto Sans JP", Arial, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.language-btn:hover {
-  color: #15181b;
-}
-
-.language-btn:active {
-  transform: scale(0.96);
-  color: #ffffff;
-}
-
-.language-btn[aria-pressed="true"] {
-  color: #fff;
-}
-
-.language-code {
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.language-name {
-  display: none;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-.language-btn:focus-visible {
-  outline: 2px solid var(--red);
-  outline-offset: -2px;
-}
+.language-btn:hover { color: #a9002f; }
+.language-btn:active { transform: scale(0.96); }
+.language-btn[aria-pressed="true"],
+.language-btn[aria-pressed="true"]:hover { color: #fff; }
+.language-code { display: block; margin: 0; padding: 0; font-weight: 800; line-height: 1; }
+.language-name { display: none; margin: 0; padding: 0; font-weight: 700; line-height: 1; }
+.language-btn:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
 
 .nav-shell.scrolled .language-selector {
-  border-color: #d5dade;
-  background: #eef0f2;
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
 }
-
 
 /* =========================================================
    LANGUAGE SELECTOR — TABLET
@@ -3129,4 +3089,153 @@ video {
     .ceo-content h2 {
         font-size: 2rem;
     }
+}
+
+
+/* =========================================================
+   Shared navigation + language selector consistency
+   ========================================================= */
+.nav-shell {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 252, 248, .96);
+  border-bottom: 1px solid rgba(185, 11, 11, .12);
+  backdrop-filter: blur(14px);
+}
+.nav-inner { gap: clamp(.75rem, 1.8vw, 1.5rem); }
+.nav-links { align-items: center; }
+.language-selector {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0;
+  min-width: 100px;
+  height: 42px;
+  padding: 4px;
+  border: 1px solid #e8e3e2;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(34, 12, 17, .08);
+}
+.language-pill-bg {
+  position: absolute;
+  z-index: -1;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  border-radius: 999px;
+  background: #b90b0b;
+  box-shadow: 0 4px 10px rgba(185, 11, 11, .2);
+  transition: transform .24s ease;
+  pointer-events: none;
+}
+.language-selector:has(.language-btn[data-language="en"][aria-pressed="true"]) .language-pill-bg {
+  transform: translateX(100%);
+}
+.language-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 50%;
+  min-width: 0;
+  height: 32px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #606067;
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: color .2s ease, transform .2s ease;
+}
+.language-btn[aria-pressed="true"] { color: #fff; }
+.language-btn:hover { transform: translateY(-1px); }
+.language-btn:focus-visible { outline: 2px solid #b90b0b; outline-offset: 3px; }
+.language-name { display: none !important; }
+@media (max-width: 900px) {
+  .language-selector { min-width: 96px; height: 40px; }
+  .nav-inner { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .language-pill-bg, .language-btn { transition: none; }
+}
+
+
+/* FINAL OVERRIDE: keep the previous Home/About glass language switch on every page. */
+.language-selector {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  width: 104px !important;
+  min-width: 104px !important;
+  height: 40px !important;
+  margin-left: 12px !important;
+  padding: 3px !important;
+  gap: 0 !important;
+  border: 1px solid rgba(255,255,255,.85) !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.42) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 5px 18px rgba(48,17,28,.10) !important;
+  backdrop-filter: blur(16px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+.language-pill-bg {
+  position: absolute !important;
+  z-index: 1 !important;
+  top: 3px !important;
+  bottom: 3px !important;
+  left: 3px !important;
+  width: calc(50% - 3px) !important;
+  height: auto !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg,#b20b3b,#850023) !important;
+  box-shadow: 0 5px 14px rgba(169,0,47,.28), inset 0 1px 0 rgba(255,255,255,.22) !important;
+  pointer-events: none !important;
+  transform: translate3d(0,0,0) !important;
+  transition: transform .28s cubic-bezier(.34,1.42,.64,1), width .2s ease !important;
+}
+.language-selector:has(.language-btn[data-language="en"][aria-pressed="true"]) .language-pill-bg {
+  transform: translateX(100%) !important;
+}
+.language-btn {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 8px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: #514b50 !important;
+  font-family: var(--font-sans,"Roboto","Noto Sans JP",Arial,sans-serif) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+.language-btn[aria-pressed="true"],
+.language-btn[aria-pressed="true"]:hover { color: #fff !important; }
+.language-btn:hover { color: #a9002f !important; }
+.language-btn[aria-pressed="true"]:hover { color: #fff !important; }
+.language-code { display: block !important; margin: 0 !important; padding: 0 !important; font-weight: 800 !important; line-height: 1 !important; }
+.language-name { display: none !important; }
+@media (max-width: 600px) {
+  .language-selector { width: 96px !important; min-width: 96px !important; margin-left: 6px !important; }
 }

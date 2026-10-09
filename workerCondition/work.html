@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="Contact Myanmar GSS Co., Ltd. in Kyaukkone, Yangon.">
-        <title>Myanmar GSS | Contact</title>
+        <title>Myanmar GSS | Work Conditions</title>
 
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="../css/contact.css">
@@ -18,7 +18,7 @@
         <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
-    <body id="top" class="about-page">
+    <body id="top" class="about-page work-page">
         <div class="page-loader" id="pageLoader" aria-hidden="true">
             <div class="loader-inner">
                 <div class="loader-logo"><img src="../assets/logo.png" alt=""></div>
@@ -38,131 +38,140 @@
                         class="brand-note" data-i18n="header.brandNoteGlobal">Overseas Employment Agency</span></span>
                     </a>
                 </div>               
-                <div class="modal-actions">
-                    <a class="btn btn-red" href="../recruitment.html" data-i18n="recruitment.modal.close">Close</a>
+                <div class="work-nav-actions">
+                    <a class="btn btn-red work-back-button" href="../recruitment.html" aria-label="Back to Recruitment">← <span data-i18n="workCondition.backToRecruitment">Back to Recruitment</span></a>
+                    <div class="language-selector" id="languageSelector" role="group" aria-label="Change language" data-i18n-aria-label="common.changeLanguage">
+                      <span class="language-pill-bg" id="languagePill" aria-hidden="true"></span>
+                      <button class="language-btn" type="button" data-language="ja" aria-pressed="false"><span class="language-code">JP</span><span class="language-name" aria-hidden="true">日本語</span></button>
+                      <button class="language-btn" type="button" data-language="en" aria-pressed="true"><span class="language-code">EN</span><span class="language-name" aria-hidden="true">English</span></button>
+                    </div>
                 </div>  
             </div>      
         </header>
 
+        <nav class="work-breadcrumb container" aria-label="Breadcrumb">
+            <a href="../index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">/</span>
+            <a href="../recruitment.html" data-i18n="nav.recruitment">Recruitment</a><span aria-hidden="true">/</span>
+            <span aria-current="page" data-i18n="workCondition.breadcrumb">Work Conditions</span>
+        </nav>
         <section class="page-hero">
             <div class="container">
                 <h1 data-i18n="workCondition.hero.title">Worker's work conditions</h1>
             </div>
-        </section><br>
-        
-        <div class="container">
-            <div class=" container row reveal.show1">            
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.hotel.title">Hotel</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.hotel.subtitle">Professional Hospitality Environment</h4>
-                        <p class="section-copy" data-i18n="workCondition.hotel.description">Professional hospitality environment with customer-focused service,
-                            teamwork, and well-organized working conditions. </p>
-                    </div>
+        </section>
+
+        <section class="section work-conditions-section">
+            <div class="container">
+                <div class="work-conditions-list">
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.hotel.title">Hotel</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.hotel.subtitle">Professional Hospitality Environment</h4>
+                            <p class="section-copy" data-i18n="workCondition.hotel.description">Professional hospitality environment with customer-focused service,
+                                teamwork, and well-organized working conditions. </p>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/Hotel/hotel.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Hotel/hotel1.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Hotel/hotel2.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.kaigo.title">Caregiving(Kaigo)</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.kaigo.subtitle">Compassionate Caregiving Environment</h4>
+                            <p class="section-copy" data-i18n="workCondition.kaigo.description">Safe and supportive care environment focused on respect, teamwork, compassion, and quality of life. </p>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo1.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo2.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo3.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo4.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo5.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.airport.title">Airport Ground Handling Services</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.airport.subtitle">Safe & Efficient Airport Operations or Efficient Airport Ground Services</h4>
+                            <p class="section-copy" data-i18n="workCondition.airport.description">Dynamic airport environment with strict safety standards, teamwork,
+                                and efficient operations. </p>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/Airport-Ground-Handling-Services/airport1.jpg" data-caption="">
+                                <img src="../assets/images/workerCondition/Airport-Ground-Handling-Services/airport.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.food.title">Professional Food Production Environment</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.kaigo.subtitle">clean and hygienic workplace</h4>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/FoodProduction/food1.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/FoodProduction/food.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.beverage.title">Food & Beverage Service/ Safe & Hygienic Food Service</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.beverage.subtitle">Clean and energetic workplace with strong hygiene standards and teamwork</h4>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/BeverageService/beverage2.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/BeverageService/beverage.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.construction.title">Professional Construction & Technical Environment</h3>
+                            <h4 class="eyebrow" data-i18n="workCondition.construction.description">An active and organized workplace foucused on safety,technical skills, reliable operations, and teamwork.</h4>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/Construction&Technical/construction.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Construction&Technical/construction1.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Construction&Technical/construction2.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Construction&Technical/construction3.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
+                    <article class="work-conditions-block reveal">
+                        <div class="work-conditions-copy">
+                            <h3 class="section-title" data-i18n="workCondition.accommodation.title">Worker Accommodation & Support/</h3>
+                            <h4 class="section-title" data-i18n="workCondition.accommodation.title1">Safe & Supportive Living Environment</h4>
+                        </div>
+                        <div class="work-conditions-media">
+                            <premium-carousel autoplay interval="5000" aspect="16/9">
+                                <img src="../assets/images/workerCondition/Accommodation/accommodation2.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Accommodation/accommodation1.webp" data-caption="">
+                                <img src="../assets/images/workerCondition/Accommodation/accommodation.webp" data-caption="">
+                            </premium-carousel>
+                        </div>
+                    </article>
+
                 </div>
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/Hotel/hotel.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Hotel/hotel1.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Hotel/hotel2.webp" data-caption="">
-                </premium-carousel>
-                </div>      
             </div>
-            <div class=" container row reveal.show1">            
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo1.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo2.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo3.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo4.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Caregiving-Kaigo/kaigo5.webp" data-caption="">
-                </premium-carousel>
-                </div>   
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.kaigo.title">Caregiving(Kaigo)</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.kaigo.subtitle">Compassionate Caregiving Environment</h4>
-                        <p class="section-copy" data-i18n="workCondition.kaigo.description">Safe and supportive care environment focused on respect, teamwork, compassion, and quality of life. </p>
-                    </div>
-                </div>          
-            </div>
-            <div class=" container row reveal.show1">            
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.airport.title">Airport Ground Handling Services</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.airport.subtitle">Safe & Efficient Airport Operations or Efficient Airport Ground Services</h4>
-                        <p class="section-copy" data-i18n="workCondition.airport.description">Dynamic airport environment with strict safety standards, teamwork,
-                            and efficient operations. </p>
-                    </div>
-                </div>
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/Airport-Ground-Handling-Services/airport1.jpg" data-caption="">
-                    <img src="../assets/images/workerCondition/Airport-Ground-Handling-Services/airport.webp" data-caption="">
-                </premium-carousel>
-                </div>      
-            </div>
-            <div class=" container row reveal.show1">            
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/FoodProduction/food1.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/FoodProduction/food.webp" data-caption="">
-                </premium-carousel>
-                </div>   
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.food.title">Professional Food Production Environment</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.kaigo.subtitle">clean and hygienic workplace</h4>
-                    </div>
-                </div>          
-            </div>
-            <div class=" container row reveal.show1">            
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.beverage.title">Food & Beverage Service/ Safe & Hygienic Food Service</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.beverage.subtitle">Clean and energetic workplace with strong hygiene standards and teamwork</h4>
-                    </div>
-                </div>
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/BeverageService/beverage2.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/BeverageService/beverage.webp" data-caption="">
-                </premium-carousel>
-                </div>      
-            </div>
-            <div class=" container row reveal.show1">            
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/Construction&Technical/construction.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Construction&Technical/construction1.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Construction&Technical/construction2.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Construction&Technical/construction3.webp" data-caption="">
-                </premium-carousel>
-                </div>   
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.construction.title">Professional Construction & Technical Environment</h3>
-                        <h4 class="eyebrow" data-i18n="workCondition.construction.description">An active and organized workplace foucused on safety,technical skills, reliable operations, and teamwork.</h4>
-                    </div>
-                </div>          
-            </div> 
-            <div class=" container row reveal.show1">            
-                <div class="col g-4 align-items-center fact-grid1 fact">
-                    <div class="col reveal" >
-                        <h3 class="section-title" data-i18n="workCondition.accommodation.title">Worker Accommodation & Support/</h3>
-                        <h4 class="section-title" data-i18n="workCondition.accommodation.title1">Safe & Supportive Living Environment</h4>
-                    </div>
-                </div>
-                <div class="col reveal delay-1 activities-intro-grid">
-                <premium-carousel autoplay interval="5000" aspect="16/9">
-                    <img src="../assets/images/workerCondition/Accommodation/accommodation2.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Accommodation/accommodation1.webp" data-caption="">
-                    <img src="../assets/images/workerCondition/Accommodation/accommodation.webp" data-caption="">
-                </premium-carousel>
-                </div>      
-            </div> 
-        </div>
+        </section>
+
         <button class="backtop" id="backTop" type="button" aria-label="Back to top"
             data-i18n-aria-label="common.backToTop">↑</button>
         <script src="../js/components.js"></script>
