@@ -96,6 +96,19 @@
   line-height: 1.8;
 }
 
+.footer-logo-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  width: 108px;
+  height: 66px;
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 13px;
+  gap: 10px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+}
+
 
 /* Headings */
 
