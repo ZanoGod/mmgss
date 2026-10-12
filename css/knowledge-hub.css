@@ -1,47 +1,697 @@
-/* MMGSS Knowledge Hub — dedicated button and modal styles */
-.activities-page #knowledgeGrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:1.5rem; }
-.activities-page .knowledge-card { min-width:0; overflow:hidden; display:flex; flex-direction:column; height:100%; border:1px solid #e7e0e0; border-radius:18px; background:#fff; box-shadow:0 8px 28px rgba(20,10,10,.07); }
-.activities-page .knowledge-card .card-media { position:relative; aspect-ratio:16/10; overflow:hidden; background:#f3eeee; }
-.activities-page .knowledge-card .knowledge-card-carousel { display:flex; width:100%; height:100%; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; }
-.activities-page .knowledge-card .knowledge-card-carousel img { flex:0 0 100%; width:100%; height:100%; min-height:200px; object-fit:cover; scroll-snap-align:start; }
-.activities-page .knowledge-card .holiday-badge { position:absolute; z-index:2; top:.8rem; left:.8rem; right:.8rem; display:flex; flex-wrap:wrap; gap:.45rem; }
-.activities-page .knowledge-card .holiday-badge span { padding:.4rem .7rem; border-radius:99px; color:#fff; background:rgba(30,10,12,.78); font-size:.78rem; font-weight:700; }
-.activities-page .knowledge-card .card-content { display:flex; flex:1; flex-direction:column; padding:1.25rem; }
-.activities-page .knowledge-card .card-title-row { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:.5rem; }
-.activities-page .knowledge-card .card-title { margin:0; color:#20232a; font-size:1.2rem; line-height:1.35; }
-.activities-page .knowledge-card .card-date { color:#a20b13; font-size:.8rem; font-weight:700; }
-.activities-page .knowledge-card .card-description { margin:.8rem 0 1rem; color:#626b76; line-height:1.7; }
-.activities-page .knowledge-card .card-footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-top:auto; padding-top:.5rem; }
-.activities-page .knowledge-card .card-season { display:inline-flex; align-items:center; gap:.45rem; color:#626b76; font-size:.8rem; font-weight:700; }
-.activities-page .knowledge-card .card-season i { color:#b90b0b; }
-.activities-page .knowledge-card .card-view-btn { appearance:none; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-width:92px; min-height:40px; padding:.6rem 1rem; border:1px solid #b90b0b; border-radius:999px; background:#b90b0b; color:#fff; font-family:inherit; font-size:.9rem; font-weight:700; line-height:1.2; cursor:pointer; box-shadow:0 4px 12px rgba(185,11,11,.18); transition:background .2s ease,transform .2s ease,box-shadow .2s ease; }
-.activities-page .knowledge-card .card-view-btn:hover { background:#850909; transform:translateY(-1px); box-shadow:0 7px 18px rgba(185,11,11,.25); }
-.activities-page .knowledge-card .card-view-btn:focus-visible { outline:3px solid rgba(185,11,11,.35); outline-offset:3px; }
-.activities-page .knowledge-card .card-view-btn .bi { font-size:1rem; }
-.activities-page .holiday-modal { position:fixed; inset:0; z-index:2147483000; display:none; align-items:center; justify-content:center; padding:clamp(.5rem,3vw,1.5rem); background:transparent; }
-.activities-page .holiday-modal.open { display:flex; }
-.activities-page .holiday-modal-backdrop { position:absolute; inset:0; background:rgba(17,14,16,.76); backdrop-filter:blur(5px); }
-.activities-page .holiday-modal-dialog { position:relative; z-index:1; width:min(980px,100%); max-height:90vh; overflow:auto; overscroll-behavior:contain; border-radius:20px; background:#fff; color:#222; box-shadow:0 24px 90px rgba(0,0,0,.35); }
-.activities-page .holiday-modal-content { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); }
-.activities-page .holiday-modal-media { position:relative; min-width:0; min-height:360px; overflow:hidden; background:#f2eeee; }
-.activities-page .holiday-modal-media>img { display:block; width:100%; height:100%; min-height:360px; max-height:650px; object-fit:cover; }
-.activities-page .holiday-modal-close { position:absolute; top:12px; right:12px; z-index:4; display:grid; place-items:center; width:42px; height:42px; border:0; border-radius:50%; background:#fff; color:#222; box-shadow:0 3px 12px rgba(0,0,0,.2); cursor:pointer; }
-.activities-page .holiday-image-nav { position:absolute; top:50%; z-index:3; display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(255,255,255,.6); border-radius:50%; background:rgba(20,20,20,.7); color:#fff; font-size:2rem; line-height:1; cursor:pointer; transform:translateY(-50%); }
-.activities-page .holiday-image-nav.prev { left:12px; } .activities-page .holiday-image-nav.next { right:12px; }
-.activities-page .holiday-image-count { position:absolute; right:12px; bottom:12px; z-index:3; padding:.35rem .65rem; border-radius:99px; background:rgba(20,20,20,.75); color:#fff; font-size:.8rem; }
-.activities-page .holiday-modal-body { min-width:0; padding:clamp(1.25rem,3vw,2.25rem); }
-.activities-page .holiday-modal-header { display:flex; align-items:center; flex-wrap:wrap; gap:.6rem; margin:1.5rem 0 1rem; }
-.activities-page .holiday-modal-badge { padding:.45rem .8rem; border-radius:99px; background:#b90b0b; color:#fff; font-weight:700; }
-.activities-page .holiday-modal-header time { padding:.45rem .8rem; border-radius:99px; background:#fbedef; color:#a10b0b; font-size:.82rem; font-weight:700; }
-.activities-page .holiday-modal-title { margin:0 0 1rem; color:#20232a; font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2; }
-.activities-page .holiday-modal-season { display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .8rem; border-radius:99px; background:#f4f4f4; color:#555; }
-.activities-page .holiday-modal-season i { color:#b90b0b; }
-.activities-page .holiday-modal-divider { height:1px; margin:1.2rem 0; background:#e8e1df; }
-.activities-page .holiday-modal-description { color:#626b76; line-height:1.8; white-space:pre-line; }
-.activities-page .holiday-modal-thumbs { display:flex; gap:.5rem; overflow-x:auto; padding:.75rem 0 .2rem; }
-.activities-page .holiday-modal-thumb { flex:0 0 62px; width:62px; height:48px; padding:0; overflow:hidden; border:2px solid transparent; border-radius:8px; background:#eee; cursor:pointer; }
-.activities-page .holiday-modal-thumb.active { border-color:#b90b0b; }
-.activities-page .holiday-modal-thumb img { display:block; width:100%; height:100%; object-fit:cover; }
-body.modal-open { overflow:hidden; }
-@media(max-width:700px) { .activities-page .holiday-modal { padding:.4rem; overflow-y:auto; align-items:flex-start; } .activities-page .holiday-modal-dialog { max-height:96vh; margin:auto 0; border-radius:14px; } .activities-page .holiday-modal-content { grid-template-columns:minmax(0,1fr); } .activities-page .holiday-modal-media,.activities-page .holiday-modal-media>img { min-height:210px; max-height:32vh; } .activities-page .holiday-modal-body { padding:1rem; } .activities-page .holiday-modal-header { margin-top:.4rem; } }
-@media(prefers-reduced-motion:reduce) { .activities-page .knowledge-card .card-view-btn,.activities-page .holiday-modal-dialog { transition:none; } }
+/* MMGSS Knowledge Hub — styles for premium-carousel based cards and modal */
+
+.activities-page #knowledgeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.activities-page .knowledge-card {
+  background: #fff;
+  border: 1px solid var(--line, #e6e2e0);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.activities-page .knowledge-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(16, 18, 22, 0.12);
+}
+
+/* Card media with premium-carousel */
+.activities-page .knowledge-card .card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface, #f4f4f4);
+}
+
+.activities-page .knowledge-card .card-media premium-carousel {
+  width: 100%;
+  height: 100%;
+  --pc-radius: 0;
+  --pc-bg: transparent;
+  --pc-glass-shadow: none;
+}
+
+.activities-page .knowledge-card .card-media premium-carousel .pc {
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.activities-page .knowledge-card .card-media premium-carousel .stage {
+  border-radius: 0;
+  background: transparent;
+}
+
+.activities-page .knowledge-card .card-media premium-carousel .slide img {
+  border-radius: 0;
+  transition: transform 0.6s var(--ease);
+}
+
+.activities-page .knowledge-card:hover .card-media premium-carousel .slide.is-active img {
+  transform: scale(1.05);
+}
+
+/* Holiday badge overlay */
+.activities-page .knowledge-card .holiday-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.activities-page .knowledge-card .holiday-badge span {
+  pointer-events: auto;
+  background: rgba(23, 2, 7, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.activities-page .knowledge-card .holiday-badge .japanese-name {
+  background: linear-gradient(135deg, var(--red, #b90b0b), var(--red-dark, #8c0909));
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 0.4rem 0.85rem;
+}
+
+/* Card content */
+.activities-page .knowledge-card .card-content {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.activities-page .knowledge-card .card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.activities-page .knowledge-card .card-title {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink, #101216);
+  letter-spacing: -0.02em;
+}
+
+.activities-page .knowledge-card .card-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--red, #b90b0b);
+  white-space: nowrap;
+  background: var(--red-soft, #fff1f3);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.activities-page .knowledge-card .card-description {
+  color: var(--muted, #687078);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.activities-page .knowledge-card .card-footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line, #e6e2e0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.activities-page .knowledge-card .card-season {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, #687078);
+  background: var(--surface, #f4f4f4);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.activities-page .knowledge-card .card-season i {
+  font-size: 0.85rem;
+  color: var(--red, #b90b0b);
+}
+
+/* View button with Bootstrap Icons */
+.activities-page .knowledge-card .card-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--red, #b90b0b);
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  box-shadow: 0 4px 16px rgba(185, 11, 11, 0.3);
+}
+
+.activities-page .knowledge-card .card-view-btn:hover {
+  background: var(--red-dark, #8c0909);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(185, 11, 11, 0.4);
+}
+
+.activities-page .knowledge-card .card-view-btn:active {
+  transform: scale(0.97);
+}
+
+.activities-page .knowledge-card .card-view-btn .bi {
+  font-size: 0.9rem;
+  transition: transform 0.2s var(--ease);
+}
+
+.activities-page .knowledge-card:hover .card-view-btn .bi {
+  transform: translateX(4px);
+}
+
+.activities-page .knowledge-card .card-view-btn:focus-visible {
+  outline: 2px solid var(--red, #b90b0b);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Holiday Modal with premium-carousel
+   ========================================================= */
+
+.holiday-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease);
+}
+
+.holiday-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.holiday-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 5, 8, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.holiday-modal.open .holiday-modal-backdrop {
+  opacity: 1;
+}
+
+.holiday-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 32px 80px rgba(16, 18, 22, 0.25);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.4s var(--ease);
+}
+
+.holiday-modal.open .holiday-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.holiday-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink, #101216);
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(16, 18, 22, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.holiday-modal-close:hover {
+  background: var(--red, #b90b0b);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.holiday-modal-close:focus-visible {
+  outline: 2px solid var(--red, #b90b0b);
+  outline-offset: 3px;
+}
+
+.holiday-modal-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 560px;
+}
+
+.holiday-modal-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark, #170207);
+}
+
+.holiday-modal-media premium-carousel {
+  --pc-radius: 0;
+  --pc-bg: transparent;
+  --pc-glass-shadow: none;
+}
+
+.holiday-modal-media premium-carousel .pc {
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.holiday-modal-media premium-carousel .stage {
+  border-radius: 0;
+  background: transparent;
+}
+
+.holiday-modal-media premium-carousel .slide img {
+  transition: transform 0.8s var(--ease);
+}
+
+.holiday-modal-media premium-carousel .slide.is-active img {
+  transform: scale(1.02);
+}
+
+.holiday-modal-body {
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.holiday-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.holiday-modal-badge {
+  background: linear-gradient(135deg, var(--red, #b90b0b), var(--red-dark, #8c0909));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.holiday-modal-header time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red, #b90b0b);
+  background: var(--red-soft, #fff1f3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.holiday-modal-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink, #101216);
+}
+
+.holiday-modal-meta {
+  margin-bottom: 1.25rem;
+}
+
+.holiday-modal-season {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, #687078);
+  background: var(--surface, #f4f4f4);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
+
+.holiday-modal-season i {
+  font-size: 0.9rem;
+  color: var(--red, #b90b0b);
+}
+
+.holiday-modal-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--line, #e6e2e0), transparent);
+  margin: 1.25rem 0;
+}
+
+.holiday-modal-description {
+  margin: 0;
+  color: var(--muted, #687078);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .holiday-modal-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .holiday-modal-media {
+    min-height: 320px;
+  }
+  
+  .holiday-modal-body {
+    padding: 1.75rem;
+  }
+  
+  .holiday-modal-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .holiday-modal {
+    padding: 1rem;
+    align-items: flex-end;
+  }
+  
+  .holiday-modal-dialog {
+    max-height: 85vh;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .holiday-modal-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .holiday-modal-media {
+    min-height: 260px;
+  }
+  
+  .holiday-modal-body {
+    padding: 1.5rem;
+  }
+  
+  .holiday-modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .holiday-modal-description {
+    font-size: 0.95rem;
+  }
+  
+  .holiday-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holiday-modal,
+  .holiday-modal-backdrop,
+  .holiday-modal-dialog,
+  .holiday-modal-close,
+  .holiday-modal-media premium-carousel .slide img {
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .holiday-modal.open .holiday-modal-dialog {
+    transform: none !important;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Knowledge grid responsive */
+@media (max-width: 900px) {
+  .activities-page .knowledge-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .activities-page .knowledge-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .activities-page .knowledge-card .card-content {
+    padding: 1.25rem;
+  }
+  
+  .activities-page .knowledge-card .card-title {
+    font-size: 1.15rem;
+  }
+  
+  .activities-page .knowledge-card .card-description {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* Reduced motion for cards */
+@media (prefers-reduced-motion: reduce) {
+  .activities-page .knowledge-card,
+  .activities-page .knowledge-card .card-media premium-carousel .slide img,
+  .activities-page .knowledge-card .card-view-btn .bi {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Production polish: consistent card rhythm and equal-height rows */
+.activities-page #knowledgeGrid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+.activities-page .knowledge-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.activities-page .knowledge-card .card-media {
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 10;
+}
+
+.activities-page .knowledge-card .card-content {
+  min-height: 310px;
+}
+
+.activities-page .knowledge-card .card-title-row {
+  min-height: 2.75rem;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.activities-page .knowledge-card .card-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.activities-page .knowledge-card .card-date {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+.activities-page .knowledge-card .card-description {
+  min-height: 6.3em;
+}
+
+.activities-page .knowledge-card .card-footer {
+  margin-top: auto;
+}
+
+.activities-page .knowledge-card .holiday-badge {
+  align-items: flex-start;
+}
+
+.activities-page .knowledge-card .holiday-badge span {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+/* Modal carousel occupies the complete media column; no empty black area */
+.holiday-modal-dialog {
+  width: min(100%, 1040px);
+  max-height: 88vh;
+}
+
+.holiday-modal-content {
+  height: min(76vh, 700px);
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.holiday-modal-media {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  background: #170207;
+}
+
+.holiday-modal-media > premium-carousel,
+.holiday-modal-media > premium-carousel .pc,
+.holiday-modal-media > premium-carousel .stage {
+  width: 100%;
+  height: 100%;
+}
+
+.holiday-modal-media > premium-carousel .stage {
+  aspect-ratio: auto !important;
+}
+
+.holiday-modal-media > premium-carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #170207;
+}
+
+.holiday-modal-body {
+  min-width: 0;
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 760px) {
+  .activities-page #knowledgeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  }
+
+  .activities-page .knowledge-card .card-content {
+    min-height: 285px;
+  }
+
+  .activities-page .knowledge-card .card-title-row {
+    min-height: 0;
+    flex-wrap: wrap;
+  }
+
+  .holiday-modal {
+    padding: 0.75rem;
+  }
+
+  .holiday-modal-dialog {
+    width: 100%;
+    max-height: 94vh;
+    overflow-y: auto;
+    border-radius: 18px;
+  }
+
+  .holiday-modal-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .holiday-modal-media {
+    height: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .holiday-modal-media > premium-carousel,
+  .holiday-modal-media > premium-carousel .pc,
+  .holiday-modal-media > premium-carousel .stage {
+    height: 100%;
+  }
+
+  .holiday-modal-body {
+    padding: 1.5rem;
+    overflow: visible;
+  }
+
+  .holiday-modal-title {
+    padding-right: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activities-page .knowledge-card,
+  .holiday-modal,
+  .holiday-modal-dialog {
+    transition: none !important;
+  }
+}
