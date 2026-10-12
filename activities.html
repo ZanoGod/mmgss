@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/activities.css">
+  <link rel="stylesheet" href="css/knowledge-hub.css?v=20261012">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/premium-carousel.css">
 
@@ -67,7 +68,7 @@
     </div>
   </header>
 
-  <main>
+<main>
     <section class="page-hero">
       <div class="container">
         <div class="crumb" data-i18n="activities.hero.crumb">Activities</div>
@@ -120,7 +121,7 @@
           <div class="col">
             <div class="eyebrow" data-i18n="activities.learning.eyebrow">Learning environment</div>
             <h2 class="section-title" data-i18n="activities.learning.title">Preparation happens together.</h2>
-            <p class="section-copy" data-i18n="activities.learning.copy">Training is more than preparation—it’s a shared experience.
+            <p class="section-copy" data-i18n="activities.learning.copy">Training is more than preparation—it's a shared experience.
                Explore the people, activities, and learning environment behind the recruitment journey,
                 giving visitors a closer look at how candidates train, grow, and prepare together.</p>
           </div>
@@ -133,8 +134,22 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="knowledge-section">
+      <div class="container">
+        <div class="knowledge-header reveal">
+          <div class="eyebrow" data-i18n="activities.knowledge.eyebrow">Knowledge Hub</div>
+          <h2 class="section-title" data-i18n="activities.knowledge.title">Japan National Holidays & Special Days</h2>
+          <p class="section-copy" data-i18n="activities.knowledge.copy">Understanding Japanese holidays is essential for life and work in Japan. Each holiday reflects Japan's culture, history, and seasonal traditions. Explore the meaning behind each special day.</p>
+        </div>
+        
+        <div class="knowledge-grid" id="knowledgeGrid">
+          <!-- Holiday cards will be rendered here via JavaScript -->
+        </div>
+      </div>
+    </section>
     
-  </main>
+</main>
 
   <!-- Footer -->
   <div id="footer-container"></div>
@@ -146,6 +161,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
   <script src="js/premium-carousel.js" defer></script>
+  
+  <script src="js/knowledge-hub.js?v=20261012" defer></script>
 </body>
-
 </html>

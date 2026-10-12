@@ -828,11 +828,121 @@
       "title": "Skills That Come Home",
       "copy": "The value of working in Japan goes beyond income. The knowledge, skills, and experience people gain can return with them to Myanmar—creating new opportunities, strengthening communities, and contributing to a better future."
     },
-    "learning": {
+"learning": {
       "eyebrow": "Learning environment",
       "title": "Preparation happens together.",
-      "copy": "Training is more than preparation—it’s a shared experience. Explore the people, activities, and learning environment behind the recruitment journey, giving visitors a closer look at how candidates train, grow, and prepare together.",
+      "copy": "Training is more than preparation—it's a shared experience. Explore the people, activities, and learning environment behind the recruitment journey, giving visitors a closer look at how candidates train, grow, and prepare together.",
       "imageAlt": "Training activity"
+    },
+    "knowledge": {
+      "eyebrow": "Knowledge Hub",
+      "title": "Japan National Holidays & Special Days",
+      "copy": "Understanding Japanese holidays is essential for life and work in Japan. Each holiday reflects Japan's culture, history, and seasonal traditions. Explore the meaning behind each special day.",
+      "holidays": {
+        "newYear": {
+          "name": "New Year's Day",
+          "japanese": "元日",
+          "date": "January 1",
+          "description": "The first day of the year. Families gather, visit shrines for hatsumode (first shrine visit), and eat traditional osechi cuisine. A time for fresh starts and good wishes."
+        },
+        "comingOfAge": {
+          "name": "Coming of Age Day",
+          "japanese": "成人の日",
+          "date": "Second Monday of January",
+          "description": "Celebrates young people who have reached the age of majority (20). Ceremonies are held at local government offices, and many wear traditional furisode or suits."
+        },
+        "nationalFoundation": {
+          "name": "National Foundation Day",
+          "japanese": "建国記念の日",
+          "date": "February 11",
+          "description": "Commemorates the founding of Japan and the accession of the first Emperor Jimmu. A day to reflect on Japan's history and foster patriotism."
+        },
+        "emperorsBirthday": {
+          "name": "Emperor's Birthday",
+          "japanese": "天皇誕生日",
+          "date": "February 23",
+          "description": "Celebrates the birthday of the current Emperor. The Imperial Palace opens to the public, and the Emperor gives a public address."
+        },
+        "springEquinox": {
+          "name": "Spring Equinox Day",
+          "japanese": "春分の日",
+          "date": "Around March 20-21",
+          "description": "Marks the vernal equinox when day and night are equal. A time to visit family graves (ohigan) and welcome spring. Nature appreciation day."
+        },
+        "showaDay": {
+          "name": "Showa Day",
+          "japanese": "昭和の日",
+          "date": "April 29",
+          "description": "Honors the birthday of Emperor Showa (Hirohito). Reflects on the turbulent Showa era (1926-1989) and Japan's recovery. Start of Golden Week."
+        },
+        "constitutionDay": {
+          "name": "Constitution Memorial Day",
+          "japanese": "憲法記念日",
+          "date": "May 3",
+          "description": "Commemorates the enactment of the Constitution of Japan in 1947. Part of Golden Week. A day to reflect on democracy and peace."
+        },
+        "greeneryDay": {
+          "name": "Greenery Day",
+          "japanese": "みどりの日",
+          "date": "May 4",
+          "description": "A day to appreciate nature and be grateful for its blessings. Originally celebrated on April 29, moved to May 4 in 2007. Part of Golden Week."
+        },
+        "childrensDay": {
+          "name": "Children's Day",
+          "japanese": "こどもの日",
+          "date": "May 5",
+          "description": "Celebrates children's happiness and growth. Families fly koinobori (carp streamers) and display samurai dolls. End of Golden Week."
+        },
+        "marineDay": {
+          "name": "Marine Day",
+          "japanese": "海の日",
+          "date": "Third Monday of July",
+          "description": "Expresses gratitude for the ocean's blessings and prays for Japan's prosperity as a maritime nation. Often celebrated with beach activities."
+        },
+        "mountainDay": {
+          "name": "Mountain Day",
+          "japanese": "山の日",
+          "date": "August 11",
+          "description": "A day to appreciate mountains and their benefits. Established in 2016. Encourages people to enjoy hiking and mountain activities."
+        },
+        "respectForAged": {
+          "name": "Respect for the Aged Day",
+          "japanese": "敬老の日",
+          "date": "Third Monday of September",
+          "description": "Honors elderly citizens and celebrates longevity. Families visit grandparents, give gifts, and communities hold events for seniors."
+        },
+        "citizensHoliday": {
+          "name": "Citizen's Holiday",
+          "japanese": "国民の休日",
+          "date": "Between Respect for the Aged Day and Autumn Equinox Day",
+          "description": "An extra holiday created when two holidays fall on adjacent days. Part of Silver Week. A rare bonus day off."
+        },
+        "autumnEquinox": {
+          "name": "Autumn Equinox Day",
+          "japanese": "秋分の日",
+          "date": "Around September 22-23",
+          "description": "Marks the autumnal equinox. Like spring equinox, a time for ohigan (visiting family graves) and remembering ancestors."
+        },
+        "sportsDay": {
+          "name": "Sports Day",
+          "japanese": "スポーツの日",
+          "date": "Second Monday of October",
+          "description": "Promotes sports and physical health. Originally Health-Sports Day (1966), renamed in 2020. Commemorates the 1964 Tokyo Olympics opening."
+        },
+        "cultureDay": {
+          "name": "Culture Day",
+          "japanese": "文化の日",
+          "date": "November 3",
+          "description": "Promotes culture, arts, and academic endeavors. The Emperor presents the Order of Culture. Museums often offer free admission."
+        },
+        "laborThanksgiving": {
+          "name": "Labor Thanksgiving Day",
+          "japanese": "勤労感謝の日",
+          "date": "November 23",
+          "description": "Expresses gratitude for labor and production. Derived from the ancient Niinamesai harvest festival. A day to appreciate workers."
+        }
+      },
+      "view": "View Details"
     }
   },
   "contact": {
