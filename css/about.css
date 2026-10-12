@@ -2028,3 +2028,39 @@
     height: 58px;
   }
 }
+
+
+/* Restored Japan-side partner information on the About page. */
+.about-page .japan-side-card {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid rgba(25, 35, 50, .12);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(16, 18, 22, .05);
+}
+.about-page .japan-side-heading h3 {
+  margin: .35rem 0 1rem;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+.about-page .japan-side-details {
+  display: grid;
+  gap: .8rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.about-page .japan-side-details li {
+  padding-left: .25rem;
+  line-height: 1.7;
+}
+.about-page .japan-side-details li span {
+  display: inline-block;
+  min-width: 10.5rem;
+  margin-right: .5rem;
+}
+.about-page .japan-side-details strong {
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .about-page .japan-side-details li span { display: block; min-width: 0; margin-bottom: .15rem; }
+}
