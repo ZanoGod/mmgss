@@ -8,7 +8,7 @@
   <title>Myanmar GSS | Contact</title>
 
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/contact.css?v=20261013-contact-redesign-v2">
   <link rel="stylesheet" href="css/footer.css">
 
 
@@ -64,136 +64,113 @@
 
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero contact-hero">
       <div class="hero-orbs" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="container">
+      <div class="container contact-hero-inner">
         <div class="crumb" data-i18n="contact.hero.crumb">Contact</div>
         <div class="eyebrow" data-i18n="contact.hero.eyebrow">Start a conversation</div>
         <h1 data-i18n="contact.hero.title">Let's build the right connection.</h1>
         <p data-i18n="contact.hero.copy">Talk to Myanmar GSS about talent placement, candidate preparation and employment support for Japan.</p>
       </div>
     </section>
-  
-    <section class="section contact-location-section" aria-labelledby="contact-location-title">
+
+    <section class="contact-main-section" id="contact-inquiry" aria-labelledby="contact-form-title">
       <div class="container">
-        <div class="contact-location-heading">
-          <div class="eyebrow" data-i18n="contact.map.eyebrow">FIND OUR OFFICE</div>
-          <h2 id="contact-location-title" class="section-title" data-i18n="contact.map.title">Visit Myanmar GSS</h2>
-          <p class="section-copy" data-i18n="contact.map.copy">Our office is located in Kyaukkone, Yankin Township, Yangon, Myanmar.</p>
-        </div>
-        <div class="container">
-            <div class="row g-4 align-items-center">
-              <div class="col">
-                <div class="contact-map-frame">
-                  <iframe
-                    title="Map showing Myanmar GSS office in Yangon"
-                    src="https://maps.google.com/maps?q=No.%2038%28A%29%2C%20Boe%20Yar%20Zar%20Street%2C%20Kyaukkone%2C%20Yankin%20Township%2C%20Yangon%2C%20Myanmar&amp;output=embed"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen>
-                  </iframe>
-                </div>
-                <div class="contact-map-caption">
-                  <div>
-                    <strong data-i18n="contact.map.addressTitle">Myanmar GSS Co., Ltd.</strong>
-                    <p data-i18n="contact.map.address">No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township, Yangon, Myanmar</p>
-                  </div>
-                  <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&amp;query=No.+38%28A%29,+Boe+Yar+Zar+Street,+Kyaukkone,+Yankin+Township,+Yangon,+Myanmar" target="_blank" rel="noopener" data-i18n="contact.map.open">Open in Google Maps</a>
+        <div class="contact-location-grid" aria-label="Office location and contact information">
+          <section class="contact-map-card" aria-labelledby="contact-location-title">
+            <div class="contact-card-heading">
+              <div class="eyebrow" data-i18n="contact.map.eyebrow">FIND OUR OFFICE</div>
+              <h2 id="contact-location-title" data-i18n="contact.map.title">Visit Myanmar GSS</h2>
+              <p data-i18n="contact.map.copy">Our office is located in Kyaukkone, Yankin Township, Yangon, Myanmar.</p>
+            </div>
+            <div class="contact-map-frame">
+              <iframe title="Map showing Myanmar GSS office in Yangon" src="https://maps.google.com/maps?q=No.%2038%28A%29%2C%20Boe%20Yar%20Zar%20Street%2C%20Kyaukkone%2C%20Yankin%20Township%2C%20Yangon%2C%20Myanmar&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <div class="contact-map-caption">
+              <a class="contact-map-open" href="https://www.google.com/maps/search/?api=1&amp;query=No.+38%28A%29,+Boe+Yar+Zar+Street,+Kyaukkone,+Yankin+Township,+Yangon,+Myanmar" target="_blank" rel="noopener" data-i18n="contact.map.open">Open in Google Maps</a>
+            </div>
+          </section>
+
+          <aside class="contact-info-panel" aria-labelledby="contact-info-title">
+            <div class="eyebrow" data-i18n="contact.info.eyebrow">CONTACT INFORMATION</div>
+            <h2 id="contact-info-title" data-i18n="contact.info.title">Let's talk about your next step.</h2>
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+                <div><span class="contact-info-label" data-i18n="contact.card.address">Address</span>
+                  <p>No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township, Yangon, Myanmar</p>
                 </div>
               </div>
-              <div class="col">
-                    <div class="contact-card">
-                      <div class="contact-row"><small data-i18n="contact.card.company">Company</small><strong data-i18n="contact.card.companyValue">Myanmar GSS Co., Ltd.</strong></div>
-                      <div class="contact-row"><small data-i18n="contact.card.address">Address</small><strong><span data-i18n="contact.card.addressValue1">No. 38(A), Boe Yar Zar Street,</span><br><span data-i18n="contact.card.addressValue2">Kyaukkone, Yankin
-                          Township, Yangon, Myanmar</span></strong></div>
-                      <div class="contact-row"><small data-i18n="contact.card.email">Email</small><strong data-i18n="contact.card.emailValue">info@myanmargss.com</strong></div>
-                      <div class="contact-row"><small data-i18n="contact.card.phone">Phone</small><strong >+95 9409 122 212</strong><br><strong >+95 9897 408 617</strong>
-                      </div>
-                  </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
+                <div><span class="contact-info-label" data-i18n="contact.card.email">Email</span>
+                  <a href="mailto:info@myanmargss.com">info@myanmargss.com</a>
                 </div>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+                <div><span class="contact-info-label" data-i18n="contact.card.phone">Phone</span>
+                  <a href="tel:+959409122212">+95 9409 122 212</a>
+                  <a href="tel:+959897408617">+95 9897 408 617</a>
+                </div>
+              </div>
             </div>
-        </div>  
+            <div class="contact-response-note">
+              <span class="contact-response-dot" aria-hidden="true"></span>
+              <p data-i18n="contact.info.note">Please include a few details about your inquiry so we can direct it to the right team.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="contact-form-panel contact-form-panel-wide">
+          <div class="contact-form-heading">
+            <div class="eyebrow" data-i18n="contact.form.eyebrow">SEND AN INQUIRY</div>
+            <h2 id="contact-form-title" data-i18n="contact.form.title">How can we help?</h2>
+            <p data-i18n="contact.form.intro">Complete the form below and share what you would like to discuss.</p>
+            <p class="contact-required-note"><span aria-hidden="true">*</span> <span data-i18n="contact.form.required">Required fields</span></p>
+          </div>
+          <form class="contact-form" action="php/sent-email.php" method="post">
+            <div class="form-field">
+              <label for="contactName"><span data-i18n="contact.form.name">Full name</span> <span class="required-mark" aria-hidden="true">*</span></label>
+              <input id="contactName" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Your full name" data-i18n-placeholder="contact.form.namePlaceholder">
+            </div>
+            <div class="form-field">
+              <label for="company"><span data-i18n="contact.form.company">Company / organization</span></label>
+              <input id="company" name="company" type="text" autocomplete="organization" required maxlength="160" placeholder="Company or organization name" data-i18n-placeholder="contact.form.companyPlaceholder">
+            </div>
+            <div class="form-field">
+              <label for="contactEmail"><span data-i18n="contact.form.email">Email address</span> <span class="required-mark" aria-hidden="true">*</span></label>
+              <input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" data-i18n-placeholder="contact.form.emailPlaceholder">
+            </div>
+            <div class="form-field">
+              <label for="contactPhone"><span data-i18n="contact.form.phone">Phone number</span> <span class="required-mark" aria-hidden="true">*</span></label>
+              <input id="contactPhone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+95 ..." data-i18n-placeholder="contact.form.phonePlaceholder">
+            </div>
+            <div class="form-field contact-interest-field">
+              <label for="interest"><span data-i18n="contact.form.interest">What are you interested in?</span> <span class="required-mark" aria-hidden="true">*</span></label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected data-i18n="contact.form.selectPrompt">Select an inquiry topic</option>
+                <option value="Work Visa - Professional Talent">Work Visa - Professional Talent</option>
+                <option value="Specified Skilled Worker - Tokutei Visa">Specified Skilled Worker - Tokutei Visa</option>
+                <option value="Technical Intern Trainee - Training Visa">Technical Intern Trainee - Training Visa</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-field contact-message-field">
+              <label for="contactMessage"><span data-i18n="contact.form.message">Message</span> <span class="required-mark" aria-hidden="true">*</span></label>
+              <textarea id="contactMessage" name="message" rows="5" required maxlength="5000" placeholder="Tell us how we can help..." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+              <span class="field-hint" data-i18n="contact.form.messageHint">Please don’t include sensitive personal or financial information.</span>
+            </div>
+            <div class="contact-form-submit">
+              <button class="btn btn-red contact-submit-button" type="submit"><span class="contact-submit-label" data-i18n="contact.form.submit">Send inquiry</span><span class="contact-submit-spinner" aria-hidden="true"></span></button>
+              <p class="form-note" data-i18n="contact.form.privacy">By submitting this form, you agree that Myanmar GSS may use your details to respond to your inquiry.</p>
+            </div>
+            <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="row g-4 three">
-          <div class="col">
-            <div class="card-clean">
-              <div class="eyebrow" data-i18n="contact.cards.employers.eyebrow">Employers</div>
-              <h3 data-i18n="contact.cards.employers.title">Need talent?</h3>
-              <p class="section-copy" data-i18n="contact.cards.employers.copy">Share your role, location, work conditions, language expectations and target start
-                date.</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card-clean">
-              <div class="eyebrow" data-i18n="contact.cards.candidates.eyebrow">Candidates</div>
-              <h3 data-i18n="contact.cards.candidates.title">Looking for Japan?</h3>
-              <p class="section-copy" data-i18n="contact.cards.candidates.copy">Contact the team to confirm current opportunities, requirements and application
-                steps.</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card-clean">
-              <div class="eyebrow" data-i18n="contact.cards.important.eyebrow">Important</div>
-              <h3 data-i18n="contact.cards.important.title">Verify current details.</h3>
-              <p class="section-copy" data-i18n="contact.cards.important.copy">Vacancies, salaries, requirements and contact details should be verified before
-                publishing or applying.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section contact-form-section">
-      <div class="container">
-        <div class="contact-form-panel">
-          <div class="contact-form-wrap">
-            <div class="contact-form-heading">
-              <div class="eyebrow">Send a message</div>
-              <h3>Tell us how we can help.</h3>
-            </div>
-            <form class="contact-form" action="php/sent-email.php" method="post">
-              <div class="form-field">
-                <label for="contactName">Name</label>
-                <input id="contactName" name="name" type="text" autocomplete="name" required placeholder="Your name">
-              </div>
-              <div class="form-field">
-                <label for="company">Company Name</label>
-                <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Your company name">
-              </div>
-              <div class="form-field">
-                <label for="contactEmail">Email</label>
-                <input id="contactEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-              </div>
-              <div class="form-field">
-                <label for="contactPhone">Phone</label>
-                <input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number">
-              </div>
-              <div class="form-field">
-                <label for="interest">I'm interested in</label>
-                <select id="interest" name="interest" required>
-                  <option value="" disabled selected>
-                    Please select an option
-                  </option>
-                  <option value="Work Visa - Professional Talent">Work Visa - Professional Talent</option>
-                  <option value="Specified Skilled Worker - Tokutei Visa">Specified Skilled Worker - Tokutei Visa</option>
-                  <option value="Technical Intern Trainee - Training Visa">Technical Intern Trainee - Training Visa</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="form-field contact-message-field">
-                <label for="contactMessage" data-i18n="contact.form.message">Message</label>
-                <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell us how we can help." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
-              </div>
-              <button class="btn btn-red" type="submit">Send inquiry</button>
-              <p class="form-note">Your inquiry will be sent securely to Myanmar GSS. Please provide accurate contact details.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
  <!-- Footer -->
@@ -205,6 +182,7 @@
   <script src="js/vendor/i18next.min.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/contact-form-feedback.js" defer></script>
 
 </body>
 

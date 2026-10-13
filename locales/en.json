@@ -195,7 +195,7 @@
         "companyLabel": "Company name",
         "companyValue": "Myanmar GSS Co., Ltd. (Licence No. 066/2026)",
         "established": "Established",
-        "establishedValue": "8 February 2023", 
+        "establishedValue": "8 February 2023",
         "address": "Address",
         "addressValue": "No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township, Yangon, Myanmar",
         "capital": "Capital",
@@ -838,7 +838,7 @@
       "title": "Skills That Come Home",
       "copy": "The value of working in Japan goes beyond income. The knowledge, skills, and experience people gain can return with them to Myanmar—creating new opportunities, strengthening communities, and contributing to a better future."
     },
-"learning": {
+    "learning": {
       "eyebrow": "Learning environment",
       "title": "Preparation happens together.",
       "copy": "Training is more than preparation—it's a shared experience. Explore the people, activities, and learning environment behind the recruitment journey, giving visitors a closer look at how candidates train, grow, and prepare together.",
@@ -1006,7 +1006,31 @@
     },
     "form": {
       "message": "Message",
-      "messagePlaceholder": "Tell us how we can help."
+      "messagePlaceholder": "Tell us how we can help.",
+      "cta": "Send us an inquiry",
+      "eyebrow": "SEND AN INQUIRY",
+      "title": "How can we help?",
+      "intro": "Complete the form below and share what you would like to discuss.",
+      "required": "Required fields",
+      "name": "Full name",
+      "namePlaceholder": "Your full name",
+      "company": "Company / organization",
+      "companyPlaceholder": "Company or organization name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "+95 ...",
+      "interest": "What are you interested in?",
+      "selectPrompt": "Select an inquiry topic",
+      "messageHint": "Please don’t include sensitive personal or financial information.",
+      "submit": "Send inquiry",
+      "privacy": "By submitting this form, you agree that Myanmar GSS may use your details to respond to your inquiry."
+    },
+    "info": {
+      "eyebrow": "CONTACT INFORMATION",
+      "title": "Let’s talk about your next step.",
+      "copy": "Whether you represent a company or are exploring opportunities in Japan, our team is ready to help you find the right direction.",
+      "note": "Please include a few details about your inquiry so we can direct it to the right team."
     }
   }
 }
