@@ -101,7 +101,7 @@ body.about-page .nav-shell { position: sticky; top: 0; }
 }
 
 .contact-page .contact-card {
-  padding: clamp(1.4rem, 2.5vw, 2rem);
+  padding: clamp(1.4rem, 2.5vw, 7rem);
 }
 
 .contact-page .contact-row {
@@ -181,7 +181,7 @@ body.about-page .nav-shell { position: sticky; top: 0; }
 .contact-page .contact-map-frame {
   position: relative;
   width: 100%;
-  height: clamp(280px, 38vw, 430px);
+  height: clamp(150px, 20vw, 370px);
   background: #f1eeee;
 }
 
