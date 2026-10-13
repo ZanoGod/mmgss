@@ -77,18 +77,21 @@
         "title": "Professional Talent",
         "title1": "(Work Visa)",
         "fee": "USD 1,500–2,000",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "tokutei": {
         "title": "Specified Skilled Worker",
         "title1": "(Tokutei Visa)",
         "fee": "USD 1,500",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "training": {
         "title": "Technical Intern Training ",
         "title1": "(Training Visa)",
         "fee": "USD 2,800",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       }
     }
@@ -217,9 +220,8 @@
     },
     "ceo": {
       "ceoTitle": "MESSAGE FROM THE CEO",
-      "ceoMessage": "Warm greetings to everyone taking",
-      "ceoMessage1": "an interest in Myanmar GSS Co., Ltd.,",
-      "ceoParagraph": "and to the young people, families, employers in Japan and partner organizations who place their trust in us.When I was young, I lived in Japan for six years, working while attending school. During that time, I gained knowledge and experience not only through my studies, but also through work and everyday life. In particular, I learned the importance of responsibility, punctuality, mutual respect, earning trust and building meaningful relationships.After returning to Myanmar, I drew on the knowledge, experience and relationships I had gained in Japan to develop businesses through which I could serve our customers, help my colleagues build happy and fulfilling lives, and contribute to society. I established Myanmar GSS to put these aspirations into practice through people development and overseas employment.Having studied and worked abroad myself, I understand how important preparation is when moving to a country with a different language, culture and way of life. This is why we place great importance on preparing young people in Japanese language, workplace rules, responsibility, teamwork, Japanese culture and everyday etiquette before they leave for Japan.Through this preparation, we want young people to work with confidence in factories, elderly care facilities and other workplaces, and to become colleagues whom Japanese employers can trust and value. Helping both sides build lasting working relationships based on mutual understanding and respect is an important part of our role.My approach to business is guided by the teachings of Kazuo Inamori, whom I deeply respect and continue to learn from. In particular, I value his emphasis on caring about the welfare of others and making decisions based on what is right as a human being. We seek to put these principles into practice by treating young people, their families, employers and our colleagues with consideration, integrity and responsibility.My long-term hope is that young people who learn and gain experience in Japan will build better lives for themselves and their families. I also hope that, in time, they will apply their knowledge and professional skills in Myanmar, contributing in their respective fields to the country’s development and nation-building.We value each person’s dreams and future, and we will respond to the trust placed in us through responsible action. Together with all of you, we will work to build a future that brings lasting value to both Myanmar and Japan.",
+      "ceoMessage": "Warm greetings to everyone taking an interest in Myanmar GSS Co., Ltd.,",
+      "ceoParagraph": "Drawing from six years of living, studying, and working in Japan, the CEO gained invaluable lessons in responsibility, punctuality, mutual respect, and trust-building.Myanmar GSS was established to leverage these experiences by developing human resources and providing ethical overseas employment opportunities. Understanding the challenges of adapting to a new culture, the company prioritizes comprehensive pre-departure training in Japanese language, workplace culture, teamwork, and daily etiquette.The goal is to nurture confident, trusted workers for Japanese factories and care facilities, fostering long-term relationships based on mutual respect.Guided by the teachings of Kazuo Inamori, the company operates with integrity, human-centric values, and genuine consideration for candidates, families, employers, and partners.Beyond personal and family upliftment for the workers, the CEO hopes candidates return to Myanmarwith valuable skills to contribute directly to the nation's future development and strengthen ties between Myanmar and Japan.",
       "name": "Mr. NI HTWE",
       "position": "Managing Director",
       "company": "Myanmar GSS Co., Ltd."
@@ -235,19 +237,16 @@
     },
     "mission": {
       "label": "MISSION",
-      "title1": "① Comprehensive Preparation Before Departure",
-      "text1": "Provide preparation in Japanese language, workplace rules, safety awareness, responsibility, punctuality, reporting, communication, consultation and teamwork. We also teach Japanese culture, traditions, daily living practices, social expectations and everyday customs to help young people prepare for both work and life in Japan.",
-      "title2": "② Matching People with Suitable Workplaces",
-      "text2": "Understand each candidate’s abilities and goals alongside the needs of employers, and connect them with suitable employment opportunities. We help candidates prepare to work effectively and become trusted team members in their respective workplaces, including factories and elderly care facilities."
+      "title": "Ethical Recruitment and Pre-Departure Preparation",
+      "text1": "The primary mission focuses on providing ethical, holistic preparation and recruitment for young workers moving to Japan.",
+      "text2": "By delivering comprehensive pre-departure training in Japanese language, workplace protocols, safety, and cultural expectations, candidates are equipped for smooth integration into Japanese society and workplaces.",
+      "text3": "Operating with complete transparency regarding fees and employment conditions, this mission prioritizes worker dignity, strong ethical standards, and long-term trust among candidates, families, employers, and international partner organizations."
     },
     "goals": {
       "label": "GOALS",
-      "title3": "③ Responsible Recruitment and Collaboration",
-      "text3": "Explain employment conditions, costs and procedures clearly, while respecting workers’ dignity and rights. We work with employers and partner organizations in Japan and take responsibility for our role in supporting a smooth transition to work and daily life.",
-      "title4": "④ Learning and Growth for the Future",
-      "text4": "Encourage continuous learning, professional development and responsibility throughout each person’s employment in Japan. We aim to nurture people who can use their knowledge, skills and experience to improve their lives and contribute to Myanmar’s future development and nation-building.",
-      "title5": "⑤ Trust Built on Care for Others",
-      "text5": "Consider the perspectives of young people, their families, employers, partner organizations and our colleagues. Through integrity and mutual understanding, we build lasting relationships in which everyone involved has the opportunity to grow."
+      "title": "Targeted Placement and Future Development",
+      "text1": "The core goals center on precise job matching, professional empowerment, and long-term national impact.",
+      "text2": "By aligning candidates' individual skills and career aspirations with the specific needs of Japanese industries—such as manufacturing and elderly care—the goal is to build highly trusted, effective team members. Beyond initial placement, these objectives emphasize continuous lifelong learning and personal development, empowering workers to improve their standard of living and ultimately apply their international experience to support Myanmar’s future nation-building."
     },
     "message": {
       "eyebrow": "Representative message",
