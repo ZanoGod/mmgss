@@ -15,7 +15,7 @@
    COMPANY PROFILES SECTION
 ========================================================= */
 .company-profiles-section {
-  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  padding: 2rem 0 1rem;
   background: #fff;
 }
 
@@ -262,7 +262,7 @@
    CEO EXECUTIVE CARD
 ========================================================= */
 .ceo-purpose-section {
-  padding: clamp(4rem, 7vw, 6.5rem) 0;
+  padding: 2rem 0 1rem;
   background: #fff;
 }
 
