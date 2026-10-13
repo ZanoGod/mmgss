@@ -77,18 +77,21 @@
         "title": "Professional Talent",
         "title1": "(Work Visa)",
         "fee": "USD 1,500–2,000",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "tokutei": {
         "title": "Specified Skilled Worker",
         "title1": "(Tokutei Visa)",
         "fee": "USD 1,500",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "training": {
         "title": "Technical Intern Training ",
         "title1": "(Training Visa)",
         "fee": "USD 2,800",
+        "payment_terms" : "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       }
     }
