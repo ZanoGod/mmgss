@@ -322,6 +322,13 @@
         ]
       }
     },
+    "payment": {
+      "eyebrow": "fees & payment",
+      "title": "PAYMENT",
+      "subtitle": "& RECEIPT terms.",
+      "copy": "Our service charges are clearly outlined below.",
+      "cta": "See our payment details"
+    },
     "support": {
       "eyebrow": "CANDIDATE SUPPORT",
       "title1": "Support beyond",
