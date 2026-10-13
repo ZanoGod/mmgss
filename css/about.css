@@ -164,6 +164,30 @@
   text-align: center;
 }
 
+.japan-side-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.japan-side-title img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 48px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .japan-side-title img {
+    height: 40px;
+  }
+}
+
 /* CARD B: PARTNER PROFILE - Corporate Partner */
 .partner-profile {
   border: 1px solid var(--about-line);
@@ -2063,4 +2087,508 @@
 }
 @media (max-width: 600px) {
   .about-page .japan-side-details li span { display: block; min-width: 0; margin-bottom: .15rem; }
+}
+
+
+/* =========================================================
+   ABOUT PAGE — VISUAL CONSISTENCY & SPACING PASS
+   Keep shared site typography while refining profile cards,
+   section rhythm, alignment and responsive line wrapping.
+========================================================= */
+.about-page {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --about-card-radius: 22px;
+}
+
+.about-page main {
+  overflow: clip;
+}
+
+.about-page .company-profiles-section {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.about-page .company-profiles-section .hero-profile {
+  border: 1px solid rgba(185, 11, 11, .22);
+  border-radius: var(--about-card-radius);
+  box-shadow: 0 22px 58px rgba(27, 10, 15, .10), 0 3px 10px rgba(185, 11, 11, .05);
+}
+
+.about-page .company-profiles-section .hero-profile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 68px rgba(27, 10, 15, .14), 0 4px 14px rgba(185, 11, 11, .08);
+}
+
+.about-page .company-profiles-section .hero-profile .profile-card-header {
+  position: relative;
+  isolation: isolate;
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  min-height: 142px;
+  padding: clamp(1.5rem, 3.4vw, 2.5rem);
+  background:
+    radial-gradient(ellipse at 92% 0%, rgba(255, 255, 255, .15), transparent 38%),
+    linear-gradient(118deg, #19050a 0%, #5b071b 48%, #a80b2d 100%);
+}
+
+.about-page .company-profiles-section .hero-profile .profile-card-header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 190px;
+  height: 190px;
+  right: -58px;
+  bottom: -130px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(255,255,255,.035), 0 0 0 46px rgba(255,255,255,.025);
+  pointer-events: none;
+}
+
+.about-page .company-profiles-section .profile-icon-wrapper {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 104px;
+  width: 104px;
+  height: 72px;
+  padding: 9px 11px;
+  border: 1px solid rgba(255,255,255,.68);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+.about-page .company-profiles-section .profile-card-title {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page .company-profiles-section .profile-card-title strong {
+  max-width: 30ch;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.22;
+  text-wrap: balance;
+}
+
+.about-page .company-profiles-section .profile-card-title span {
+  margin-top: .55rem;
+  font-size: .92rem;
+  line-height: 1.55;
+  letter-spacing: .015em;
+}
+
+.about-page .company-profiles-section .hero-profile .profile-card-body {
+  padding: .65rem clamp(1.25rem, 3vw, 2.5rem) 1rem;
+}
+
+.about-page .company-profiles-section .hero-profile .profile-row {
+  grid-template-columns: minmax(125px, .55fr) minmax(0, 1.45fr);
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 1.05rem 0;
+}
+
+.about-page .company-profiles-section .hero-profile .profile-label {
+  font-size: .75rem;
+  letter-spacing: .035em;
+  line-height: 1.55;
+}
+
+.about-page .company-profiles-section .hero-profile .profile-value {
+  font-size: .94rem;
+  line-height: 1.75;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+
+.about-page .ceo-purpose-section {
+  padding-block: clamp(2rem, 4vw, 3.5rem) clamp(3rem, 6vw, 5.5rem);
+}
+
+.about-page .ceo-executive-card {
+  border-radius: var(--about-card-radius);
+}
+
+.about-page .purpose-section {
+  margin-top: clamp(3rem, 6vw, 5.5rem);
+}
+
+.about-page .purpose-header {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.about-page .purpose-header h2 {
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.about-page .purpose-grid-3col {
+  align-items: stretch;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.about-page .purpose-card-3col {
+  min-width: 0;
+  border-radius: 20px;
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.about-page .purpose-card-3col h3 {
+  line-height: 1.45;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+
+.about-page .purpose-card-3col p {
+  font-size: .94rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.about-page .japan-side-card {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 1060px);
+  margin: clamp(2.5rem, 5vw, 4.5rem) auto 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(185, 11, 11, .16);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fff 0%, #fff 60%, #fff8f8 100%);
+  box-shadow: 0 22px 55px rgba(23, 2, 7, .08);
+  transition: box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+
+.about-page .japan-side-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 64px rgba(23, 2, 7, .12);
+}
+
+.about-page .japan-side-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .45rem;
+  padding: clamp(1.5rem, 3.2vw, 2.25rem);
+  color: #fff;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(255,255,255,.16), transparent 32%),
+    /* linear-gradient(118deg, #19050a 0%, #65091f 52%, #b90b0b 100%); */
+
+}
+
+.about-page .japan-side-heading::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -72px;
+  width: 155px;
+  height: 155px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(255,255,255,.04);
+  pointer-events: none;
+}
+
+.about-page .japan-side-heading .eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+  padding: .38rem .72rem;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  color: #ffe0e7;
+  background: rgba(255,255,255,.09);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+
+.about-page .japan-side-details {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: .35rem clamp(1.25rem, 3.2vw, 2.25rem) 1rem;
+}
+
+.about-page .japan-side-details li {
+  display: grid;
+  grid-template-columns: minmax(145px, .55fr) minmax(0, 1.45fr);
+  align-items: start;
+  gap: clamp(.8rem, 2vw, 1.5rem);
+  padding: 1rem 0;
+  border-bottom: 1px solid #ece8e9;
+  line-height: 1.7;
+}
+
+.about-page .japan-side-details li:last-child {
+  border-bottom: 0;
+}
+
+.about-page .japan-side-details li span {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  color: #72777f;
+  font-size: .77rem;
+  font-weight: 800;
+  letter-spacing: .035em;
+  line-height: 1.65;
+}
+
+.about-page .japan-side-details li strong {
+  display: block;
+  min-width: 0;
+  color: #202127;
+  font-size: .94rem;
+  font-weight: 650;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page h4 {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.about-page p {
+  text-wrap: pretty;
+}
+
+@media (max-width: 700px) {
+  .about-page .company-profiles-section {
+    padding-block: 2rem 1rem;
+  }
+
+  .about-page .company-profiles-section .hero-profile .profile-card-header {
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 1.35rem;
+  }
+
+  .about-page .company-profiles-section .profile-icon-wrapper {
+    flex: 0 0 76px;
+    width: 76px;
+    height: 58px;
+    padding: 6px;
+  }
+
+  .about-page .company-profiles-section .profile-card-title strong {
+    font-size: clamp(1.05rem, 4.3vw, 1.35rem);
+  }
+
+  .about-page .company-profiles-section .hero-profile .profile-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .25rem;
+    padding: .9rem 0;
+  }
+
+  .about-page .purpose-grid-3col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-page .japan-side-details li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .25rem;
+    padding: .9rem 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-page .company-profiles-section .hero-profile .profile-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .about-page .company-profiles-section .profile-icon-wrapper {
+    flex-basis: 58px;
+    width: 92px;
+    height: 58px;
+  }
+
+  .about-page .japan-side-heading {
+    padding: 1.25rem;
+  }
+
+  .about-page .japan-side-details {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page .japan-side-card,
+  .about-page .company-profiles-section .hero-profile {
+    transition: none;
+  }
+
+  .about-page .japan-side-card:hover,
+  .about-page .company-profiles-section .hero-profile:hover {
+    transform: none;
+  }
+}
+
+/* Final About-page spacing and distinct Japan partner treatment */
+.about-page .company-profiles-section {
+  padding-block: clamp(1.75rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem);
+}
+.about-page .ceo-purpose-section {
+  padding-block: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+.about-page .ceo-executive-card { margin-top: 0; }
+.about-page .purpose-section {
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+}
+.about-page .purpose-header { margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+.about-page .japan-side-card {
+  display: grid;
+  grid-template-columns: minmax(210px, .72fr) minmax(0, 1.55fr);
+  width: min(100%, 1060px);
+  margin: clamp(1.75rem, 3vw, 2.5rem) auto 0;
+  border: 1px solid #ead9de;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(35, 8, 16, .07);
+}
+.about-page .japan-side-heading {
+  justify-content: center;
+  min-height: 100%;
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+  background: linear-gradient(155deg, #fff8f9 0%, #f8e9ed 100%);
+  color: #470b1b;
+  border-right: 1px solid #ead9de;
+}
+.about-page .japan-side-heading::after {
+  right: -42px;
+  bottom: -52px;
+  border-color: rgba(120, 14, 43, .13);
+  box-shadow: 0 0 0 15px rgba(120, 14, 43, .035);
+}
+.about-page .japan-side-heading .eyebrow {
+  border: 0;
+  border-radius: 5px;
+  padding: .35rem .55rem;
+  color: #8f1737;
+  background: #f2dbe2;
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+.about-page .japan-side-heading h3 {
+  color: #350b17;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+}
+.about-page .japan-side-details {
+  align-content: center;
+  padding: .65rem clamp(1.25rem, 2.6vw, 2rem);
+}
+.about-page .japan-side-details li {
+  grid-template-columns: minmax(115px, .65fr) minmax(0, 1.35fr);
+  gap: 1rem;
+  padding: .8rem 0;
+}
+.about-page .japan-side-details li strong { line-height: 1.6; }
+@media (max-width: 700px) {
+  .about-page .company-profiles-section { padding-block: 1.5rem .75rem; }
+  .about-page .ceo-purpose-section { padding-block: .75rem 1.5rem; }
+  .about-page .purpose-section { margin-top: 1.75rem; }
+  .about-page .japan-side-card { grid-template-columns: minmax(0, 1fr); }
+  .about-page .japan-side-heading {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #ead9de;
+    padding: 1.25rem;
+  }
+  .about-page .japan-side-details { padding: .5rem 1.25rem .75rem; }
+}
+
+/* =========================================================
+   JAPAN PARTNER — BADGE AND LOGO ALIGNMENT REFINEMENT
+   Keep this block at the end of about.css so it overrides
+   earlier Japan partner styles without affecting other pages.
+   ========================================================= */
+.about-page .japan-side-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.9rem;
+  min-width: 0;
+  padding: 1.75rem 2rem;
+}
+
+.about-page .japan-side-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-radius: 6px;
+  background: #f4dce3;
+  color: #a3153c;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.about-page .japan-side-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 148px;
+  min-height: 74px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #f0dfe4;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(71, 11, 27, 0.06);
+}
+
+.about-page .japan-side-title img {
+  display: block;
+  width: 100%;
+  height: 48px;
+  max-width: 100%;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  .about-page .japan-side-heading {
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.35rem 1rem;
+    text-align: center;
+  }
+
+  .about-page .japan-side-title {
+    width: 148px;
+    min-height: 68px;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .about-page .japan-side-title img {
+    height: 42px;
+  }
 }
