@@ -1,0 +1,689 @@
+/* =========================================================
+   MYANMAR GSS — SHARED PAGE HERO POLISH
+   Loaded after page styles to keep every interior-page hero
+   aligned while preserving the existing burgundy/red palette.
+========================================================= */
+
+:root {
+  --mgss-hero-ink: #fffaf9;
+  --mgss-hero-muted: rgba(255, 245, 246, .76);
+  --mgss-hero-pink: #ff9caf;
+  --mgss-hero-gutter: clamp(22px, 5.2vw, 40px);
+}
+
+/* Consistent canvas, gradient, and spacing across interior pages. */
+body:not(.home-page) .page-hero,
+body:not(.home-page) .services-hero {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(390px, 27vw, 510px);
+  display: flex;
+  align-items: center;
+  padding: clamp(76px, 8vw, 112px) 0 clamp(66px, 7vw, 94px) !important;
+  color: var(--mgss-hero-ink);
+  background:
+    radial-gradient(ellipse at 92% 18%, rgba(220, 19, 57, .25), transparent 34%),
+    radial-gradient(ellipse at 12% 95%, rgba(90, 5, 25, .42), transparent 42%),
+    linear-gradient(116deg, #170207 0%, #430817 49%, #900b2a 100%) !important;
+}
+
+/* Preserve the original oversized circular ring on the RIGHT. */
+body:not(.home-page) .page-hero::before,
+body:not(.home-page) .services-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: clamp(440px, 49vw, 760px);
+  aspect-ratio: 1;
+  right: clamp(-260px, -7vw, -90px);
+  top: clamp(-360px, -17vw, -150px);
+  border: 1px solid rgba(255, 205, 218, .17);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 38px rgba(255, 190, 207, .025),
+    0 0 0 76px rgba(255, 190, 207, .018);
+  background: radial-gradient(circle at 45% 45%, rgba(255, 190, 207, .035), transparent 66%);
+}
+
+/* Static hexagonal glitter on the LEFT only; no motion or transition. */
+body:not(.home-page) .page-hero::after,
+body:not(.home-page) .services-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .86;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='130' viewBox='0 0 150 130'%3E%3Cg stroke='%23ffdce5' stroke-opacity='.32' stroke-width='1'%3E%3Cpath d='M25 3 43 13 43 33 25 43 7 33 7 13Z' fill='%23ffdce5' fill-opacity='.10'/%3E%3Cpath d='M91 27 109 37 109 57 91 67 73 57 73 37Z' fill='%23ff9fb7' fill-opacity='.15'/%3E%3Cpath d='M42 81 60 91 60 111 42 121 24 111 24 91Z' fill='%23ffffff' fill-opacity='.08'/%3E%3Cpath d='M133 91 143 97 143 109 133 115 123 109 123 97Z' fill='%23ffffff' fill-opacity='.12'/%3E%3C/g%3E%3Cpath d='M25 3 25 23 43 33M91 27 91 47 109 57M42 81 42 101 60 111' fill='none' stroke='%23fff4f7' stroke-opacity='.28'/%3E%3Ccircle cx='54' cy='53' r='1.3' fill='%23fff4f7' fill-opacity='.65'/%3E%3Ccircle cx='119' cy='16' r='1' fill='%23ffb3c5' fill-opacity='.7'/%3E%3C/svg%3E");
+  background-size: 150px 130px;
+  background-position: left top;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 18%, rgba(0,0,0,.3) 38%, transparent 54%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 18%, rgba(0,0,0,.3) 38%, transparent 54%);
+}
+
+body:not(.home-page) .page-hero-inner,
+body:not(.home-page) .services-hero .container {
+  width: min(1180px, calc(100% - var(--mgss-hero-gutter) * 2)) !important;
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body:not(.home-page) .page-hero-inner {
+  padding-top: clamp(0px, 1.5vw, 18px);
+  padding-bottom: clamp(0px, 1.5vw, 18px);
+  max-width: 1180px;
+}
+
+body:not(.home-page) .page-hero h1,
+body:not(.home-page) .services-hero h1 {
+  max-width: 900px;
+  margin: 12px 0 18px;
+  color: #fffaf9;
+  font-size: clamp(2.65rem, 5.1vw, 4.65rem);
+  line-height: .99;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+
+body:not(.home-page) .page-hero p,
+body:not(.home-page) .services-hero p {
+  max-width: 680px;
+  color: var(--mgss-hero-muted);
+  font-size: clamp(.98rem, 1.15vw, 1.08rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+body:not(.home-page) .page-hero .crumb,
+body:not(.home-page) .page-hero .eyebrow,
+body:not(.home-page) .services-hero .eyebrow {
+  color: var(--mgss-hero-pink);
+  letter-spacing: .12em;
+}
+
+body:not(.home-page) .page-hero .page-hero-meta,
+body:not(.home-page) .page-hero .hero-meta,
+body:not(.home-page) .services-hero .services-hero-meta {
+  color: rgba(255, 245, 246, .88);
+}
+
+body:not(.home-page) .page-hero .pill,
+body:not(.home-page) .page-hero .hero-chip,
+body:not(.home-page) .services-hero .pill,
+body:not(.home-page) .services-hero .hero-chip {
+  border: 1px solid rgba(255, 224, 231, .24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .055);
+  backdrop-filter: blur(10px);
+}
+
+/* Services uses a split hero; preserve its two-column content layout. */
+body:not(.home-page) .services-hero .services-hero-grid {
+  width: min(1180px, calc(100% - var(--mgss-hero-gutter) * 2));
+  max-width: 1180px;
+  margin-inline: auto;
+  gap: clamp(36px, 7vw, 100px);
+  align-items: center;
+}
+
+body:not(.home-page) .services-hero .services-hero-copy {
+  min-width: 0;
+}
+
+/* Larger faceted hero-orbs. Hexagonal silhouettes replace the old round blur circles.
+   Decorative glitter remains static; only the text entrance is animated. */
+body:not(.home-page) .hero-orbs {
+  opacity: .18;
+  pointer-events: none;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+body:not(.home-page) .hero-orbs span {
+  border-radius: 0 !important;
+  filter: blur(1px) !important;
+  clip-path: polygon(25% 2%, 75% 2%, 98% 50%, 75% 98%, 25% 98%, 2% 50%);
+  outline: 1px solid rgba(255, 220, 230, .12);
+  opacity: .8;
+}
+
+body:not(.home-page) .hero-orbs span:nth-child(1) {
+  width: clamp(380px, 44vw, 680px) !important;
+  height: clamp(330px, 39vw, 590px) !important;
+  top: -34% !important; left: -12% !important;
+  background: linear-gradient(135deg, rgba(196, 10, 52, .12), rgba(255, 145, 170, .035) 55%, transparent) !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(2) {
+  width: clamp(440px, 49vw, 760px) !important;
+  height: clamp(380px, 43vw, 650px) !important;
+  top: -28% !important; right: -13% !important;
+  background: linear-gradient(145deg, rgba(255, 186, 202, .07), rgba(220, 15, 57, .12) 65%, transparent) !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(3) {
+  width: clamp(280px, 31vw, 480px) !important;
+  height: clamp(250px, 28vw, 430px) !important;
+  bottom: -26% !important; left: 34% !important;
+  background: linear-gradient(135deg, rgba(210, 0, 46, .10), rgba(255, 180, 198, .025), transparent) !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(4) {
+  width: clamp(250px, 28vw, 420px) !important;
+  height: clamp(220px, 25vw, 380px) !important;
+  bottom: -18% !important; right: 5% !important;
+  background: linear-gradient(135deg, rgba(255, 190, 205, .06), rgba(255, 90, 130, .08), transparent) !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(5) {
+  width: clamp(300px, 34vw, 520px) !important;
+  height: clamp(270px, 30vw, 460px) !important;
+  top: 24% !important; left: 15% !important;
+  background: linear-gradient(135deg, rgba(185, 0, 42, .08), rgba(255, 180, 198, .025), transparent) !important;
+}
+
+body:not(.home-page) .hero-orbs::before,
+body:not(.home-page) .hero-orbs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Static, restrained sparkle points; center stays clearer for readable copy. */
+body:not(.home-page) .hero-orbs::before {
+  opacity: .72;
+  background-image:
+    radial-gradient(circle, rgba(255,245,248,.96) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,166,188,.88) 0 .8px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,224,232,.72) 0 1.2px, transparent 2px),
+    radial-gradient(circle, rgba(255,115,148,.62) 0 .8px, transparent 1.8px);
+  background-size: 113px 97px, 157px 139px, 211px 173px, 181px 157px;
+  background-position: 17px 21px, 63px 47px, 101px 73px, 29px 89px;
+  mask-image: radial-gradient(ellipse at 48% 48%, transparent 0%, rgba(0,0,0,.2) 34%, #000 78%);
+}
+body:not(.home-page) .hero-orbs::after {
+  opacity: .6;
+  background:
+    linear-gradient(30deg, transparent 0 48%, rgba(255,210,220,.09) 49%, transparent 50%) 0 0 / 160px 140px,
+    radial-gradient(ellipse at 0% 100%, rgba(255,166,188,.13), transparent 30%),
+    radial-gradient(ellipse at 100% 0%, rgba(255,205,217,.10), transparent 28%);
+}
+
+/* Staggered text entrance: headings, supporting copy, then chips/links. */
+body:not(.home-page) .page-hero .crumb,
+body:not(.home-page) .page-hero .eyebrow,
+body:not(.home-page) .services-hero .eyebrow {
+  animation: mgss-hero-enter .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+body:not(.home-page) .page-hero h1,
+body:not(.home-page) .services-hero h1 {
+  animation: mgss-hero-enter .8s cubic-bezier(.2,.8,.2,1) .08s both;
+}
+
+body:not(.home-page) .page-hero p,
+body:not(.home-page) .services-hero p {
+  animation: mgss-hero-enter .7s cubic-bezier(.2,.8,.2,1) .2s both;
+}
+
+body:not(.home-page) .page-hero .page-hero-meta,
+body:not(.home-page) .page-hero .hero-meta,
+body:not(.home-page) .page-hero .pill,
+body:not(.home-page) .page-hero .hero-chip,
+body:not(.home-page) .services-hero .services-hero-meta,
+body:not(.home-page) .services-hero .pill,
+body:not(.home-page) .services-hero .hero-chip {
+  animation: mgss-hero-enter .7s cubic-bezier(.2,.8,.2,1) .32s both;
+}
+
+@keyframes mgss-hero-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  body:not(.home-page) .page-hero,
+  body:not(.home-page) .services-hero {
+    min-height: 0;
+    padding: 76px 0 66px !important;
+  }
+  body:not(.home-page) .hero-orbs span {
+    opacity: .45;
+  }
+  body:not(.home-page) .page-hero h1,
+  body:not(.home-page) .services-hero h1 {
+    font-size: clamp(2.35rem, 9.5vw, 3.6rem);
+    line-height: 1.02;
+    letter-spacing: -.055em;
+  }
+  body:not(.home-page) .services-hero .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  body:not(.home-page) .page-hero::before,
+  body:not(.home-page) .services-hero::before {
+    right: -300px;
+    top: -190px;
+    opacity: .55;
+  }
+  body:not(.home-page) .page-hero::after,
+  body:not(.home-page) .services-hero::after {
+    opacity: .62;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.55) 28%, transparent 62%);
+    mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.55) 28%, transparent 62%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.home-page) .page-hero::after,
+  body:not(.home-page) .services-hero::after,
+  body:not(.home-page) .page-hero h1,
+  body:not(.home-page) .services-hero h1,
+  body:not(.home-page) .page-hero .crumb,
+  body:not(.home-page) .page-hero .eyebrow,
+  body:not(.home-page) .page-hero p,
+  body:not(.home-page) .page-hero .page-hero-meta,
+  body:not(.home-page) .page-hero .hero-meta,
+  body:not(.home-page) .page-hero .pill,
+  body:not(.home-page) .page-hero .hero-chip,
+  body:not(.home-page) .services-hero .eyebrow,
+  body:not(.home-page) .services-hero p,
+  body:not(.home-page) .services-hero .services-hero-meta,
+  body:not(.home-page) .services-hero .pill,
+  body:not(.home-page) .services-hero .hero-chip {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   DIRECTIONAL SHAPE REFINEMENT
+   Keep the signature circular ring on the RIGHT; use larger
+   faceted hexagons and static glitter on the LEFT only.
+========================================================= */
+body:not(.home-page) .page-hero::before,
+body:not(.home-page) .services-hero::before {
+  width: clamp(430px, 47vw, 760px);
+  aspect-ratio: 1;
+  right: clamp(-240px, -8vw, -90px);
+  left: auto;
+  top: clamp(-330px, -15vw, -115px);
+  clip-path: none;
+  border: 1px solid rgba(255, 205, 218, .15);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 42% 38%, rgba(255, 191, 207, .055), transparent 58%),
+    linear-gradient(135deg, rgba(255,220,228,.025), rgba(255,100,135,.045));
+  box-shadow: 0 0 0 34px rgba(255, 196, 211, .018),
+              0 0 0 74px rgba(255, 196, 211, .012),
+              0 0 84px rgba(255, 70, 105, .08);
+  opacity: .9;
+}
+
+/* The first and fifth orb become the larger left-side hexagon accents. */
+body:not(.home-page) .hero-orbs span:nth-child(1) {
+  width: clamp(330px, 39vw, 610px) !important;
+  height: clamp(290px, 34vw, 530px) !important;
+  top: -20% !important;
+  left: -10% !important;
+  right: auto !important;
+  clip-path: polygon(25% 2%, 75% 2%, 98% 50%, 75% 98%, 25% 98%, 2% 50%) !important;
+  border: 1px solid rgba(255, 214, 225, .10) !important;
+  background: linear-gradient(135deg, rgba(255, 181, 200, .075), rgba(205, 8, 49, .035) 60%, transparent) !important;
+  filter: none !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(5) {
+  width: clamp(240px, 28vw, 440px) !important;
+  height: clamp(220px, 25vw, 390px) !important;
+  top: 30% !important;
+  left: 3% !important;
+  right: auto !important;
+  clip-path: polygon(25% 2%, 75% 2%, 98% 50%, 75% 98%, 25% 98%, 2% 50%) !important;
+  border: 1px solid rgba(255, 214, 225, .08) !important;
+  background: linear-gradient(145deg, rgba(220, 15, 57, .065), rgba(255, 184, 202, .035), transparent 72%) !important;
+  filter: none !important;
+}
+
+/* Restore the circular orb on the RIGHT, as a fine ring rather than a filled blob. */
+body:not(.home-page) .hero-orbs span:nth-child(2) {
+  width: clamp(380px, 43vw, 670px) !important;
+  height: clamp(380px, 43vw, 670px) !important;
+  top: -31% !important;
+  right: -14% !important;
+  left: auto !important;
+  border-radius: 50% !important;
+  clip-path: none !important;
+  outline: none !important;
+  border: 1px solid rgba(255, 207, 220, .14) !important;
+  background: radial-gradient(circle, rgba(255, 196, 211, .035) 0 48%, transparent 69%) !important;
+  box-shadow: 0 0 0 28px rgba(255, 196, 211, .014), 0 0 0 62px rgba(255, 196, 211, .01) !important;
+  filter: none !important;
+  opacity: .8 !important;
+}
+
+/* Keep decorative sparkles concentrated toward the left, away from copy. */
+body:not(.home-page) .hero-orbs::before {
+  opacity: .78;
+  background-image:
+    radial-gradient(circle, rgba(255,245,248,.96) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,166,188,.88) 0 .8px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,224,232,.72) 0 1.2px, transparent 2px),
+    radial-gradient(circle, rgba(255,115,148,.62) 0 .8px, transparent 1.8px);
+  background-size: 113px 97px, 157px 139px, 211px 173px, 181px 157px;
+  background-position: 17px 21px, 63px 47px, 101px 73px, 29px 89px;
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.78) 27%, transparent 57%);
+}
+
+@media (max-width: 760px) {
+  body:not(.home-page) .page-hero::before,
+  body:not(.home-page) .services-hero::before {
+    right: -300px;
+    top: -180px;
+    opacity: .55;
+  }
+  body:not(.home-page) .hero-orbs span:nth-child(1) {
+    left: -45% !important;
+    top: -16% !important;
+  }
+  body:not(.home-page) .hero-orbs span:nth-child(5) {
+    left: -24% !important;
+    top: 38% !important;
+  }
+  body:not(.home-page) .hero-orbs span:nth-child(2) {
+    right: -55% !important;
+    top: -24% !important;
+  }
+}
+
+
+/* =========================================================
+   STATIC HEXAGON GLITTER — LEFT EDGE ONLY
+   Inspired by the supplied PowerPoint reference. Shapes are
+   purely decorative: no movement, shimmer, or transitions.
+   Keep the circular ring on the right and text fade-in intact.
+========================================================= */
+body:not(.home-page) .hero-orbs {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Fine hexagonal tessellation fades out before the text column. */
+body:not(.home-page) .hero-orbs::before {
+  opacity: .88;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='76' viewBox='0 0 88 76'%3E%3Cg stroke='%23f8dfe5' stroke-opacity='.26' stroke-width='1' fill='none'%3E%3Cpath d='M22 1 43 13 43 37 22 49 1 37 1 13Z'/%3E%3Cpath d='M66 39 87 51 87 75 66 87 45 75 45 51Z'/%3E%3C/g%3E%3Cg stroke='%23fff7f8' stroke-width='1' stroke-opacity='.25'%3E%3Cpath fill='%23fff7f8' fill-opacity='.12' d='M22 1 43 13 22 25 1 13Z'/%3E%3Cpath fill='%23d6c8cd' fill-opacity='.13' d='M22 25 43 13 43 37 22 49Z'/%3E%3Cpath fill='%238d7c82' fill-opacity='.12' d='M22 25 22 49 1 37 1 13Z'/%3E%3Cpath fill='%23fff7f8' fill-opacity='.09' d='M66 39 87 51 66 63 45 51Z'/%3E%3Cpath fill='%23e7d9de' fill-opacity='.11' d='M66 63 87 51 87 75 66 87Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 88px 76px;
+  background-position: -8px -4px;
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.92) 18%, rgba(0,0,0,.58) 34%, transparent 55%);
+}
+
+/* Static facets and hexagon accents clustered along the left edge. */
+body:not(.home-page) .hero-orbs span {
+  border-radius: 0 !important;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) !important;
+  filter: none !important;
+  outline: 1px solid rgba(255, 239, 243, .22) !important;
+  box-shadow: none !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(1) {
+  width: clamp(100px, 12vw, 190px) !important;
+  height: clamp(88px, 10.5vw, 166px) !important;
+  top: 3% !important; left: -1.5% !important; right: auto !important;
+  border: 1px solid rgba(255, 236, 241, .3) !important;
+  background: linear-gradient(145deg, rgba(255,248,250,.2) 0 32%, rgba(220,190,199,.1) 33% 62%, rgba(95,12,34,.18) 63%) !important;
+  opacity: .62 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(2) {
+  /* Right-side circular ring deliberately preserved. */
+  width: clamp(380px, 43vw, 670px) !important;
+  height: clamp(380px, 43vw, 670px) !important;
+  top: -31% !important; right: -14% !important; left: auto !important;
+  border-radius: 50% !important; clip-path: none !important;
+  outline: none !important;
+  border: 1px solid rgba(255, 207, 220, .14) !important;
+  background: radial-gradient(circle, rgba(255,196,211,.025) 0 48%, transparent 69%) !important;
+  box-shadow: 0 0 0 28px rgba(255,196,211,.014), 0 0 0 62px rgba(255,196,211,.01) !important;
+  opacity: .8 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(3) {
+  width: clamp(58px, 7vw, 108px) !important;
+  height: clamp(52px, 6.1vw, 94px) !important;
+  bottom: 8% !important; left: 8% !important; right: auto !important; top: auto !important;
+  border: 1px solid rgba(255, 235, 241, .24) !important;
+  background: linear-gradient(135deg, rgba(255,248,250,.19), rgba(207,184,192,.08) 52%, rgba(70,5,24,.18)) !important;
+  opacity: .6 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(4) {
+  width: clamp(44px, 5.4vw, 82px) !important;
+  height: clamp(40px, 4.7vw, 72px) !important;
+  top: 41% !important; left: 1.8% !important; right: auto !important; bottom: auto !important;
+  border: 1px solid rgba(255, 235, 241, .25) !important;
+  background: linear-gradient(35deg, rgba(255,247,249,.17), rgba(153,112,124,.09) 52%, rgba(58,4,20,.16)) !important;
+  opacity: .55 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(5) {
+  width: clamp(72px, 8.5vw, 130px) !important;
+  height: clamp(64px, 7.5vw, 115px) !important;
+  top: 67% !important; left: 2.5% !important; right: auto !important; bottom: auto !important;
+  border: 1px solid rgba(255, 235, 241, .22) !important;
+  background: linear-gradient(145deg, rgba(255,248,250,.16), rgba(221,184,195,.08) 48%, rgba(90,7,29,.16)) !important;
+  opacity: .58 !important;
+}
+
+/* Small fixed glints are static; no sparkle animation is applied. */
+body:not(.home-page) .hero-orbs::after {
+  opacity: .82;
+  background-image:
+    radial-gradient(circle, rgba(255,246,249,.78) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,173,193,.62) 0 1px, transparent 2px),
+    linear-gradient(30deg, transparent 49.5%, rgba(255,229,236,.11) 50%, transparent 50.5%);
+  background-size: 47px 53px, 79px 83px, 128px 112px;
+  background-position: 5px 8px, 23px 31px, -12px 4px;
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.78) 22%, transparent 48%);
+}
+
+@media (max-width: 760px) {
+  body:not(.home-page) .hero-orbs::before,
+  body:not(.home-page) .hero-orbs::after {
+    mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.65) 25%, transparent 58%);
+  }
+  body:not(.home-page) .hero-orbs span:nth-child(1) { left: -7% !important; top: 1% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(2) { right: -58% !important; top: -22% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(3) { left: 6% !important; bottom: 6% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(4) { left: -5% !important; top: 42% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(5) { left: -4% !important; top: 68% !important; }
+}
+
+
+/* FINAL DIRECTIONAL FIX — remove left circular orbit; preserve right orbit.
+   Left decoration uses static faceted hexagons and fine glitter only. */
+body:not(.home-page) .page-hero::before,
+body:not(.home-page) .services-hero::before {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+body:not(.home-page) .hero-orbs span {
+  border-radius: 0 !important;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%) !important;
+  outline: 1px solid rgba(255,239,243,.2) !important;
+  box-shadow: none !important;
+}
+/* The only circular orbit is intentionally on the RIGHT. */
+body:not(.home-page) .hero-orbs span:nth-child(2) {
+  width: clamp(380px, 43vw, 670px) !important;
+  height: clamp(380px, 43vw, 670px) !important;
+  top: -31% !important;
+  right: -14% !important;
+  left: auto !important;
+  bottom: auto !important;
+  border-radius: 50% !important;
+  clip-path: none !important;
+  outline: none !important;
+  border: 1px solid rgba(255,207,220,.14) !important;
+  background: radial-gradient(circle, rgba(255,196,211,.025) 0 48%, transparent 69%) !important;
+  box-shadow: 0 0 0 28px rgba(255,196,211,.014), 0 0 0 62px rgba(255,196,211,.01) !important;
+  filter: none !important;
+  opacity: .8 !important;
+}
+/* Keep the left glitter static and fade it out before the text column. */
+body:not(.home-page) .hero-orbs::before,
+body:not(.home-page) .hero-orbs::after {
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.78) 22%, transparent 49%) !important;
+}
+@media (max-width: 760px) {
+  body:not(.home-page) .hero-orbs span:nth-child(2) {
+    right: -58% !important;
+    top: -22% !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL ORBIT PLACEMENT — all interior hero banners
+   LEFT: static hexagonal glitter only, no circular outlines.
+   RIGHT: one large circular orbit, retained as a brand motif.
+========================================================= */
+body:not(.home-page) .page-hero,
+body:not(.home-page) .services-hero {
+  isolation: isolate;
+}
+
+/* Disable any legacy left-side orbit pseudo-layer. */
+body:not(.home-page) .page-hero::before,
+body:not(.home-page) .services-hero::before {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Restore one clear orbit on the RIGHT edge only. */
+body:not(.home-page) .page-hero::after,
+body:not(.home-page) .services-hero::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  width: clamp(420px, 47vw, 740px) !important;
+  height: clamp(420px, 47vw, 740px) !important;
+  top: clamp(-310px, -16vw, -130px) !important;
+  right: clamp(-300px, -9vw, -100px) !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  border: 1px solid rgba(255, 210, 222, .16) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    0 0 0 34px rgba(255, 194, 211, .025),
+    0 0 0 78px rgba(255, 194, 211, .016) !important;
+  background: radial-gradient(circle at 42% 40%,
+    rgba(255, 196, 213, .045) 0%,
+    rgba(255, 196, 213, .012) 48%,
+    transparent 70%) !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* All orb spans are angular. Do not use a circular span as the orbit. */
+body:not(.home-page) .hero-orbs {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+body:not(.home-page) .hero-orbs span {
+  border-radius: 0 !important;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+  outline: 1px solid rgba(255, 239, 243, .22) !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(1) {
+  width: clamp(100px, 12vw, 190px) !important;
+  height: clamp(88px, 10.5vw, 166px) !important;
+  top: 3% !important; left: -1.5% !important; right: auto !important;
+  bottom: auto !important;
+  background: linear-gradient(145deg, rgba(255,248,250,.18), rgba(220,190,199,.09) 55%, rgba(95,12,34,.14)) !important;
+  opacity: .62 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(2) {
+  width: clamp(64px, 7vw, 108px) !important;
+  height: clamp(56px, 6.1vw, 94px) !important;
+  top: 16% !important; left: 13% !important; right: auto !important;
+  bottom: auto !important;
+  border: 1px solid rgba(255, 236, 241, .22) !important;
+  border-radius: 0 !important; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%) !important;
+  background: linear-gradient(135deg, rgba(255,248,250,.16), rgba(207,184,192,.07) 52%, rgba(70,5,24,.15)) !important;
+  opacity: .54 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(3) {
+  width: clamp(58px, 7vw, 108px) !important;
+  height: clamp(52px, 6.1vw, 94px) !important;
+  bottom: 8% !important; left: 8% !important; right: auto !important; top: auto !important;
+  background: linear-gradient(135deg, rgba(255,248,250,.17), rgba(207,184,192,.08) 52%, rgba(70,5,24,.16)) !important;
+  opacity: .6 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(4) {
+  width: clamp(44px, 5.4vw, 82px) !important;
+  height: clamp(40px, 4.7vw, 72px) !important;
+  top: 41% !important; left: 1.8% !important; right: auto !important; bottom: auto !important;
+  background: linear-gradient(35deg, rgba(255,247,249,.15), rgba(153,112,124,.08) 52%, rgba(58,4,20,.15)) !important;
+  opacity: .55 !important;
+}
+body:not(.home-page) .hero-orbs span:nth-child(5) {
+  width: clamp(72px, 8.5vw, 130px) !important;
+  height: clamp(64px, 7.5vw, 115px) !important;
+  top: 67% !important; left: 2.5% !important; right: auto !important; bottom: auto !important;
+  background: linear-gradient(145deg, rgba(255,248,250,.15), rgba(221,184,195,.07) 48%, rgba(90,7,29,.15)) !important;
+  opacity: .58 !important;
+}
+
+/* Static faceted hexagon field and fixed glints fade before the copy. */
+body:not(.home-page) .hero-orbs::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: .88 !important;
+  pointer-events: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='76' viewBox='0 0 88 76'%3E%3Cg stroke='%23f8dfe5' stroke-opacity='.25' stroke-width='1' fill='none'%3E%3Cpath d='M22 1 43 13 43 37 22 49 1 37 1 13Z'/%3E%3Cpath d='M66 39 87 51 87 75 66 87 45 75 45 51Z'/%3E%3C/g%3E%3Cg stroke='%23fff7f8' stroke-width='1' stroke-opacity='.2'%3E%3Cpath fill='%23fff7f8' fill-opacity='.11' d='M22 1 43 13 22 25 1 13Z'/%3E%3Cpath fill='%23d6c8cd' fill-opacity='.12' d='M22 25 43 13 43 37 22 49Z'/%3E%3Cpath fill='%238d7c82' fill-opacity='.11' d='M22 25 22 49 1 37 1 13Z'/%3E%3C/g%3E%3C/svg%3E") !important;
+  background-size: 88px 76px !important;
+  background-position: -8px -4px !important;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.9) 18%, rgba(0,0,0,.55) 34%, transparent 55%) !important;
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.9) 18%, rgba(0,0,0,.55) 34%, transparent 55%) !important;
+}
+body:not(.home-page) .hero-orbs::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: .76 !important;
+  pointer-events: none !important;
+  background-image:
+    radial-gradient(circle, rgba(255,246,249,.78) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,173,193,.62) 0 1px, transparent 2px);
+  background-size: 47px 53px, 79px 83px;
+  background-position: 5px 8px, 23px 31px;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.78) 22%, transparent 49%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.78) 22%, transparent 49%);
+}
+
+@media (max-width: 760px) {
+  body:not(.home-page) .page-hero::after,
+  body:not(.home-page) .services-hero::after {
+    width: 430px !important;
+    height: 430px !important;
+    right: -300px !important;
+    top: -150px !important;
+  }
+  body:not(.home-page) .hero-orbs span:nth-child(1) { left: -7% !important; top: 1% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(2) { left: 11% !important; top: 18% !important; right: auto !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(3) { left: 6% !important; bottom: 6% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(4) { left: -5% !important; top: 42% !important; }
+  body:not(.home-page) .hero-orbs span:nth-child(5) { left: -4% !important; top: 68% !important; }
+}

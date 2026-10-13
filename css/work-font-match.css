@@ -1,0 +1,126 @@
+/* Work Conditions typography alignment.
+   This file loads after work.css so the shared type scale wins over legacy rules. */
+.work-page {
+  font-family: "Manrope", "Inter", "Noto Sans", "Noto Sans Myanmar", "Yu Gothic", "Meiryo", sans-serif;
+}
+.work-page :where(p, li, label, input, select, textarea, button, small, a) {
+  font-family: inherit;
+}
+.work-page :where(h1, h2, h3, h4, h5, h6,
+  .hero-main-title, .highlight-title, .hero-lead-text,
+  .brand-name, .brand-note, .nav-link, .lang-btn) {
+  font-family: "Manrope", "Inter", "Noto Sans", "Noto Sans Myanmar", "Yu Gothic", "Meiryo", sans-serif;
+}
+.work-page .hero-main-title {
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+.work-page .hero-lead-text {
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+.work-page .brand-name,
+.work-page .nav-link {
+  font-weight: 600;
+}
+/* Icon-font families are intentionally left to Bootstrap Icons and Font Awesome. */
+
+
+/* =========================================================
+   WORK CONDITIONS — shared-site typography and alignment
+   Keep the same type system as styles.css: Inter for body/UI,
+   Manrope for headings. This file loads after work.css.
+   ========================================================= */
+.work-page {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Arial, "Noto Sans Myanmar", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink, #101216);
+  -webkit-font-smoothing: antialiased;
+}
+.work-page :where(p, li, label, input, select, textarea, button, small, a, span) {
+  font-family: inherit;
+}
+.work-page :where(h1, h2, h3, h4, h5, h6) {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+.work-page .brand-name,
+.work-page .brand-note,
+.work-page .nav-link,
+.work-page .language-btn,
+.work-page .language-name,
+.work-page .language-code {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Arial, sans-serif;
+}
+.work-page .brand-name { font-weight: 800; letter-spacing: -.02em; }
+.work-page .brand-note { letter-spacing: .13em; }
+.work-page .nav-link { font-size: .84rem; font-weight: 600; letter-spacing: .01em; }
+.work-page .language-btn { font-size: .78rem; font-weight: 600; }
+.work-page .hero-main-title {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  max-width: 850px;
+  text-wrap: balance;
+}
+.work-page .hero-lead-text {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+.work-page .hero-accent-pill,
+.work-page .hero-breadcrumbs,
+.work-page .chip-item {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: normal;
+}
+.work-page .work-conditions-copy .section-title {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+.work-page .work-conditions-copy .eyebrow {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.work-page .work-conditions-copy .section-copy {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+.work-page .work-conditions-block {
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+.work-page .work-conditions-copy,
+.work-page .work-conditions-media { min-width: 0; }
+.work-page .work-conditions-copy { max-width: 100%; }
+@media (max-width: 860px) {
+  .work-page .nav-link { font-size: .88rem; }
+  .work-page .work-conditions-block { gap: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .work-page { font-size: 15px; }
+  .work-page .hero-main-title {
+    font-size: clamp(2.2rem, 9.5vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -.04em;
+  }
+  .work-page .work-conditions-copy .section-title { font-size: 1.55rem; }
+  .work-page .work-conditions-copy .section-copy { font-size: .96rem; }
+}
