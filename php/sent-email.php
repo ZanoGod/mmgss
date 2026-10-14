@@ -6,12 +6,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 header('Content-Type: text/plain; charset=UTF-8');
 
-/* --------------------------------------------------------------------------
- * Composer autoload
- * Expected structure:
- * public_html/vendor/autoload.php
- * public_html/php/sent-email.php
- * -------------------------------------------------------------------------- */
 
 $autoload = __DIR__ . '/../vendor/autoload.php';
 
@@ -20,24 +14,18 @@ if (!is_file($autoload)) {
     error_log('MMGSS contact form: Composer autoload file not found: ' . $autoload);
     exit('The contact form is temporarily unavailable. Please contact the company directly.');
 }
-
 require_once $autoload;
     
-/* --------------------------------------------------------------------------
- * SMTP configuration — everything is kept in this one file.
- * Verify the hostname in cPanel > Email Accounts > Connect Devices.
- * The password below must be replaced with the NEW mailbox password.
- * -------------------------------------------------------------------------- */
 
-$smtpHost     = 'mail.myanmargss.com';
+$smtpHost     =  'mail.myanmargss.com';
 $smtpUsername = 'no-reply@myanmargss.com';
-$smtpPassword = '4TZvK7y6KI@q)yey';
+$smtpPassword = 'MItLF5vJKNxqhAX5';
 $recipient    = 'seteam@nicemyanmartravel.com';
 $smtpPort     = 465;
 
 if (
     $smtpPassword === '' ||
-    $smtpPassword === 'REPLACE_WITH_YOUR_NEW_MGSS_MAILBOX_PASSWORD'
+    $smtpPassword === 'MItLF5vJKNxqhAX5'
 ) {
     http_response_code(500);
     error_log('MMGSS contact form: SMTP password is not configured in sent-email.php.');
@@ -126,11 +114,11 @@ try {
     $mail->Username = $smtpUsername;
     $mail->Password = $smtpPassword;
 
-    // Match the working Golden Support Service settings: SMTP over implicit TLS.
+   
     if ($smtpPort === 465) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     } else {
-        // Use this only if the host's Connect Devices page confirms port 587.
+    
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     }
 

@@ -93,7 +93,7 @@
 .contact-page .contact-form textarea:focus-visible {
   border-color: var(--red, #b90b0b); box-shadow: 0 0 0 3px rgba(185,11,11,.12); background: #fffdfd;
 }
-.contact-page .contact-form input:required:valid { }
+
 .contact-page .contact-form .contact-interest-field,
 .contact-page .contact-form .contact-message-field,
 .contact-page .contact-form-submit { grid-column: 1 / -1; }
