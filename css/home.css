@@ -1,8 +1,3 @@
-/* =========================================================
-   MYANMAR GSS — HOME PAGE
-   Home-only layout, typography, backgrounds and controls.
-   Load after styles.css, footer.css and premium-carousel.css.
-   ========================================================= */
 
 :root {
   --home-cream: #fff8ef;
@@ -13,6 +8,8 @@
   --home-red: #a9002f;
   --home-pink: #e85a78;
   --home-dark: #26030e;
+  /* Soft light tint derived from #B90B0B */
+  --home-surface: #fbf8f8;
 }
 
 /* Global readable type scale for the home page */
@@ -112,7 +109,6 @@ button {
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
-  /* color: #ffb6c7; */
   color: #fff;
   font-size: 12px;
   font-weight: 800;
@@ -125,7 +121,6 @@ button {
   content: "";
   width: 42px;
   height: 2px;
-  /* background: #ff9fb7; */
   background: #fff;
   flex: 0 0 auto;
 }
@@ -307,7 +302,7 @@ button {
   color: #ff7894;
 }
 
-/* Premium carousel controls: equal circles, centered glyphs, no distorted pill */
+/* Premium carousel controls */
 premium-carousel .dock {
   right: 14px;
   bottom: 14px;
@@ -438,11 +433,8 @@ premium-carousel .dot.is-active {
 
 /* =========================================================
    FINAL HOME OVERRIDES
-   These rules intentionally come last so they win over legacy
-   home declarations in the global stylesheet.
    ========================================================= */
 
-/* Home hero typography: readable at desktop and easy to scan. */
 .hero {
   min-height: 720px;
 }
@@ -466,97 +458,6 @@ premium-carousel .dot.is-active {
   line-height: 1.65;
 }
 
-/* Hero carousel controls — visible, keyboard accessible and icon-ready. */
-.hero-carousel-controls {
-  position: absolute;
-  z-index: 8;
-  right: 32px;
-  bottom: 28px;
-  left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  background: rgba(24, 15, 23, 0.478);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-}
-
-.hero-carousel-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
-}
-
-.hero-carousel-arrow i {
-  font-size: 14px;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.hero-carousel-arrow:hover,
-.hero-carousel-arrow:focus-visible {
-  background: #a9002f;
-  border-color: rgba(255, 255, 255, 0.9);
-  transform: scale(1.06);
-}
-
-.hero-carousel-arrow:focus-visible,
-.hero-carousel-dot:focus-visible {
-  outline: 2px solid #ffb5c3;
-  outline-offset: 3px;
-}
-
-.hero-carousel-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 0 4px;
-}
-
-.hero-carousel-dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.32);
-  cursor: pointer;
-  transition:
-    width 180ms ease,
-    background 180ms ease;
-}
-
-.hero-carousel-dot.active {
-  width: 24px;
-  background: #ff5478;
-  border-color: #ff5478;
-}
-
-/* Section contrast: every home section has a deliberate text surface. */
 .section-company {
   background: #fff8ef;
   color: #242226;
@@ -601,170 +502,7 @@ premium-carousel .dot.is-active {
   font-weight: 400;
 }
 
-/* Language selector: stable glass segmented switch. */
-.language-selector {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
-  width: 104px;
-  height: 40px;
-  margin-left: 12px;
-  padding: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.34);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 6px 22px rgba(48, 17, 28, 0.12);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  overflow: hidden;
-}
-
-.language-pill-bg {
-  z-index: 1;
-  top: 3px;
-  bottom: 3px;
-  left: 3px;
-  width: calc(50% - 3px);
-  border-radius: 999px;
-  background: linear-gradient(135deg, #b20b3b, #850023);
-  box-shadow:
-    0 5px 14px rgba(169, 0, 47, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
-  pointer-events: none;
-}
-
-.language-btn {
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  height: 32px;
-  padding: 0 8px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: #514b50;
-  font-family: var(--font-sans, "Roboto", Arial, sans-serif);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.language-btn[aria-pressed="true"] {
-  color: #ffffff;
-}
-
-.language-btn:hover {
-  color: #a9002f;
-}
-
-.language-btn[aria-pressed="true"]:hover {
-  color: #ffffff;
-}
-
-@media (max-width: 1100px) {
-  .hero .hero-title {
-    font-size: 44px;
-  }
-
-  .hero-carousel-controls {
-    right: 24px;
-    bottom: 22px;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero {
-    min-height: 650px;
-  }
-
-  .hero-content {
-    width: min(100% - 40px, 720px);
-    padding: 84px 0 100px;
-  }
-
-  .hero .hero-title {
-    max-width: 700px;
-    font-size: 38px;
-    line-height: 1.15;
-  }
-
-  .hero-carousel-controls {
-    right: 20px;
-    bottom: 18px;
-  }
-
-  .section-message .quote {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    min-height: 620px;
-  }
-
-  .hero-content {
-    width: calc(100% - 32px);
-    padding: 64px 0 92px;
-  }
-
-  .hero .hero-title {
-    font-size: 30px;
-    letter-spacing: -0.4px;
-  }
-
-  .hero-highlights li {
-    font-size: 15px;
-  }
-
-  .hero-carousel-controls {
-    right: 12px;
-    bottom: 12px;
-    gap: 6px;
-    padding: 6px;
-  }
-
-  .hero-carousel-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-  }
-
-  .hero-carousel-dots {
-    gap: 5px;
-  }
-
-  .hero-carousel-dot {
-    width: 7px;
-    height: 7px;
-  }
-
-  .hero-carousel-dot.active {
-    width: 18px;
-  }
-
-  .language-selector {
-    width: 96px;
-    height: 38px;
-    margin-left: 0;
-  }
-
-  .language-btn {
-    height: 30px;
-    font-size: 12px;
-  }
-}
-
-/* =========================================================
-   FINAL CAROUSEL BUTTON HARDENING
-   Keeps the premium glass UI and guarantees visible controls.
-   ========================================================= */
+/* Hero elements isolation */
 .hero {
   isolation: isolate;
 }
@@ -792,74 +530,51 @@ premium-carousel .dot.is-active {
   position: relative;
 }
 
-/* =========================================================
-   MGSS HERO CAROUSEL CONTROLS
-   Minimal floating controls + individual glass buttons
-   No outer container / no surrounding border
-   ========================================================= */
-
-/* Controls wrapper — transparent, no box */
+/* Hero carousel controls */
 .hero-carousel-controls {
   position: absolute;
   z-index: 10;
   right: clamp(20px, 5vw, 72px);
   bottom: clamp(20px, 4vw, 48px);
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
-
   padding: 0;
   margin: 0;
-
   background: transparent;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
-
-/* =========================================================
-   PREVIOUS / NEXT — individual glass buttons
-   ========================================================= */
 
 .hero-carousel-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 46px;
-
   width: 46px;
   min-width: 46px;
   height: 46px;
   min-height: 46px;
-
   padding: 0;
   margin: 0;
-
   color: #ffffff;
   background: rgba(255, 255, 255, 0.14);
-
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 50%;
-
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-
   cursor: pointer;
-
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -867,7 +582,6 @@ premium-carousel .dot.is-active {
     transform 180ms ease;
 }
 
-/* Bootstrap Icons */
 .hero-carousel-arrow i {
   display: block;
   font-size: 15px;
@@ -875,70 +589,52 @@ premium-carousel .dot.is-active {
   pointer-events: none;
 }
 
-/* Hover */
 .hero-carousel-arrow:hover {
   color: #ffffff;
   background: rgba(169, 0, 47, 0.88);
   border-color: rgba(255, 255, 255, 0.7);
-
   box-shadow:
     0 6px 20px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
   transform: translateY(-2px);
 }
 
-/* Press */
 .hero-carousel-arrow:active {
   transform: scale(0.94);
 }
 
-/* Keyboard focus */
 .hero-carousel-arrow:focus-visible,
 .hero-carousel-dot:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 4px;
 }
 
-/* =========================================================
-   DOTS — clean indicators without a background container
-   ========================================================= */
-
 .hero-carousel-dots {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   padding: 0;
   margin: 0;
-
   background: transparent;
   border: 0;
   box-shadow: none;
 }
 
-/* Individual dot */
 .hero-carousel-dot {
   display: block;
   flex: 0 0 9px;
-
   width: 9px;
   min-width: 9px;
   height: 9px;
   min-height: 9px;
-
   padding: 0;
   margin: 0;
-
   background: rgba(255, 255, 255, 0.55);
   border: 0;
   border-radius: 999px;
-
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22);
-
   cursor: pointer;
-
   transition:
     width 220ms ease,
     flex-basis 220ms ease,
@@ -946,23 +642,16 @@ premium-carousel .dot.is-active {
     opacity 220ms ease;
 }
 
-/* Active slide */
 .hero-carousel-dot.active {
   flex-basis: 25px;
   width: 25px;
-
   background: #ffffff;
   opacity: 1;
 }
 
-/* Dot hover */
 .hero-carousel-dot:hover {
   background: #ffb4c4;
 }
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 768px) {
   .hero-carousel-controls {
@@ -1026,66 +715,14 @@ premium-carousel .dot.is-active {
   }
 }
 
-/* UNUSED: Previous pill/container styling is superseded by this
-   carousel visual and interaction regression testing is complete. */
-
-/* 
-.hero-carousel-controls {
-  z-index: 30;
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto;
-}
-
-.hero-carousel-arrow {
-  flex: 0 0 42px;
-  width: 42px;
-  min-width: 42px;
-  height: 42px;
-  min-height: 42px;
-  color: #ffffff !important;
-  background: rgba(25, 17, 24, 0.72) !important;
-  text-indent: 0;
-  overflow: visible;
-}
-
-.hero-carousel-arrow i {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  color: inherit;
-  font-size: 14px;
-  line-height: 1;
-}
-
-.hero-carousel-dot {
-  flex: 0 0 auto;
-  display: block;
-  visibility: visible;
-  opacity: 0.8;
-}
-
-.hero-carousel-dot.active {
-  opacity: 1;
-}
-
-@media (max-width: 700px) {
-  .hero-carousel-controls {
-    right: 12px;
-    bottom: 12px;
-  }
-} */
-
 /* =========================================================
-   COMPANY FOCUS HIGHLIGHTS - FULL CONTAINER ALIGNMENT
+   COMPANY FOCUS HIGHLIGHTS
    ========================================================= */
 
 .home-focus-section {
-  padding: 0 0 60px 0; /* Tightened spacing to flow naturally with above content */
+  padding: 0 0 60px 0;
 }
 
-/* Override the 760px max-width cap from styles.css */
 .home-focus-section .fact-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1141,7 +778,6 @@ premium-carousel .dot.is-active {
   line-height: 1.45;
 }
 
-/* Tablet: 2x2 grid */
 @media (max-width: 992px) {
   .home-focus-section .fact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1149,7 +785,6 @@ premium-carousel .dot.is-active {
   }
 }
 
-/* Mobile: Single column */
 @media (max-width: 580px) {
   .home-focus-section .fact-grid {
     grid-template-columns: 1fr;
@@ -1161,3 +796,165 @@ premium-carousel .dot.is-active {
     padding: 1.1rem 1.2rem;
   }
 }
+
+/* =========================================================
+   STATISTICS SECTION & CARDS (FIXED PADDING & OVERFLOW)
+   ========================================================= */
+
+.home-stats-section {
+  position: relative;
+  overflow: visible;
+  padding: clamp(48px, 6vw, 72px) 16px clamp(80px, 8vw, 110px);
+  margin-block: 0;
+  background:  var(--home-surface);
+}
+
+.home-stats-surface {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.home-stats-surface > .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.home-stats-heading {
+  max-width: 760px;
+  margin: 0 auto clamp(28px, 3.5vw, 42px);
+  text-align: center;
+}
+
+.home-stats-heading .section-title {
+  font-family: var(--ios-font, inherit);
+  color: var(--home-ink);
+}
+
+.home-stats-heading .section-copy {
+  margin-inline: auto;
+  color: var(--home-muted);
+}
+
+.home-stats-grid--circular {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(16px, 1.8vw, 24px);
+  width: 100%;
+}
+
+.home-stats-grid--circular .home-stat-card {
+  --stat-accent: #a9002f;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 260px;
+  height: 100%;
+  padding: 26px 18px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  border-radius: 24px;
+  text-align: center;
+  color: var(--ios-glass-label, #29252d);
+  font-family: var(--ios-font, inherit);
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 24px rgba(38, 35, 56, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.home-stats-grid--circular .home-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(169, 0, 47, 0.3);
+  box-shadow: 0 16px 36px rgba(47, 17, 28, 0.12);
+}
+
+.home-stats-grid--circular .home-stat-card--success {
+  --stat-accent: #16805d;
+  grid-column: auto;
+}
+
+.home-stats-grid--circular .home-stat-label {
+  min-height: 28px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+  font-size: 0.92rem;
+  font-weight: 750;
+  color: #38343f;
+}
+
+.home-stat-ring {
+  --progress: 0;
+  --ring-size: 126px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  margin: 6px auto;
+  padding: 9px;
+  border-radius: 50%;
+  background: conic-gradient(var(--stat-accent, #a9002f) calc(var(--progress, 0) * 1%), rgba(140, 140, 155, 0.18) 0);
+  box-shadow: 0 4px 16px rgba(44, 40, 72, 0.06);
+}
+
+.home-stat-ring::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.home-stat-ring-center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  color: var(--ios-glass-label, #29252d);
+  font-family: var(--ios-font, inherit);
+  font-size: 1.55rem;
+  line-height: 1;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-stat-percent {
+  color: var(--stat-accent, #a9002f);
+  font-size: 0.82rem;
+}
+
+.home-stat-card .home-stat-note {
+  margin: auto 0 0;
+  padding-bottom: 2px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--ios-glass-label, #625d68);
+}
+
+.home-stats-grid--circular .home-stat-card:not(:has(.home-stat-note)) .home-stat-ring {
+  margin-bottom: auto;
+}
+

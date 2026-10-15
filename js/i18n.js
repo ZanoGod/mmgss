@@ -54,7 +54,10 @@
     "about.html": "pages.company",
     "services.html": "pages.services",
     "recruitment.html": "pages.recruitment",
-    "workerCondition.html": "pages.recruitment.workCondition",
+    // The current work-conditions page is nested at workerCondition/work.html.
+    "work.html": "pages.workCondition",
+    // Keep the former filename as a compatibility alias for older deployments.
+    "workerCondition.html": "pages.workCondition",
     "process.html": "pages.process",
     "activities.html": "pages.activities",
     "contact.html": "pages.contact",

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://aiuxplayground.com/kits/ios-26/v1/ios.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Myanmar GSS Co., Ltd. connects Myanmar talent with opportunities in Japan.">
@@ -20,6 +21,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/site-ui.css">
 </head>
 
 <body id="top">
@@ -105,7 +107,7 @@
 
       <!-- Decorative hero grid -->
       <div class="hero-grid" aria-hidden="true"></div>
-    
+
       <div class="hero-carousel-controls" aria-label="Hero image carousel"
         data-i18n-aria-label="home.hero.aria.carousel">
         <button class="hero-carousel-arrow" type="button" data-carousel-prev aria-label="Previous hero image"
@@ -136,7 +138,7 @@
 
       <!-- Hero content -->
       <div class="container hero-content">
-        <div class="kicker white"  data-i18n="home.hero.kicker">Myanmar GSS Co., Ltd.</div>
+        <div class="kicker white" data-i18n="home.hero.kicker">Myanmar GSS Co., Ltd.</div>
         <h2>
           <span class="white" data-i18n="home.hero.title1">Your Future in Japan Starts Here</span><br>
           <!-- <span class="red" data-i18n="home.hero.title2">Connecting Myanmar's Talent with Trusted Opportunities in
@@ -145,7 +147,8 @@
         </h2>
         <ul class="hero-highlights">
           <li class="hero-copy" data-i18n="home.hero.copy">
-            Myanmar GSS connects motivated people from Myanmar with trusted employment opportunities in Japan, supporting them every step of the way.
+            Myanmar GSS connects motivated people from Myanmar with trusted employment opportunities in Japan,
+            supporting them every step of the way.
           </li>
         </ul>
 
@@ -155,6 +158,7 @@
         </div>
       </div>
     </section>
+
 
     <section class="section">
       <div class="container">
@@ -180,7 +184,7 @@
             </premium-carousel>
           </div>
         </div>
-        </div> 
+      </div>
     </section>
 
     <!-- Company focus highlights -->
@@ -252,6 +256,61 @@
       </div>
     </section>
 
+    <!-- Visa and placement statistics -->
+    <section class="section home-stats-section" aria-labelledby="home-stats-title">
+      <div class="container">
+        <div class="ios-surface home-stats-surface">
+          <div class="container">
+            <header class="home-stats-heading reveal">
+              <div class="eyebrow" data-i18n="home.stats.eyebrow">Our results</div>
+              <h2 class="section-title" id="home-stats-title" data-i18n="home.stats.title">Progress you can measure</h2>
+              <p class="section-copy" data-i18n="home.stats.copy">A snapshot of placement outcomes and visa pathways.
+              </p>
+            </header>
+
+            <div class="home-stats-grid home-stats-grid--circular">
+              <article class="home-stat-card ios-glass-prominent home-stat-card--success reveal">
+                <h3 class="home-stat-label" data-i18n="home.stats.totalSuccess">Total Success</h3>
+                <div class="home-stat-ring ios-glass-clear" role="img" aria-label="Total Success: 92.82 percent"
+                  data-progress="92.82296650717703">
+                  <div class="home-stat-ring-center"><span class="home-stat-number"
+                      data-count="92.82296650717703">0.00</span><span class="home-stat-percent">%</span></div>
+                </div>
+                <p class="home-stat-note" data-i18n="home.stats.successNote">Successful outcomes</p>
+              </article>
+
+              <article class="home-stat-card ios-glass reveal">
+                <h3 class="home-stat-label" data-i18n="home.stats.workVisa">Work visa</h3>
+                <div class="home-stat-ring ios-glass-clear" role="img" aria-label="Work visa: 11.48 percent"
+                  data-progress="11.483253588516746">
+                  <div class="home-stat-ring-center"><span class="home-stat-number"
+                      data-count="11.483253588516746">0.00</span><span class="home-stat-percent">%</span></div>
+                </div>
+              </article>
+
+              <article class="home-stat-card ios-glass reveal delay-1">
+                <h3 class="home-stat-label" data-i18n="home.stats.sswVisa">SSW visa</h3>
+                <div class="home-stat-ring ios-glass-clear" role="img" aria-label="SSW visa: 47.85 percent"
+                  data-progress="47.84688995215311">
+                  <div class="home-stat-ring-center"><span class="home-stat-number"
+                      data-count="47.84688995215311">0.00</span><span class="home-stat-percent">%</span></div>
+                </div>
+              </article>
+
+              <article class="home-stat-card ios-glass reveal delay-2">
+                <h3 class="home-stat-label" data-i18n="home.stats.titVisa">TIT visa</h3>
+                <div class="home-stat-ring ios-glass-clear" role="img" aria-label="TIT visa: 40.67 percent"
+                  data-progress="40.66985645933015">
+                  <div class="home-stat-ring-center"><span class="home-stat-number"
+                      data-count="40.66985645933015">0.00</span><span class="home-stat-percent">%</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- <section class="section dark-panel">
       <div class="container">
         <div class="row g-5 align-items-center">
@@ -295,14 +354,19 @@
 
   <!-- Footer -->
   <div id="footer-container"></div>
-
-  <button class="backtop" id="backTop" type="button" aria-label="Back to top"
-    data-i18n-aria-label="common.backToTop">↑</button>
   <script src="js/components.js"></script>
   <script src="js/vendor/i18next.min.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/home-stats.js" defer></script>
   <script src="js/premium-carousel.js" defer></script>
+  <script src="js/back-to-top.js" defer></script>
+  <button class="back-to-top ios-glass-clear" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M6 11l6-6 6 6" />
+    </svg>
+  </button>
+  <script src="js/back-to-top.js" defer></script>
 </body>
 
 </html>

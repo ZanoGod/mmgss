@@ -57,6 +57,10 @@
       "title": "Myanmar GSS | 求人情報",
       "description": "Myanmar GSS Co., Ltd. による日本での勤務に関する最新の求人情報。"
     },
+    "workCondition": {
+      "title": "Myanmar GSS | 日本での労働条件",
+      "description": "日本での就労を目指すミャンマー人材向けに、職場環境と労働条件をご紹介します。"
+    },
     "process": {
       "title": "Myanmar GSS | プロセス",
       "description": "求人票の受け取りから入国後のサポートまで、Myanmar GSS の採用プロセス。"
@@ -77,21 +81,21 @@
         "title": "高度専門人材",
         "title1": "（技術・人文知識・国際業務ビザ）",
         "fee": "1,500〜2,000米ドル",
-        "payment_terms" : "お支払い条件：",
+        "payment_terms": "お支払い条件：",
         "payment": "お支払いは2回の分割払いが可能です。"
       },
       "tokutei": {
         "title": "特定技能",
         "title1": "（特定技能ビザ）",
         "fee": "1,500米ドル",
-        "payment_terms" : "お支払い条件：",
+        "payment_terms": "お支払い条件：",
         "payment": "お支払いは2回の分割払いが可能です。"
       },
       "training": {
         "title": "技能実習生",
         "title1": "（技能実習ビザ）",
         "fee": "2,800米ドル",
-        "payment_terms" : "お支払い条件：",
+        "payment_terms": "お支払い条件：",
         "payment": "お支払いは2回の分割払いが可能です。"
       }
     }
@@ -170,6 +174,18 @@
       "title": "ミャンマーで人材をお探しですか？",
       "copy": "人材派遣、候補者の準備、日本での雇用サポートについて Myanmar GSS にご相談ください。",
       "cta": "Myanmar GSS に問い合わせる"
+    },
+    "stats": {
+      "eyebrow": "実績",
+      "title": "数字で見る実績",
+      "copy": "就職実績とビザの種類の割合をご紹介します。",
+      "totalSuccess": "成功率",
+      "onProcess": "手続き中",
+      "workVisa": "就労ビザ",
+      "sswVisa": "特定技能ビザ",
+      "titVisa": "技能実習ビザ",
+      "successNote": "成功した実績",
+      "processNote": "現在手続き中"
     }
   },
   "company": {
@@ -221,7 +237,7 @@
     "ceo": {
       "ceoTitle": "代表メッセージ",
       "ceoMessage": "Myanmar GSS Co., Ltd.に関心をお寄せくださる皆様、",
-      "ceoParagraph": "そして私たちを信頼してくださる若者とご家族、 日本の受入れ企業、関係機関の皆様に、心よりご挨拶申し上げます。私は若い頃、日本で学校に通いながら働き、6年間にわたり生活しました。その間、学校での学びに加え、仕事や日々の暮らしを通じて、多くの知識と経験を得ることができました。特に、仕事への責任感、時間を守る姿勢、互いを尊重すること、信頼を積み重ねること、そして人と人とのつながりの大切さを学びました。ミャンマーへ帰国後は、日本で得た知識や経験、築いてきた人脈と信頼関係を活かし、自分にできる事業を通じて、お客様のお役に立つこと、共に働く仲間が幸せで充実した人生を築けること、そして社会に貢献することを目指してまいりました。Myanmar GSSは、その思いを人材育成と送り出しの分野で実現するために設立した会社です。私自身、海外で学びながら働いた経験から、言葉や文化、生活習慣が異なる国で働くためには、渡航前の準備が非常に重要であると実感しています。そのため、私たちは日本語に加え、職場のルールや責任感、協調性、日本の文化や日常生活のマナーを丁寧に伝えることを大切にしています。こうした準備を通じて、若者が工場や介護施設など、それぞれの職場で自信を持って仕事に取り組み、受入れ企業の皆様にとっても、安心して共に働ける存在へと成長してほしいと願っています。互いを理解し、尊重しながら、長く協力できる関係を築くことが、私たちの大切な役割です。私が敬愛し、学び続けている稲盛和夫氏の教えである「利他の心」と「人間として何が正しいのか」という判断基準を、事業に向き合ううえでのよりどころとしています。若者、ご家族、受入れ企業、そして共に働く仲間の立場を思いやり、誠実さと責任感を持って、一つひとつの仕事に取り組んでまいります。私の長期的な願いは、日本で学び、経験を積んだ若者が、自分と家族の暮らしを豊かにすることです。そして将来、その知識や技術を母国ミャンマーでも活かし、それぞれの専門分野から社会の発展と国づくりに貢献できる人材となることを願っています。一人ひとりの夢と未来を大切にし、皆様からお寄せいただく信頼に、責任ある行動で応えてまいります。ミャンマーと日本の双方にとって価値ある未来を、皆様と共に築いてまいります",
+      "ceoParagraph": "アンド私たちを信頼してくださる若者とご家族、 日本の受入れ企業、関係機関の皆様に、心よりご挨拶申し上げます。私は若い頃、日本で学校に通いながら働き、6年間にわたり生活しました。その間、学校での学びに加え、仕事や日々の暮らしを通じて、多くの知識と経験を得ることができました。特に、仕事への責任感、時間を守る姿勢、互いを尊重すること、信頼を積み重ねること、アンド人と人とのつながりの大切さを学びました。ミャンマーへ帰国後は、日本で得た知識や経験、築いてきた人脈と信頼関係を活かし、自分にできる事業を通じて、お客様のお役に立つこと、共に働く仲間が幸せで充実した人生を築けること、アンド社会に貢献することを目指してまいりました。Myanmar GSSは、その思いを人材育成と送り出しの分野で実現するために設立した会社です。私自身、海外で学びながら働いた経験から、言葉や文化、生活習慣が異なる国で働くためには、渡航前の準備が非常に重要であると実感しています。そのため、私たちは日本語に加え、職場のルールや責任感、協調性、日本の文化や日常生活のマナーを丁寧に伝えることを大切にしています。こうした準備を通じて、若者が工場や介護施設など、それぞれの職場で自信を持って仕事に取り組み、受入れ企業の皆様にとっても、安心して共に働ける存在へと成長してほしいと願っています。互いを理解し、尊重しながら、長く協力できる関係を築くことが、私たちの大切な役割です。私が敬愛し、学び続けている稲盛和夫氏の教えである「利他の心」と「人間として何が正しいのか」という判断基準を、事業に向き合ううえでのよりどころとしています。若者、ご家族、受入れ企業、アンド共に働く仲間の立場を思いやり、誠実さと責任感を持って、一つひとつの仕事に取り組んでまいります。私の長期的な願いは、日本で学び、経験を積んだ若者が、自分と家族の暮らしを豊かにすることです。アンド将来、その知識や技術を母国ミャンマーWaitも活かし、それぞれの専門分野から社会の発展と国づくりに貢献できる人材となることを願っています。一人ひとりの夢と未来を大切にし、皆様からお寄せいただく信頼に、責任ある行動で応えてまいります。ミャンマーと日本の双方にとって価値ある未来を、皆様と共に築いてまいります",
       "name": "Mr. NI HTWE",
       "position": "最高経営責任者（CEO）",
       "company": "Myanmar GSS Co., Ltd."
@@ -246,7 +262,7 @@
       "label": "GOALS",
       "title": "誠実で責任ある送り出しと連携",
       "text1": "就労条件、費用、手続きを分かりやすく説明し、働く人の尊厳と権利を尊重します。日本の受入れ企業や関係機関と連携し、私たちが担う役割に責任を持って、円滑な就労と生活を支えます。",
-      "text2": "日本で働く期間を通じて学び続け、専門性と責任感を高められるよう後押しします。身につけた知識・技術・経験を、自らの生活の向上と、将来のミャンマーの発展や国づくりに活かせる人材を育成します。若者、ご家族、受入れ企業、関係機関、そして共に働く仲間の立場を思いやり、誠実さと相互理解を大切にします。関わる人々が共に成長できる、長期的な信頼関係を築きます。"
+      "text2": "日本で働く期間を通じて学び続け、専門性と責任感を高められるよう後押しします。身につけた知識・技術・経験を、自らの生活の向上と、将来のミャンマーの発展や国づくりに活かせる人材を育成します。若者、ご家族、受入れ企業、関係機関、アンド共に働く仲間の立場を思いやり、誠実さと相互理解を大切にします。関わる人々が共に成長できる、長期的な信頼関係を築きます。"
     },
     "message": {
       "eyebrow": "代表メッセージ",
@@ -683,44 +699,48 @@
   },
   "workCondition": {
     "note": {
-      "wc": "Work Condition"
+      "wc": "労働条件"
     },
     "hero": {
-      "title": "Worker's work conditions"
+      "title": "労働条件・就労環境"
     },
     "modal": {
-      "close": "Close"
+      "close": "閉じる"
     },
     "hotel": {
-      "title": "Hotel",
-      "subtitle": "Professional Hospitality Environment",
-      "description": "Professional hospitality environment with customer-focused service, teamwork, and well-organized working conditions."
+      "title": "ホテル業務",
+      "subtitle": "プロフェッショナルな接客・ホスピタリティ環境",
+      "description": "お客様中心のサービス、チームワーク、整備された環境で働くプロフェッショナルなホスピタリティ空間です。"
     },
     "kaigo": {
-      "title": "Caregiving(Kaigo)",
-      "subtitle": "Compassionate Caregiving Environment",
-      "description": "Safe and supportive care environment focused on respect, teamwork, compassion, and quality of life."
+      "title": "介護（Kaigo）",
+      "subtitle": "思いやりのある介護・医療サポート環境",
+      "description": "尊重、チームワーク、思いやり、利用者の生活の質向上に重点を置いた、安心で手厚い介護環境です。"
     },
     "airport": {
-      "title": "Airport Ground Handling Services",
-      "subtitle": "Safe & Efficient Airport Operations or Efficient Airport Ground Services",
-      "description": "Dynamic airport environment with strict safety standards, teamwork, and efficient operations."
+      "title": "空港グランドハンドリングサービス",
+      "subtitle": "安全かつ効率的な空港オペレーション",
+      "description": "厳格な安全基準、チームワーク、効率的な運行サポートを行う活気ある空港就労環境です。"
     },
     "food": {
-      "title": "Professional Food Production Environment",
-      "subtitle": "Clean and hygienic workplace."
+      "title": "食品製造・加工環境",
+      "subtitle": "清潔で衛生的な職場環境",
+      "description": "品質、正確性、効率的なチームワークに重点を置いた、清潔で衛生的な製造環境です。"
     },
     "beverage": {
-      "title": "Food & Beverage Service/ Safe & Hygienic Food Service",
-      "subtitle": "Clean and energetic workplace with strong hygiene standards and teamwork."
+      "title": "外食・飲食サービス",
+      "subtitle": "高い衛生基準とチームワークを兼ね備えた職場",
+      "description": "厳格な衛生基準、チームワーク、品質重視のサービスを提供する、清潔で効率的な職場環境です。"
     },
     "construction": {
-      "title": "Professional Construction & Technical Environment",
-      "description": "An active and organized workplace focused on safety, technical skills, reliable operations, and teamwork."
+      "title": "工場・技術職",
+      "subtitle": "プロフェッショナルな建設・技術環境",
+      "description": "安全、技術力、確実な運用、チームワークを重視したアクティブで整備された職場環境です。"
     },
     "accommodation": {
-      "title": "Worker Accommodation & Support/",
-      "title1": "Safe & Supportive Living Environment"
+      "title": "快適な宿舎・生活サポート",
+      "subtitle": "安心・安全な生活環境",
+      "description": "働く人々に安心、快適、便利な生活環境を提供するために設計された高品質な宿泊施設です。"
     }
   },
   "process": {

@@ -353,11 +353,7 @@
   line-height: 1.2;
 }
 
-.brand-subtitle {
-  font-size: 0.75rem;
-  color: #6b7280;
-  font-weight: 500;
-}
+
 
 .nav-actions {
   display: flex;
@@ -642,7 +638,7 @@
 }
 
 /* ==========================================================================
-   WORK CONDITIONS PAGE — shared navigation + refined hero
+   WORK CONDITIONS PAGE â€” shared navigation + refined hero
    Keep the same navigation component used by the main site.
    ========================================================================== */
 .work-page .nav-shell {
@@ -864,3 +860,76 @@
   .work-page .hero-text-block { animation: none; }
   .work-page .language-pill-bg { transition: none; }
 }
+
+
+/* ==========================================================================
+   WORK CONDITIONS — content section layout
+   Two-column copy / media grid with alternating media side.
+   The media side uses the shared <premium-carousel> component exactly as the
+   homepage does: all slide, dock, arrow and dot styling comes from
+   css/premium-carousel.css, so no page-local carousel overrides are needed.
+   ========================================================================== */
+.work-page .work-conditions-section {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+  background: linear-gradient(180deg, #fffaf8 0%, #ffffff 100%);
+}
+
+.work-page .work-conditions-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.work-page .work-conditions-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+/* Alternate the media side while keeping one clean markup order. */
+.work-page .work-conditions-block:nth-child(even) .work-conditions-media {
+  order: -1;
+}
+
+.work-page .work-conditions-copy {
+  min-width: 0;
+  padding: clamp(1.4rem, 2.5vw, 2.25rem);
+  border: 1px solid #ececef;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(16, 18, 22, 0.045);
+}
+
+.work-page .work-conditions-copy .section-title {
+  margin: 0 0 0.5rem;
+}
+
+.work-page .work-conditions-copy .section-title + .section-title {
+  margin-top: 0.35rem;
+}
+
+.work-page .work-conditions-copy .eyebrow {
+  margin: 0 0 0.75rem;
+}
+
+.work-page .work-conditions-copy .section-copy {
+  margin: 0;
+}
+
+.work-page .work-conditions-media {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .work-page .work-conditions-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .work-page .work-conditions-block:nth-child(even) .work-conditions-media {
+    order: 0;
+  }
+}
+

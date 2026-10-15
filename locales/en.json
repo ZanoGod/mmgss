@@ -57,6 +57,10 @@
       "title": "Myanmar GSS | Recruitment",
       "description": "Current recruitment opportunities from Myanmar GSS Co., Ltd. for work in Japan."
     },
+    "workCondition": {
+      "title": "Myanmar GSS | Work Conditions in Japan",
+      "description": "Explore work environments and conditions for Myanmar talent pursuing employment opportunities in Japan."
+    },
     "process": {
       "title": "Myanmar GSS | Process",
       "description": "Myanmar GSS recruitment process from job order to post-arrival support in Japan."
@@ -77,21 +81,21 @@
         "title": "Professional Talent",
         "title1": "(Work Visa)",
         "fee": "USD 1,500–2,000",
-        "payment_terms" : "Payment Terms:",
+        "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "tokutei": {
         "title": "Specified Skilled Worker",
         "title1": "(Tokutei Visa)",
         "fee": "USD 1,500",
-        "payment_terms" : "Payment Terms:",
+        "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "training": {
         "title": "Technical Intern Training ",
         "title1": "(Training Visa)",
         "fee": "USD 2,800",
-        "payment_terms" : "Payment Terms:",
+        "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       }
     }
@@ -169,6 +173,18 @@
       "title": "Looking for talent in Myanmar?",
       "copy": "Talk to Myanmar GSS about talent placement, candidate preparation and employment support for Japan.",
       "cta": "Contact Myanmar GSS"
+    },
+    "stats": {
+      "eyebrow": "OUR RESULTS",
+      "title": "Progress you can measure",
+      "copy": "A snapshot of placement outcomes and visa pathways.",
+      "totalSuccess": "Total Success",
+      "onProcess": "On Process",
+      "workVisa": "Work visa",
+      "sswVisa": "SSW visa",
+      "titVisa": "TIT visa",
+      "successNote": "Successful outcomes",
+      "processNote": "Currently being processed"
     }
   },
   "company": {
@@ -709,19 +725,23 @@
     },
     "food": {
       "title": "Professional Food Production Environment",
-      "subtitle": "Clean and hygienic workplace."
+      "subtitle": "clean and hygienic workplace",
+      "description": "Clean and hygienic production environment focused on quality, precision, and efficient teamwork"
     },
     "beverage": {
-      "title": "Food & Beverage Service/ Safe & Hygienic Food Service",
-      "subtitle": "Clean and energetic workplace with strong hygiene standards and teamwork."
+      "title": "Safe & Hygienic Food Service",
+      "subtitle": "workplace with strong hygiene standards and teamwork",
+      "description": "Clean and efficient workplace with strict hygiene standards, teamwork, and quality-focused service."
     },
     "construction": {
-      "title": "Professional Construction & Technical Environment",
+      "title": "Factory Work",
+      "subtitle": "Professional Construction & Technical Environment",
       "description": "An active and organized workplace focused on safety, technical skills, reliable operations, and teamwork."
     },
     "accommodation": {
-      "title": "Worker Accommodation & Support/",
-      "title1": "Safe & Supportive Living Environment"
+      "title": "Comfortable Accommodation (Worker Accommodation & Support)",
+      "subtitle": "Safe & Supportive Living Environment",
+      "description": "Quality accommodation designed to provide workers with a safe, comfortable, and convenient living environment."
     }
   },
   "process": {

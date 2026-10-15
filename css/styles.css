@@ -3307,9 +3307,9 @@ video {
 .language-btn[aria-pressed="true"],
 .language-btn[aria-pressed="true"]:hover { color: #fff !important; }
 .language-btn:hover { color: #a9002f !important; }
-.language-btn[aria-pressed="true"]:hover { color: #fff !important; }
+
 .language-code { display: block !important; margin: 0 !important; padding: 0 !important; font-weight: 800 !important; line-height: 1 !important; }
-.language-name { display: none !important; }
+
 @media (max-width: 600px) {
   .language-selector { width: 96px !important; min-width: 96px !important; margin-left: 6px !important; }
 }

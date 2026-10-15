@@ -208,6 +208,13 @@
   transform: translateY(-3px);
 }
 
+/* Specific Viber styling to maintain brand purple on hover */
+.footer-social a.viber-btn:hover {
+  background-color: #7360f2;
+  border-color: #7360f2;
+  color: #ffffff;
+}
+
 
 /* Contact */
 
