@@ -139,7 +139,7 @@
     },
     "services": {
       "eyebrow": "What we do",
-      "title": "Three pathways. One goal.",
+      "title": "Three pathways",
       "copy": "We prepare and connect Myanmar talent for work in Japan through professional talent placement, specified skilled worker routes and technical intern training.",
       "talent": {
         "title": "Highly skilled foreign talent",
@@ -237,7 +237,11 @@
     "ceo": {
       "ceoTitle": "MESSAGE FROM THE CEO",
       "ceoMessage": "Warm greetings to everyone taking an interest in Myanmar GSS Co., Ltd.,",
-      "ceoParagraph": "Drawing from six years of living, studying, and working in Japan, the CEO gained invaluable lessons in responsibility, punctuality, mutual respect, and trust-building.Myanmar GSS was established to leverage these experiences by developing human resources and providing ethical overseas employment opportunities. Understanding the challenges of adapting to a new culture, the company prioritizes comprehensive pre-departure training in Japanese language, workplace culture, teamwork, and daily etiquette.The goal is to nurture confident, trusted workers for Japanese factories and care facilities, fostering long-term relationships based on mutual respect.Guided by the teachings of Kazuo Inamori, the company operates with integrity, human-centric values, and genuine consideration for candidates, families, employers, and partners.Beyond personal and family upliftment for the workers, the CEO hopes candidates return to Myanmarwith valuable skills to contribute directly to the nation's future development and strengthen ties between Myanmar and Japan.",
+      "ceoParagraph": "Drawing from six years of living, studying, and working in Japan, the CEO gained invaluable lessons in responsibility, punctuality, mutual respect, and trust-building.Myanmar GSS was established to leverage these experiences by developing human resources and providing ethical overseas employment opportunities.",
+      "ceoParagraph1": "Understanding the challenges of adapting to a new culture, the company prioritizes comprehensive pre-departure training in Japanese language, workplace culture, teamwork, and daily etiquette.",
+      "ceoParagraph2": "The goal is to nurture confident, trusted workers for Japanese factories and care facilities, fostering long-term ",
+      "ceoParagraph3": "Guided by the teachings of Kazuo Inamori, the company operates with integrity, human-centric values, and genuine consideration for candidates, families, employers, and partners.",
+      "ceoParagraph4": "Beyond personal and family upliftment for the workers, the CEO hopes candidates return to Myanmarwith valuable skills to contribute directly to the nation's future development and strengthen ties between Myanmar and Japan.",
       "name": "Mr. NI HTWE",
       "position": "Managing Director",
       "company": "Myanmar GSS Co., Ltd."
