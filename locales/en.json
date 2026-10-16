@@ -79,21 +79,21 @@
     "items": {
       "work": {
         "title": "Professional Talent",
-        "title1": "(Work Visa)",
+        "title1": "(Work VISA)",
         "fee": "USD 1,500–2,000",
         "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "tokutei": {
         "title": "Specified Skilled Worker",
-        "title1": "(Tokutei Visa)",
+        "title1": "(Tokutei VISA)",
         "fee": "USD 1,500",
         "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
       },
       "training": {
         "title": "Technical Intern Training ",
-        "title1": "(Training Visa)",
+        "title1": "(Training VISA)",
         "fee": "USD 2,800",
         "payment_terms": "Payment Terms:",
         "payment": "Payment is accepted in two installments."
@@ -180,9 +180,9 @@
       "copy": "A snapshot of placement outcomes and visa pathways.",
       "totalSuccess": "Total Success",
       "onProcess": "On Process",
-      "workVisa": "Work visa",
-      "sswVisa": "SSW visa",
-      "titVisa": "TIT visa",
+      "workVisa": "Work VISA",
+      "sswVisa": "SSW VISA",
+      "titVisa": "TIT VISA",
       "successNote": "Successful outcomes",
       "processNote": "Currently being processed"
     }
