@@ -38,6 +38,12 @@
       "process": "プロセス",
       "activities": "活動",
       "contact": "お問い合わせ"
+    },
+    "service" : {
+      "talent" : "人材派遣",
+      "language" : "日本語・技能教育",
+      "support" : "就職支援",
+      "process" : "ご利用の流れ"
     }
   },
   "pages": {

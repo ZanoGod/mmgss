@@ -38,6 +38,12 @@
       "process": "Process",
       "activities": "Activities",
       "contact": "Contact"
+    },
+    "service" : {
+      "talent" : "Talent Placement",
+      "language" : "Japanese Language & Skills",
+      "support" : "Employment Support",
+      "process" : "Our Process"
     }
   },
   "pages": {
