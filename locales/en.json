@@ -37,7 +37,8 @@
       "recruitment": "Recruitment",
       "process": "Process",
       "activities": "Activities",
-      "contact": "Contact"
+      "contact": "Contact",
+      "workCondtions" : "Work Conditions"
     },
     "service" : {
       "talent" : "Talent Placement",
@@ -399,6 +400,12 @@
       "japan": "Japan",
       "processLink": "See our recruitment process"
     },
+    "workCondition" : {
+      "eyebrow" : "BEFORE YOU APPLY",
+      "title" : "Understand your work conditions",
+      "copy": "Review overseas employment regulations, working hours, and terms before applying.",
+      "button" : "Review Work Conditions"
+    },  
     "heading": {
       "eyebrow": "Open roles",
       "title": "Opportunities",
@@ -713,10 +720,14 @@
       "wc": "Work Condition"
     },
     "hero": {
-      "title": "Worker's work conditions"
+      "title1": "Work Conditions",
+      "title2": "for Workers",
+      "copy": "Clear, transparent guidelines on labor rights, compensation structures, working hours, and safe environments ensured for all candidates by Myanmar GSS."
     },
-    "modal": {
-      "close": "Close"
+    "nav": {
+      "chip1": "Fair Labor Compliant",
+      "chip2": "Verified Overseas Partners",
+      "chip3": "24/7 Candidate Support"
     },
     "hotel": {
       "title": "Hotel",
