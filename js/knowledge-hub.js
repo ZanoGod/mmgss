@@ -258,6 +258,7 @@
     modal = document.createElement('div');
     modal.id = 'holidayModal';
     modal.className = 'holiday-modal';
+    modal.hidden = true;
     modal.innerHTML = `
       <div class="holiday-modal-backdrop" tabindex="-1"></div>
       <div class="holiday-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="holidayModalTitle">
@@ -291,6 +292,7 @@
     // Close handlers
     const closeModal = () => {
       modal.classList.remove('open');
+      modal.hidden = true;
       document.body.classList.remove('modal-open');
       // Pause carousel
       const carousel = modal.querySelector('premium-carousel');
@@ -353,6 +355,8 @@
     oldCarousel.replaceWith(carouselEl);
 
     // Show modal
+    modal.hidden = false;
+    
     requestAnimationFrame(() => {
       modal.classList.add('open');
       document.body.classList.add('modal-open');
