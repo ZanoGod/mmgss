@@ -174,7 +174,7 @@
 .contact-page .contact-card-heading p { margin: 0; color: var(--muted, #687078); font-size: .9rem; line-height: 1.65; }
 .contact-page .contact-map-frame { height: clamp(260px, 28vw, 350px); }
 .contact-page .contact-map-caption { justify-content: flex-end; padding: .9rem 1.4rem 1.2rem; }
-.contact-page .contact-map-open { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .7rem 1rem; border-radius: 9px; background: var(--red, #b90b0b); color: #fff; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+.contact-page .contact-map-open { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .7rem 1rem; border-radius: 9999px; background: var(--red, #b90b0b); color: #fff; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease; }
 .contact-page .contact-map-open:hover { transform: translateY(-1px); background: #970909; }
 .contact-page .contact-info-panel { height: 100%; }
 .contact-page .contact-form-panel-wide { max-width: none; }
@@ -312,4 +312,116 @@
   .contact-page .contact-submit-button,
   .contact-page .contact-map-open::after { transition: none; }
   .contact-page .contact-submit-spinner { animation-duration: 1.5s; }
+}
+
+/* Contact form: submit + cloudflare turnstile. */
+
+ .contact-page .contact-form-submit {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "verification privacy send";
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ded7d7;
+}
+
+.contact-page .contact-form-submit > .cf-turnstile {
+  align-self: center;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #ded7d7;
+  border-radius: 10px; 
+}
+
+.contact-page .contact-form-submit > .form-note {
+  grid-area: privacy;
+  max-width: 30ch;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.contact-page .contact-form-submit > .contact-submit-button {
+  grid-area: send;
+  min-width: 172px;
+  min-height: 50px;
+  padding-inline: 1.25rem;
+  gap: 0;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgb(185 11 11 / 14%);
+  transition: box-shadow 160ms ease, opacity 200ms ease;
+}
+
+
+.contact-page .contact-form-submit > .contact-submit-button:focus-visible {
+  outline: 2px solid var(--red, #b90b0b);
+  outline-offset: 3px;
+}
+
+.contact-page .contact-form-submit > .contact-submit-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.contact-page .contact-form-submit > .contact-submit-button.is-loading {
+  cursor: wait;
+}
+
+@media (max-width: 760px) {
+  .contact-page .contact-form-submit {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "verification"
+      "send"
+      "privacy";
+  }
+
+  .contact-page .contact-form-submit > .contact-submit-button {
+    width: 100%;
+  }
+
+  .contact-page .contact-form-submit > .form-note {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-page .contact-form-submit > .contact-submit-button {
+    transition: none;
+  }
+
+  .contact-page .contact-form-submit .contact-submit-spinner {
+    animation: none;
+  }
+}
+/* Contact form: submit button styling. */
+
+.contact-page .contact-form-submit .contact-submit-button {
+  min-width: 0;
+  min-height: 46px;
+  padding: 0.7rem 2rem;
+  border-radius: 999px;
+  background: var(--red, #b90b0b);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgb(185 11 11 / 20%);
+}
+
+.contact-page .contact-form-submit .contact-submit-button.is-success {
+  background: #247548;
+}
+
+.contact-page .contact-form-submit .contact-submit-button.is-error {
+  background: #8f0808;
+}
+
+@media (max-width: 600px) {
+  .contact-page .contact-form-submit .contact-submit-button {
+    width: 100%;
+    min-height: 52px;
+  }
 }

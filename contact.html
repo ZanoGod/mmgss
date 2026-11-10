@@ -1,194 +1,500 @@
 <!doctype html>
 <html lang="en">
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
 
-<head>
-  <link rel="stylesheet" href="https://aiuxplayground.com/kits/ios-26/v1/ios.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Contact Myanmar GSS Co., Ltd. in Kyaukkone, Yangon.">
-  <title>Myanmar GSS | Contact</title>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://aiuxplayground.com/kits/ios-26/v1/ios.css"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Contact Myanmar GSS Co., Ltd. in Kyaukkone, Yangon."
+    />
+    <title>Myanmar GSS | Contact</title>
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/contact.css?v=20261013-contact-redesign-v2">
-  <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="css/contact.css?v=20261013-contact-redesign-v2"
+    />
+    <link rel="stylesheet" href="css/footer.css" />
 
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/favicon-192.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/hero-refresh.css?v=20261013-6" />
 
-  <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="css/hero-refresh.css?v=20261013-6">
+    <link rel="stylesheet" href="css/site-ui.css" />
+  </head>
 
-  <link rel="stylesheet" href="css/site-ui.css">
-</head>
-
-<body id="top" class="contact-page">
-
-  <div class="page-loader" id="pageLoader" aria-hidden="true">
-    <div class="loader-inner">
-      <div class="loader-logo"><img src="assets/logo.png" alt=""></div>
-      <div class="loader-line"><span></span></div>
-    </div>
-  </div>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-
-
-  <header class="nav-shell">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Myanmar GSS home" data-i18n-aria-label="common.brandHome">
-        <span class="brand-logo-wrap"><img class="brand-logo" src="assets/logo.png" alt="Myanmar GSS logo" data-i18n-alt="header.brandName"></span>
-        <span class="brand-copy"><span class="brand-name" data-i18n="header.brandName">Myanmar GSS</span><span class="brand-note" data-i18n="header.brandNoteGlobal">Overseas Employment Agency</span></span>
-      </a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" data-i18n-aria-label="common.openNavigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks" aria-label="Primary navigation" data-i18n-aria-label="common.primaryNavigation">
-        <a class="nav-link" data-page="index.html" href="index.html" data-i18n="nav.home">Home</a>
-        <a class="nav-link" data-page="about.html" href="about.html" data-i18n="nav.company">Company</a>
-        <a class="nav-link" data-page="services.html" href="services.html" data-i18n="nav.services">Services</a>
-        <a class="nav-link" data-page="recruitment.html" href="recruitment.html" data-i18n="nav.recruitment">Recruitment</a>
-        <a class="nav-link" data-page="process.html" href="process.html" data-i18n="nav.process">Process</a>
-        <a class="nav-link" data-page="activities.html" href="activities.html" data-i18n="nav.activities">Activities</a>
-        <a class="nav-link nav-contact" data-page="contact.html" href="contact.html" data-i18n="nav.contact">Contact</a>
-
-        <div class="language-selector" id="languageSelector" role="group" aria-label="Change language" data-i18n-aria-label="common.changeLanguage">
-  <span class="language-pill-bg" id="languagePill" aria-hidden="true"></span>
-  <button class="language-btn" type="button" data-language="ja" aria-pressed="false"><span class="language-code">JP</span><span class="language-name" aria-hidden="true">日本語</span></button>
-  <button class="language-btn" type="button" data-language="en" aria-pressed="true"><span class="language-code">EN</span><span class="language-name" aria-hidden="true">English</span></button>
-</div>
-        
-      </nav>
-    </div>
-  </header>
-
-
-  <main>
-    <section class="page-hero contact-hero">
-      <div class="hero-orbs" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="container contact-hero-inner">
-        <div class="crumb" data-i18n="contact.hero.crumb">Contact</div>
-        <div class="eyebrow" data-i18n="contact.hero.eyebrow">Start a conversation</div>
-        <h1 data-i18n="contact.hero.title">Let's build the right connection.</h1>
-        <p data-i18n="contact.hero.copy">Talk to Myanmar GSS about talent placement, candidate preparation and employment support for Japan.</p>
+  <body id="top" class="contact-page">
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-logo"><img src="assets/logo.png" alt="" /></div>
+        <div class="loader-line"><span></span></div>
       </div>
-    </section>
+    </div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-    <section class="contact-main-section" id="contact-inquiry" aria-labelledby="contact-form-title">
-      <div class="container">
-        <div class="contact-location-grid" aria-label="Office location and contact information">
-          <section class="contact-map-card" aria-labelledby="contact-location-title">
-            <div class="contact-card-heading">
-              <div class="eyebrow" data-i18n="contact.map.eyebrow">FIND OUR OFFICE</div>
-              <h2 id="contact-location-title" data-i18n="contact.map.title">Visit Myanmar GSS</h2>
-              <p data-i18n="contact.map.copy">Our office is located in Kyaukkone, Yankin Township, Yangon, Myanmar.</p>
-            </div>
-            <div class="contact-map-frame">
-              <iframe title="Map showing Myanmar GSS office in Yangon" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.895116311711!2d96.16504177577096!3d16.83155851857832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1938c5e8cf599%3A0xead920e83ba02257!2sMYANMAR%20GSS%20CO.%2C%20LTD!5e0!3m2!1smy!2smm!4v1792122940795!5m2!1smy!2smm" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            </div>
-           
-            <div class="contact-map-caption">
-              <a class="contact-map-open" href="https://www.google.com/maps/place/MYANMAR+GSS+CO.,+LTD/@16.8315585,96.1650418,17z/data=!3m1!4b1!4m6!3m5!1s0x30c1938c5e8cf599:0xead920e83ba02257!8m2!3d16.8315534!4d96.1676167!16s%2Fg%2F11z67lfmpg?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" data-i18n="contact.map.open">Open in Google Maps</a>
-            </div>
-          </section>
+    <header class="nav-shell">
+      <div class="container nav-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Myanmar GSS home"
+          data-i18n-aria-label="common.brandHome"
+        >
+          <span class="brand-logo-wrap"
+            ><img
+              class="brand-logo"
+              src="assets/logo.png"
+              alt="Myanmar GSS logo"
+              data-i18n-alt="header.brandName"
+          /></span>
+          <span class="brand-copy"
+            ><span class="brand-name" data-i18n="header.brandName"
+              >Myanmar GSS</span
+            ><span class="brand-note" data-i18n="header.brandNoteGlobal"
+              >Overseas Employment Agency</span
+            ></span
+          >
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          data-i18n-aria-label="common.openNavigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav
+          class="nav-links"
+          id="navLinks"
+          aria-label="Primary navigation"
+          data-i18n-aria-label="common.primaryNavigation"
+        >
+          <a
+            class="nav-link"
+            data-page="index.html"
+            href="index.html"
+            data-i18n="nav.home"
+            >Home</a
+          >
+          <a
+            class="nav-link"
+            data-page="about.html"
+            href="about.html"
+            data-i18n="nav.company"
+            >Company</a
+          >
+          <a
+            class="nav-link"
+            data-page="services.html"
+            href="services.html"
+            data-i18n="nav.services"
+            >Services</a
+          >
+          <a
+            class="nav-link"
+            data-page="recruitment.html"
+            href="recruitment.html"
+            data-i18n="nav.recruitment"
+            >Recruitment</a
+          >
+          <a
+            class="nav-link"
+            data-page="process.html"
+            href="process.html"
+            data-i18n="nav.process"
+            >Process</a
+          >
+          <a
+            class="nav-link"
+            data-page="activities.html"
+            href="activities.html"
+            data-i18n="nav.activities"
+            >Activities</a
+          >
+          <a
+            class="nav-link nav-contact"
+            data-page="contact.html"
+            href="contact.html"
+            data-i18n="nav.contact"
+            >Contact</a
+          >
 
-          <aside class="contact-info-panel" aria-labelledby="contact-info-title">
-            <div class="eyebrow" data-i18n="contact.info.eyebrow">CONTACT INFORMATION</div>
-            <h2 id="contact-info-title" data-i18n="contact.info.title">Let's talk about your next step.</h2>
-            <div class="contact-info-list">
-              <div class="contact-info-item">
-                <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
-                <div><span class="contact-info-label" data-i18n="contact.card.address">Address</span>
-                  <p>No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township, Yangon, Myanmar</p>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <span class="contact-info-icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
-                <div><span class="contact-info-label" data-i18n="contact.card.email">Email</span>
-                  <a href="mailto:info@myanmargss.com">info@myanmargss.com</a>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <span class="contact-info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-                <div><span class="contact-info-label" data-i18n="contact.card.phone">Phone</span>
-                  <a href="tel:+959409122212">+95 9409 122 212</a>
-                  <a href="tel:+959897408617">+95 9897 408 617</a>
-                </div>
-              </div>
-            </div>
-            <div class="contact-response-note">
-              <span class="contact-response-dot" aria-hidden="true"></span>
-              <p data-i18n="contact.info.note">Please include a few details about your inquiry so we can direct it to the right team.</p>
-            </div>
-          </aside>
-        </div>
-
-        <div class="contact-form-panel contact-form-panel-wide">
-          <div class="contact-form-heading">
-            <div class="eyebrow" data-i18n="contact.form.eyebrow">SEND AN INQUIRY</div>
-            <h2 id="contact-form-title" data-i18n="contact.form.title">How can we help?</h2>
-            <p data-i18n="contact.form.intro">Complete the form below and share what you would like to discuss.</p>
-            <p class="contact-required-note"><span aria-hidden="true">*</span> <span data-i18n="contact.form.required">Required fields</span></p>
+          <div
+            class="language-selector"
+            id="languageSelector"
+            role="group"
+            aria-label="Change language"
+            data-i18n-aria-label="common.changeLanguage"
+          >
+            <span
+              class="language-pill-bg"
+              id="languagePill"
+              aria-hidden="true"
+            ></span>
+            <button
+              class="language-btn"
+              type="button"
+              data-language="ja"
+              aria-pressed="false"
+            >
+              <span class="language-code">JP</span
+              ><span class="language-name" aria-hidden="true">日本語</span>
+            </button>
+            <button
+              class="language-btn"
+              type="button"
+              data-language="en"
+              aria-pressed="true"
+            >
+              <span class="language-code">EN</span
+              ><span class="language-name" aria-hidden="true">English</span>
+            </button>
           </div>
-          <form class="contact-form" action="php/sent-email.php" method="post">
-            <div class="form-field">
-              <label for="contactName"><span data-i18n="contact.form.name">Full name</span> <span class="required-mark" aria-hidden="true">*</span></label>
-              <input id="contactName" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Your full name" data-i18n-placeholder="contact.form.namePlaceholder">
-            </div>
-            <div class="form-field">
-              <label for="company"><span data-i18n="contact.form.company">Company / organization</span></label>
-              <input id="company" name="company" type="text" autocomplete="organization" required maxlength="160" placeholder="Company or organization name" data-i18n-placeholder="contact.form.companyPlaceholder">
-            </div>
-            <div class="form-field">
-              <label for="contactEmail"><span data-i18n="contact.form.email">Email address</span> <span class="required-mark" aria-hidden="true">*</span></label>
-              <input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" data-i18n-placeholder="contact.form.emailPlaceholder">
-            </div>
-            <div class="form-field">
-              <label for="contactPhone"><span data-i18n="contact.form.phone">Phone number</span> <span class="required-mark" aria-hidden="true">*</span></label>
-              <input id="contactPhone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+95 ..." data-i18n-placeholder="contact.form.phonePlaceholder">
-            </div>
-            <div class="form-field contact-interest-field">
-              <label for="interest"><span data-i18n="contact.form.interest">What are you interested in?</span> <span class="required-mark" aria-hidden="true">*</span></label>
-              <select id="interest" name="interest" required>
-                <option value="" disabled selected data-i18n="contact.form.selectPrompt">Select an inquiry topic</option>
-                <option value="Work Visa - Professional Talent">Work Visa - Professional Talent</option>
-                <option value="Specified Skilled Worker - Tokutei Visa">Specified Skilled Worker - Tokutei Visa</option>
-                <option value="Technical Intern Trainee - Training Visa">Technical Intern Trainee - Training Visa</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-field contact-message-field">
-              <label for="contactMessage"><span data-i18n="contact.form.message">Message</span> <span class="required-mark" aria-hidden="true">*</span></label>
-              <textarea id="contactMessage" name="message" rows="5" required maxlength="5000" placeholder="Tell us how we can help..." data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
-              <span class="field-hint" data-i18n="contact.form.messageHint">Please don’t include sensitive personal or financial information.</span>
-            </div>
-            <div class="contact-form-submit">
-              <button class="btn btn-red contact-submit-button" type="submit"><span class="contact-submit-label" data-i18n="contact.form.submit">Send inquiry</span><span class="contact-submit-spinner" aria-hidden="true"></span></button>
-              <p class="form-note" data-i18n="contact.form.privacy">By submitting this form, you agree that Myanmar GSS may use your details to respond to your inquiry.</p>
-            </div>
-            <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
-          </form>
-        </div>
+        </nav>
       </div>
-    </section>
+    </header>
 
-  </main>
+    <main>
+      <section class="page-hero contact-hero">
+        <div class="hero-orbs" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="container contact-hero-inner">
+          <div class="crumb" data-i18n="contact.hero.crumb">Contact</div>
+          <div class="eyebrow" data-i18n="contact.hero.eyebrow">
+            Start a conversation
+          </div>
+          <h1 data-i18n="contact.hero.title">
+            Let's build the right connection.
+          </h1>
+          <p data-i18n="contact.hero.copy">
+            Talk to Myanmar GSS about talent placement, candidate preparation
+            and employment support for Japan.
+          </p>
+        </div>
+      </section>
 
- <!-- Footer -->
-  <div id="footer-container"></div>
-  <script src="js/back-to-top.js" defer></script>
-  <script src="js/components.js"></script>
-  <script src="js/vendor/i18next.min.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/contact-form-feedback.js" defer></script>
+      <section
+        class="contact-main-section"
+        id="contact-inquiry"
+        aria-labelledby="contact-form-title"
+      >
+        <div class="container">
+          <div
+            class="contact-location-grid"
+            aria-label="Office location and contact information"
+          >
+            <section
+              class="contact-map-card"
+              aria-labelledby="contact-location-title"
+            >
+              <div class="contact-card-heading">
+                <div class="eyebrow" data-i18n="contact.map.eyebrow">
+                  FIND OUR OFFICE
+                </div>
+                <h2 id="contact-location-title" data-i18n="contact.map.title">
+                  Visit Myanmar GSS
+                </h2>
+                <p data-i18n="contact.map.copy">
+                  Our office is located in Kyaukkone, Yankin Township, Yangon,
+                  Myanmar.
+                </p>
+              </div>
+              <div class="contact-map-frame">
+                <iframe
+                  title="Map showing Myanmar GSS office in Yangon"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.895116311711!2d96.16504177577096!3d16.83155851857832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1938c5e8cf599%3A0xead920e83ba02257!2sMYANMAR%20GSS%20CO.%2C%20LTD!5e0!3m2!1smy!2smm!4v1792122940795!5m2!1smy!2smm"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
 
-<button class="back-to-top ios-glass-clear" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
-</button>
-<script src="js/back-to-top.js" defer></script>
-</body>
+              <div class="contact-map-caption">
+                <a
+                  class="contact-map-open"
+                  href="https://www.google.com/maps/place/MYANMAR+GSS+CO.,+LTD/@16.8315585,96.1650418,17z/data=!3m1!4b1!4m6!3m5!1s0x30c1938c5e8cf599:0xead920e83ba02257!8m2!3d16.8315534!4d96.1676167!16s%2Fg%2F11z67lfmpg?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener"
+                  data-i18n="contact.map.open"
+                  >Open in Google Maps</a
+                >
+              </div>
+            </section>
 
+            <aside
+              class="contact-info-panel"
+              aria-labelledby="contact-info-title"
+            >
+              <div class="eyebrow" data-i18n="contact.info.eyebrow">
+                CONTACT INFORMATION
+              </div>
+              <h2 id="contact-info-title" data-i18n="contact.info.title">
+                Let's talk about your next step.
+              </h2>
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <span class="contact-info-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-location-dot"></i
+                  ></span>
+                  <div>
+                    <span
+                      class="contact-info-label"
+                      data-i18n="contact.card.address"
+                      >Address</span
+                    >
+                    <p>
+                      No. 38(A), Boe Yar Zar Street, Kyaukkone, Yankin Township,
+                      Yangon, Myanmar
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <span class="contact-info-icon" aria-hidden="true"
+                    ><i class="fa-regular fa-envelope"></i
+                  ></span>
+                  <div>
+                    <span
+                      class="contact-info-label"
+                      data-i18n="contact.card.email"
+                      >Email</span
+                    >
+                    <a href="mailto:info@myanmargss.com">info@myanmargss.com</a>
+                  </div>
+                </div>
+                <div class="contact-info-item">
+                  <span class="contact-info-icon" aria-hidden="true"
+                    ><i class="fa-solid fa-phone"></i
+                  ></span>
+                  <div>
+                    <span
+                      class="contact-info-label"
+                      data-i18n="contact.card.phone"
+                      >Phone</span
+                    >
+                    <a href="tel:+959409122212">+95 9409 122 212</a>
+                    <a href="tel:+959897408617">+95 9897 408 617</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-response-note">
+                <span class="contact-response-dot" aria-hidden="true"></span>
+                <p data-i18n="contact.info.note">
+                  Please include a few details about your inquiry so we can
+                  direct it to the right team.
+                </p>
+              </div>
+            </aside>
+          </div>
+
+          <div class="contact-form-panel contact-form-panel-wide">
+            <div class="contact-form-heading">
+              <div class="eyebrow" data-i18n="contact.form.eyebrow">
+                SEND AN INQUIRY
+              </div>
+              <h2 id="contact-form-title" data-i18n="contact.form.title">
+                How can we help?
+              </h2>
+              <p data-i18n="contact.form.intro">
+                Complete the form below and share what you would like to
+                discuss.
+              </p>
+              <p class="contact-required-note">
+                <span aria-hidden="true">*</span>
+                <span data-i18n="contact.form.required">Required fields</span>
+              </p>
+            </div>
+            <form
+              class="contact-form"
+              action="php/sent-email.php"
+              method="post"
+            >
+              <div class="form-field">
+                <label for="contactName"
+                  ><span data-i18n="contact.form.name">Full name</span>
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                >
+                <input
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  maxlength="120"
+                  placeholder="Your full name"
+                  data-i18n-placeholder="contact.form.namePlaceholder"
+                />
+              </div>
+              <div class="form-field">
+                <label for="company"
+                  ><span data-i18n="contact.form.company"
+                    >Company / organization</span
+                  ></label
+                >
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  autocomplete="organization"
+                  required
+                  maxlength="160"
+                  placeholder="Company or organization name"
+                  data-i18n-placeholder="contact.form.companyPlaceholder"
+                />
+              </div>
+              <div class="form-field">
+                <label for="contactEmail"
+                  ><span data-i18n="contact.form.email">Email address</span>
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                >
+                <input
+                  id="contactEmail"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  maxlength="254"
+                  placeholder="you@example.com"
+                  data-i18n-placeholder="contact.form.emailPlaceholder"
+                />
+              </div>
+              <div class="form-field">
+                <label for="contactPhone"
+                  ><span data-i18n="contact.form.phone">Phone number</span>
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                >
+                <input
+                  id="contactPhone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                  maxlength="40"
+                  placeholder="+95 ..."
+                  data-i18n-placeholder="contact.form.phonePlaceholder"
+                />
+              </div>
+              <div class="form-field contact-interest-field">
+                <label for="interest"
+                  ><span data-i18n="contact.form.interest"
+                    >What are you interested in?</span
+                  >
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                >
+                <select id="interest" name="interest" required>
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    data-i18n="contact.form.selectPrompt"
+                  >
+                    Select an inquiry topic
+                  </option>
+                  <option value="Work Visa - Professional Talent">
+                    Work Visa - Professional Talent
+                  </option>
+                  <option value="Specified Skilled Worker - Tokutei Visa">
+                    Specified Skilled Worker - Tokutei Visa
+                  </option>
+                  <option value="Technical Intern Trainee - Training Visa">
+                    Technical Intern Trainee - Training Visa
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field contact-message-field">
+                <label for="contactMessage"
+                  ><span data-i18n="contact.form.message">Message</span>
+                  <span class="required-mark" aria-hidden="true">*</span></label
+                >
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  rows="5"
+                  required
+                  maxlength="5000"
+                  placeholder="Tell us how we can help..."
+                  data-i18n-placeholder="contact.form.messagePlaceholder"
+                ></textarea>
+                <span class="field-hint" data-i18n="contact.form.messageHint"
+                  >Please don’t include sensitive personal or financial
+                  information.</span
+                >
+              </div>
+              <div class="contact-form-submit">
+                <div class="contact-turnstile-shell">
+                  <div
+                    class="cf-turnstile"
+                    data-sitekey="0x4AAAAAAF5jwpUahk-b7LMH"
+                  ></div>
+                </div>
+                <button class="btn btn-red contact-submit-button" type="submit">
+                  <span
+                    class="contact-submit-label"
+                    data-i18n="contact.form.submit"
+                    >Send inquiry</span
+                  ><span
+                    class="contact-submit-spinner"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+              <p
+                class="contact-form-status"
+                id="contactFormStatus"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <script src="js/back-to-top.js" defer></script>
+    <script src="js/components.js"></script>
+    <script src="js/vendor/i18next.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/contact-form-feedback.js" defer></script>
+
+    <button
+      class="back-to-top ios-glass-clear"
+      id="backToTop"
+      type="button"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 19V5M6 11l6-6 6 6" />
+      </svg>
+    </button>
+    <script src="js/back-to-top.js" defer></script>
+  </body>
 </html>

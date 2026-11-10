@@ -3,68 +3,84 @@
 declare(strict_types=1);
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 header('Content-Type: text/plain; charset=UTF-8');
 
+/* --------------------------------------------------------------------------
+ * Composer autoload
+ * Expected structure:
+ * public_html/vendor/autoload.php
+ * public_html/php/sent-email.php
+ * -------------------------------------------------------------------------- */
 
-//in hosting server cpanel 
- // $autoload = __DIR__ . '/../vendor/autoload.php';
- require_once __DIR__ . '/../vendor/autoload.php';
+$autoload = __DIR__ . '/../vendor/autoload.php';
 
+if (!is_file($autoload)) {
+    http_response_code(500);
+    error_log('MMGSS contact form: Composer autoload file not found: ' . $autoload);
+    exit('The contact form is temporarily unavailable. Please contact the company directly.');
+}
 
+require_once $autoload;
 
-// if (!is_file($autoload)) {
-//     http_response_code(500);
-//     error_log('MMGSS contact form: Composer autoload file not found: ' . $autoload);
-//     exit('The contact form is temporarily unavailable. Please contact the company directly.');
-// }
-// require_once $autoload;
-    
+/* --------------------------------------------------------------------------
+ * SMTP configuration
+ * Confirm the hostname in cPanel > Email Accounts > Connect Devices.
+ * Replace the password placeholder with the new mailbox password.
+ * -------------------------------------------------------------------------- */
 
 $smtpHost     = 'mail.myanmargss.com';
-$smtpUsername = 'no-reply@myanmargss.com';
-$smtpPassword = 'MItLF5vJKNxqhAX5';
-$recipient    = 'thwel4186@gmail.com';
+$smtpUsername = 'auto-reply@myanmargss.com';
+$smtpPassword = 'WU7xmp-)v%*Vg{9Z';
+$recipient    = 'info@myanmargss.com';
 $smtpPort     = 465;
 
-// if (
-//     $smtpPassword === '' ||
-//     $smtpPassword === 'MItLF5vJKNxqhAX5'
-// ) {
-//     http_response_code(500);
-//     error_log('MMGSS contact form: SMTP password is not configured in sent-email.php.');
-//     exit('The contact form is temporarily unavailable. Please contact the company directly.');
-// }
+$turnstileSecret = '0x4AAAAAAF5jwjpYlZ6YHoQtvibREMvRJ0k';
 
-// if (
-//     !filter_var($smtpUsername, FILTER_VALIDATE_EMAIL) ||
-//     !filter_var($recipient, FILTER_VALIDATE_EMAIL) ||
-//     trim($smtpHost) === ''
-// ) {
-//     http_response_code(500);
-//     error_log('MMGSS contact form: Invalid SMTP configuration.');
-//     exit('The contact form is temporarily unavailable. Please contact the company directly.');
-// }
+if (!filter_var($smtpUsername ?? '', FILTER_VALIDATE_EMAIL)) {
+    error_log('MMGSS: smtpUsername is missing or invalid.');
+}
 
-// // Accept POST requests only.
-// if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
-//     http_response_code(405);
-//     header('Allow: POST');
-//     exit('Please submit the contact form.');
-// }
+if (!filter_var($recipient ?? '', FILTER_VALIDATE_EMAIL)) {
+    error_log('MMGSS: recipient is missing or invalid.');
+}
 
-// Read and validate form data.
-$name = trim((string) ($_POST['name'] ?? ''));
-$company = trim((string) ($_POST['company'] ?? ''));
-$email = trim((string) ($_POST['email'] ?? ''));
-$phone = trim((string) ($_POST['phone'] ?? ''));
-$interest = trim((string) ($_POST['interest'] ?? ''));
-$message = trim((string) ($_POST['message'] ?? ''));
+if (trim($smtpHost ?? '') === '') {
+    error_log('MMGSS: smtpHost is missing or empty.');
+}
 
 if (
-    $name === '' || $company === '' || $email === '' ||
-    $phone === '' || $interest === '' || $message === ''
+    !filter_var($smtpUsername, FILTER_VALIDATE_EMAIL) ||
+    !filter_var($recipient, FILTER_VALIDATE_EMAIL) ||
+    trim($smtpHost) === ''
+) {
+    http_response_code(500);
+    error_log('MMGSS contact form: Invalid SMTP configuration.');
+    exit('The contact form is temporarily unavailable. Please contact the company directly.');
+}
+
+// Accept POST requests only.
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    http_response_code(405);
+    header('Allow: POST');
+    exit('Please submit the contact form.');
+}
+
+// Read and validate form data.
+$name     = trim((string) ($_POST['name'] ?? ''));
+$company  = trim((string) ($_POST['company'] ?? ''));
+$email    = trim((string) ($_POST['email'] ?? ''));
+$phone    = trim((string) ($_POST['phone'] ?? ''));
+$interest = trim((string) ($_POST['interest'] ?? ''));
+$message  = trim((string) ($_POST['message'] ?? ''));
+
+if (
+    $name === '' ||
+    $company === '' ||
+    $email === '' ||
+    $phone === '' ||
+    $interest === '' ||
+    $message === ''
 ) {
     http_response_code(400);
     exit('Please fill in all required fields.');
@@ -75,8 +91,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit('Please enter a valid email address.');
 }
 
+// Check field lengths.
 $stringLength = static function (string $value): int {
-    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+    return function_exists('mb_strlen')
+        ? mb_strlen($value, 'UTF-8')
+        : strlen($value);
 };
 
 if (
@@ -91,93 +110,93 @@ if (
     exit('One or more fields exceed the permitted length.');
 }
 
-// Remove CR/LF from values used in headers, such as the subject and Reply-To name.
+// Remove CR/LF characters from values used in email headers.
 $cleanHeaderValue = static function (string $value): string {
     return trim(str_replace(["\r", "\n"], '', $value));
 };
 
 $nameForHeader = $cleanHeaderValue($name);
 
-// Escape form values before placing them into HTML email content.
+// Escape customer input for HTML email content.
 $escapeHtml = static function (string $value): string {
-    return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    return htmlspecialchars(
+        $value,
+        ENT_QUOTES | ENT_SUBSTITUTE,
+        'UTF-8'
+    );
 };
 
-$safeName = $escapeHtml($name);
-$safeCompany = $escapeHtml($company);
-$safeEmail = $escapeHtml($email);
-$safePhone = $escapeHtml($phone);
+$safeName     = $escapeHtml($name);
+$safeCompany  = $escapeHtml($company);
+$safeEmail    = $escapeHtml($email);
+$safePhone    = $escapeHtml($phone);
 $safeInterest = $escapeHtml($interest);
-$safeMessage = nl2br($escapeHtml($message));
+$safeMessage  = nl2br($escapeHtml($message));
+
+/* --------------------------------------------------------------------------
+ * Inquiry reference and received date/time
+ * Define these before using them in either email body.
+ * -------------------------------------------------------------------------- */
+
+date_default_timezone_set('Asia/Yangon');
+
+$referenceNumber = 'MMGSS-' . date('Ymd-His')
+    . '-' . strtoupper(bin2hex(random_bytes(3)));
+
+$receivedDate = date('d M Y');
+$receivedTime = date('h:i A');
+
+// Prevent sending if the SMTP password has not been configured.
+if ($smtpPassword === 'REPLACE_WITH_NEW_MAILBOX_PASSWORD') {
+    http_response_code(500);
+    error_log(
+        'MMGSS contact form: SMTP mailbox password has not been configured.'
+    );
+    exit('The contact form is temporarily unavailable. Please contact the company directly.');
+}
 
 $mail = new PHPMailer(true);
 
 try {
+    // SMTP configuration.
     $mail->isSMTP();
-    $mail->Host = $smtpHost;
-    $mail->SMTPAuth = true;
-    $mail->Username = $smtpUsername;
-    $mail->Password = $smtpPassword;
+    $mail->Host       = $smtpHost;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $smtpUsername;
+    $mail->Password   = $smtpPassword;
 
-   
+    // Port 465 uses implicit TLS.
     if ($smtpPort === 465) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     } else {
-    
+        // Use port 587 only if confirmed by the email hosting provider.
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     }
 
-    $mail->Port = $smtpPort;
+    $mail->Port    = $smtpPort;
     $mail->CharSet = 'UTF-8';
     $mail->Timeout = 20;
-    $mail->SMTPDebug = 0; // Never expose SMTP diagnostics to public visitors.
 
-    $mail->setFrom($smtpUsername, 'Myanmar GSS Website');
+    // Do not expose SMTP debugging information to website visitors.
+    $mail->SMTPDebug = 0;
+
+    // Sender name and email address.
+    $mail->setFrom(
+        $smtpUsername,
+        'Myanmar GSS Co., Ltd.'
+    );
+
+    // Destination for contact form notifications.
     $mail->addAddress($recipient);
+
+    // Replies go directly to the customer who submitted the form.
     $mail->addReplyTo($email, $nameForHeader);
 
-    // $mail->isHTML(true);
-    // $mail->Subject = 'New Contact Form Message from ' . $nameForHeader;
-    // $mail->Body = "
-    //     <div style=\"font-family:Arial,sans-serif;padding:20px;color:#333\">
-    //         <h2 style=\"color:#b50909\">New Contact Form Submission</h2>
-    //         <hr style=\"border:0;border-top:1px solid #eee;margin:15px 0\">
-    //         <p><strong>Name:</strong> {$safeName}</p>
-    //         <p><strong>Company:</strong> {$safeCompany}</p>
-    //         <p><strong>Email:</strong> {$safeEmail}</p>
-    //         <p><strong>Phone:</strong> {$safePhone}</p>
-    //         <p><strong>Inquiry topic:</strong> {$safeInterest}</p>
-    //         <p><strong>Message:</strong></p>
-    //         <div style=\"background:#f9f9f9;padding:15px;border-left:4px solid #b50909;margin-top:10px\">
-    //             {$safeMessage}
-    //         </div>
-    //     </div>
-    // ";
+    $mail->isHTML(true);
 
-    // $mail->AltBody =
-    //     "New Contact Form Submission\n\n" .
-    //     "Name: {$name}\n" .
-    //     "Company: {$company}\n" .
-    //     "Email: {$email}\n" .
-    //     "Phone: {$phone}\n" .
-    //     "Inquiry topic: {$interest}\n\n" .
-    //     "Message:\n{$message}";
+    $mail->Subject = 'New Contact Form Message from ' . $nameForHeader;
 
-    
-$mail->isHTML(true);
-$mail->CharSet = 'UTF-8';
-$mail->Subject = 'New Contact Form Submission - ' . $nameForHeader;
-
-// Generate a reference for this notification.
-// Use a database ID if you require guaranteed uniqueness.
-$referenceNumber = 'GSS-' . date('Ymd-His');
-$receivedDate = date('d F Y');
-$receivedTime = date('H:i') . ' (MMT)';
-
-// $safeMessage must already be escaped with htmlspecialchars().
-$safeMessageHtml = nl2br($safeMessage);
-
-$mail->Body = <<<HTML
+    $mail->Body = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -257,8 +276,7 @@ style="width:100%;max-width:700px;background:#ffffff;">
             </table>
         </td>
 
-        <td valign="middle"
-        style="padding:23px 18px;">
+        <td valign="middle" style="padding:23px 18px;">
             <div style="font-size:11px;letter-spacing:2px;
             font-weight:bold;color:#ffdede;margin-bottom:8px;">
                 NEW CONTACT INQUIRY
@@ -463,7 +481,7 @@ style="width:100%;max-width:700px;background:#ffffff;">
                     margin-bottom:8px;color:#17243b;">
                         Customer Message
                     </div>
-                    {$safeMessageHtml}
+                    {$safeMessage}
                 </td>
             </tr>
             </table>
@@ -549,31 +567,78 @@ style="width:100%;max-width:700px;background:#ffffff;">
 </html>
 HTML;
 
-$mail->AltBody =
-    "MYANMAR GSS CO., LTD.\n" .
-    "NEW CONTACT FORM SUBMISSION\n\n" .
-    "Reference: {$referenceNumber}\n" .
-    "Received: {$receivedDate} {$receivedTime}\n\n" .
-    "CUSTOMER INFORMATION\n" .
-    "Full Name: {$name}\n" .
-    "Company: {$company}\n" .
-    "Email: {$email}\n" .
-    "Phone: {$phone}\n" .
-    "Inquiry Topic: {$interest}\n\n" .
-    "MESSAGE DETAILS\n" .
-    "{$message}\n\n" .
-    "ACTION REQUIRED\n" .
-    "Please review this inquiry and respond to the customer.\n";
+    // Plain-text alternative for email clients that do not display HTML.
+    $mail->AltBody =
+        "MYANMAR GSS CO., LTD.\n" .
+        "NEW CONTACT FORM SUBMISSION\n\n" .
+        "Reference: {$referenceNumber}\n" .
+        "Received: {$receivedDate} {$receivedTime}\n\n" .
+        "CUSTOMER INFORMATION\n" .
+        "Full Name: {$name}\n" .
+        "Company: {$company}\n" .
+        "Email: {$email}\n" .
+        "Phone: {$phone}\n" .
+        "Inquiry Topic: {$interest}\n\n" .
+        "MESSAGE DETAILS\n" .
+        "{$message}\n\n" .
+        "ACTION REQUIRED\n" .
+        "Please review this inquiry and respond to the customer.\n";
+
+//check if the Turnstile response token is present in the POST data        
+$token = $_POST['cf-turnstile-response'] ?? '';
+
+if (!is_string($token) || $token === '' || strlen($token) > 2048) {
+    http_response_code(400);
+    exit('Please complete the verification and try again.');
+}
+
+if (empty($turnstileSecret) || !function_exists('curl_init')) {
+    error_log('Turnstile secret or PHP cURL is missing.');
+    http_response_code(503);
+    exit('Verification is temporarily unavailable.');
+}
+
+$curl = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+curl_setopt_array($curl, [
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => http_build_query([
+        'secret' => $turnstileSecret,
+        'response' => $token,
+    ]),
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_CONNECTTIMEOUT => 3,
+    CURLOPT_TIMEOUT => 8,
+]);
+
+$response = curl_exec($curl);
+$status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+$result = is_string($response) ? json_decode($response, true) : null;
+
+if ($status !== 200 || !is_array($result)) {
+    error_log('Turnstile Siteverify request failed.');
+    http_response_code(503);
+    exit('Verification is temporarily unavailable.');
+}
+
+if (($result['success'] ?? false) !== true) {
+    http_response_code(403);
+    exit('Verification failed. Please try again.');
+}
 
 
     $mail->send();
+
     http_response_code(200);
     echo 'Message sent successfully!';
+
 } catch (Throwable $e) {
     // Keep detailed errors in the server log only.
     error_log(
-        'MMGSS contact form mail error [' . get_class($e) . ']: ' . $e->getMessage()
+        'MMGSS contact form mail error [' .
+        get_class($e) . ']: ' . $e->getMessage()
     );
+
     error_log('MMGSS SMTP ErrorInfo: ' . $mail->ErrorInfo);
 
     http_response_code(500);
