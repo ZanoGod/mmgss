@@ -174,7 +174,7 @@
 .contact-page .contact-card-heading p { margin: 0; color: var(--muted, #687078); font-size: .9rem; line-height: 1.65; }
 .contact-page .contact-map-frame { height: clamp(260px, 28vw, 350px); }
 .contact-page .contact-map-caption { justify-content: flex-end; padding: .9rem 1.4rem 1.2rem; }
-.contact-page .contact-map-open { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .7rem 1rem; border-radius: 9999px; background: var(--red, #b90b0b); color: #fff; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+.contact-page .contact-map-open { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .7rem 1rem; border-radius: 99px; background: var(--red, #b90b0b); color: #fff; font-weight: 750; text-decoration: none; transition: transform .2s ease, background .2s ease; }
 .contact-page .contact-map-open:hover { transform: translateY(-1px); background: #970909; }
 .contact-page .contact-info-panel { height: 100%; }
 .contact-page .contact-form-panel-wide { max-width: none; }
