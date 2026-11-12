@@ -690,28 +690,76 @@
       "detailsOverview": "This is a previous recruitment round. Its application window has closed, and this listing is kept for reference only.",
       "detailsRequirements": "Please contact Myanmar GSS to ask whether a similar opportunity is currently available. Do not treat this archived listing as an open vacancy.",
       "past1": {
-        "role": "Automotive Assembly Technician",
-        "summary": "Automotive assembly and production-line work."
+        "role": "Travel Industry Worker",
+        "summary": "Sales & Marketing and Operations work within the travel industry."
       },
       "past2": {
-        "role": "Food Manufacturing Line Worker",
-        "summary": "Food processing, packaging and production-line support."
+        "role": "Engineering",
+        "summary": "Design support work using Auto CAD (2D, 3D)."
       },
       "past3": {
-        "role": "Construction Machinery Operator",
-        "summary": "Construction machinery operation and related site work."
+        "role": "IT Industry",
+        "summary": "Mechanical, electronic, software and process opportunities."
       },
       "past4": {
-        "role": "Hotel Front Desk Assistant",
-        "summary": "Front-desk support and guest-service operations."
+        "role": "Factory Work",
+        "summary": "Manufacturing using power tools, automated machine operation and maintenance."
       },
       "past5": {
-        "role": "Electrical Wiring Apprentice",
-        "summary": "Electrical wiring assistance and basic installation work."
+        "role": "Hotel Operations",
+        "summary": "Hotel management, guest support, reservations, OTA operation and local guide services."
       },
       "past6": {
-        "role": "Agricultural Farm Worker",
-        "summary": "Farm operations, crop care and related agricultural work."
+        "role": "Caregiving",
+        "summary": "Caregiving work for a Japanese care facility."
+      },
+      "past7": {
+        "role": "Food Services",
+        "summary": "Food preparation, customer service, kitchen support and daily operations."
+      },
+      "past8": {
+        "role": "Food Manufacturing",
+        "summary": "Production for a food manufacturing environment(Ready-Made Meal Manufacturing Work, (Read-Made Meal Processing) Food Industry)."
+      },
+      "past9": {
+        "role": "Airport Ground Handling Services",
+        "summary": "Baggage handling, ramp-side support and airport operational assistance."
+      },
+      "past10": {
+        "role": "Infrastructure & Equipment",
+        "summary": "Installation, maintenance, testing and operational support for electrical systems and equipment."
+      },
+      "past11": {
+        "role": "Hotel Operation",
+        "summary": "Guest transportation, guest services, meal venue preparation and food and beverage service."
+      },
+      "past12": {
+        "role": "Garment Manufacturing",
+        "summary": "Garment sewing, fabric cutting, assembly, finishing and quality inspection."
+      },
+      "past13": {
+        "role": "Construction & Scaffolding",
+        "summary": "General construction, scaffolding installation, dismantling and site support."
+      },
+      "past14": {
+        "role": "Caregiving (Kaigo)",
+        "summary": "Support for elderly people with daily activities, personal care, mobility and meals."
+      },
+      "past15": {
+        "role": "Meal Preparation & Food Service",
+        "summary": "Food preparation, cooking assistance, serving and kitchen operations."
+      },
+      "past16": {
+        "role": "Bread & Bakery Production",
+        "summary": "Bread and bakery production including mixing, shaping, baking and packaging."
+      },
+      "past17": {
+        "role": "Bento & Confectionery Production",
+        "summary": "Bento and confectionery production including preparation, cooking, packaging and quality control."
+      },
+      "past18": {
+        "role": "Machine Processing & Electrical Control Panels",
+        "summary": "Machine operation and electrical control-panel assembly, wiring, testing and inspection."
       }
     }
   },
