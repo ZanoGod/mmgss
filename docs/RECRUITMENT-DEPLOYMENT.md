@@ -1,7 +1,7 @@
 # Recruitment administration
 
 PHP 8.2+ with PDO MySQL, mbstring, sessions and JSON; MySQL 8.0+ or MariaDB 10.4+;
-Apache 2.4 with mod_rewrite and AllowOverride All. Tests additionally use PHP curl.
+Apache 2.4 with mod_rewrite and AllowOverride All.
 Bootstrap 5.3.3 is vendored, with its MIT notice, so the admin has no CDN dependency.
 No Composer or JavaScript framework dependency was added.
 
@@ -9,7 +9,8 @@ No Composer or JavaScript framework dependency was added.
 
 - `admin/public/`: the admin subdomain document root, with its own assets.
 - `recruitment-app/`: shared private PHP code. Keep outside both production roots.
-- `api/jobs.php`: read-only, same-origin public listing endpoint using its own DB user.
+- `api/jobs.php`: read-only, same-origin public listing endpoint. It can use a
+  separate DB user or the shared admin database credentials.
 - `recruitment.html` and `js/recruitment.js`: existing public design, database-backed
   cards, separate category filters, bilingual detail modal and language switcher.
 - `database/schema.sql`: initial schema, no default users.
@@ -17,7 +18,6 @@ No Composer or JavaScript framework dependency was added.
   `812616b`: 2 open and 16 closed, with English/Japanese text. Full original role
   details are retained instead of the old generic closed-intake detail text.
 - `scripts/`: CLI-only provisioning and counter cleanup; never expose over HTTP.
-- `tests/`: CLI/HTTP security and optional Playwright verification, dedicated DB only.
 
 One job has one status and two translation rows. Open/closed rows are public;
 draft/archived rows are private. Close/reopen changes the status of the same row.
@@ -34,8 +34,27 @@ those files now contain interface translations only.
 
 The public page requests current data on load, when the tab becomes visible, and
 every 60 seconds while visible. Reload for an immediate update after an admin save.
-Failures show a retry message and keep any already-loaded listings. Bypass caching
+Skeleton cards appear during the initial load and respect reduced-motion preferences.
+Failures show an availability message and keep any already-loaded listings. Bypass caching
 for `/api/jobs.php` and all admin paths at any CDN/reverse proxy.
+
+## Using one database user
+
+To configure credentials once, set `database.admin_user` and
+`database.admin_password`. Omit `public_user`, `public_password`, `cli_user` and
+`cli_password`, or leave their usernames blank. Public requests and CLI commands
+then use the admin database credentials automatically. Existing installations
+with explicitly configured public/CLI usernames continue to use those accounts.
+
+The shared account needs the admin DML permissions in `permissions.example.sql`.
+Both website connections then have the same database permissions, including write
+access. Separate public credentials provide database-level read-only isolation.
+The public HTTP endpoint itself continues to accept GET requests only.
+
+Upload the updated `recruitment-app/bootstrap.php` to the shared private
+application folder before using this configuration. Keep the PHP configuration in
+the private `config.php`; `.htaccess` contains Apache directives such as `SetEnv`,
+not PHP code. Database passwords belong only in the private configuration.
 
 ## XAMPP on Windows
 
@@ -104,25 +123,6 @@ for `/api/jobs.php` and all admin paths at any CDN/reverse proxy.
 8. Open `http://mmgss.local/recruitment`. Create an open job, reload the page,
    edit it, close it, then reopen it. It should appear exactly once in the matching
    section. Check JP and EN and open the role detail modal in each language.
-
-### Optional PHP development servers
-
-These are loopback-only development tools, not production servers. From the source
-folder run each command in a separate terminal, with the same config environment:
-
-```powershell
-$env:MMGSS_CONFIG_FILE='D:/private/mmgss-local.php'
-php -S 127.0.0.1:8088 -t . tests/public-router.php
-```
-
-```powershell
-$env:MMGSS_CONFIG_FILE='D:/private/mmgss-local.php'
-php -S 127.0.0.1:8089 -t admin/public
-```
-
-Set `public_url` to `http://127.0.0.1:8088`. Visit the admin on port 8089 and public
-`/recruitment` on port 8088. The test router emulates public route protection; Apache
-`.htaccess` must also be checked independently before release.
 
 ## cPanel production deployment
 
@@ -223,48 +223,6 @@ This branch has not changed production DNS, hosting, data, or accounts.
     database and audit trail, monitor private error logs, and limit recovery CLI
     access to trusted operators. To rotate/recover a lost owner, run create-admin
     with a fresh username, sign in, and disable the old account.
-
-## Automated verification
-
-Never run integration tests on real recruitment data. Create a separate local
-database ending `_test`, import the schema and job migration, configure separate
-test admin/public users, and run the local seed against it. Start the two PHP
-servers above using that test config; PHP sessions are local-only without Secure
-because these test servers use HTTP. Then:
-
-```powershell
-$env:MMGSS_CONFIG_FILE='D:/private/mmgss-test.php'
-$env:MMGSS_TEST_ALLOW_WRITE='1'
-php tests/run.php
-php tests/security.php
-```
-
-The tests require the original seeded admin as ID 1 and an otherwise fresh job
-fixture. They create and delete test jobs and create disabled test accounts; they
-clear rate-limit counters in the dedicated DB. The security test temporarily
-creates a production-style owner in that same test DB and restores the local seed.
-Do not deploy any tests or their router. Use the optional URL environment variables
-`MMGSS_TEST_ADMIN_URL` and `MMGSS_TEST_PUBLIC_URL` for different loopback ports.
-
-For browser QA install Playwright in a temporary folder, leaving app dependencies
-unchanged, and use an installed Chrome:
-
-```powershell
-npm install --prefix "$env:TEMP/mmgss-browser" playwright
-$env:MMGSS_PLAYWRIGHT_PATH="$env:TEMP/mmgss-browser/node_modules/playwright/index.mjs"
-$env:MMGSS_CHROME_PATH='C:/Program Files/Google/Chrome/Application/chrome.exe'
-$env:MMGSS_TEST_ALLOW_WRITE='1'
-node tests/browser.mjs
-```
-
-Screenshots go to the OS temporary directory, optionally overridden with
-`MMGSS_SCREENSHOT_DIR`. The browser test checks login, responsive layouts, real
-job create/edit/close/reopen/archive/delete, public filtering, translations,
-confirmation cancellation, role modal, XSS text rendering and the unrelated home
-page. Run it after the HTTP tests, using the same local seed/test DB.
-
-For syntax checks, run `php -l` on all added PHP files and `node --check` on the
-changed JavaScript. See `RECRUITMENT-VERIFICATION.md` for this branch's recorded run.
 
 ## Rollback
 

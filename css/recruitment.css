@@ -1574,3 +1574,29 @@ body.modal-open {
 .modal-copy p { white-space: pre-line; overflow-wrap: anywhere; }
 .job-item h3, .past-intake-item h3, #modalRole { overflow-wrap: anywhere; }
 .jobs-grid [hidden], .past-intake-grid [hidden] { display: none !important; }
+
+.recruitment-skeleton {
+  padding: 30px;
+  min-height: 350px;
+  border: 1px solid var(--line, #e6e2e0);
+  border-radius: 24px;
+  background: #fff;
+}
+.recruitment-skeleton-closed { min-height: 260px; padding: 24px; }
+.skeleton-line {
+  display: block;
+  height: 13px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  background: linear-gradient(100deg, #f0edeb 20%, #faf8f7 40%, #f0edeb 60%);
+  background-size: 220% 100%;
+  animation: recruitment-shimmer 1.6s ease-in-out infinite;
+}
+.skeleton-badge { width: 36%; height: 23px; margin-bottom: 30px; border-radius: 20px; }
+.skeleton-title { width: 80%; height: 28px; margin-bottom: 24px; }
+.skeleton-short { width: 58%; }
+.skeleton-button { width: 65%; height: 42px; margin-top: 36px; margin-bottom: 0; border-radius: 12px; }
+.recruitment-skeleton-closed .skeleton-badge { margin-bottom: 20px; }
+.recruitment-skeleton-closed .skeleton-button { margin-top: 24px; }
+@keyframes recruitment-shimmer { from { background-position: 100% 0; } to { background-position: -120% 0; } }
+@media (prefers-reduced-motion: reduce) { .skeleton-line { animation: none; } }

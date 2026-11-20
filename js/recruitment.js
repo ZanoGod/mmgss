@@ -1,10 +1,10 @@
 (() => {
   'use strict';
   const $ = s => document.querySelector(s);
-  let jobs = [], openFilter = 'all', closedFilter = 'all', selected = null, returnFocus = null, busy = false, loaded = false;
+  let jobs = [], openFilter = 'all', closedFilter = 'all', selected = null, returnFocus = null, busy = false, loaded = false, loadFailed = false;
   const modal = $('#jobModal'), panel = modal.querySelector('.modal-panel');
-  const en = {loading: 'Loading opportunities…', error: 'Opportunities could not be refreshed. Please try again or contact our team.', retry: 'Try again', open: 'Open opportunity', closed: 'Closed', empty: 'No closed roles match this category.'};
-  const ja = {loading: '求人情報を読み込み中…', error: '求人情報を更新できませんでした。再度お試しいただくか、お問い合わせください。', retry: '再試行', open: '募集中', closed: '募集終了', empty: 'このカテゴリーに募集終了の求人はありません。'};
+  const en = {loading: 'Loading opportunities…', error: 'Opportunities are temporarily unavailable. Please contact our team for assistance.', open: 'Open opportunity', closed: 'Closed', empty: 'No closed roles match this category.'};
+  const ja = {loading: '求人情報を読み込み中…', error: '求人情報を一時的に表示できません。詳しくはお問い合わせください。', open: '募集中', closed: '募集終了', empty: 'このカテゴリーに募集終了の求人はありません。'};
   const lang = () => document.documentElement.lang === 'ja' ? 'ja' : 'en';
   const labels = () => lang() === 'ja' ? ja : en;
   const t = (key, fallback) => window.MMGSSI18n?.t(key, undefined, fallback) || fallback;
@@ -14,6 +14,14 @@
     return Object.fromEntries(Object.keys(english).map(key => [key, translated[key] || english[key]]));
   }
   function el(tag, cls, text) { const node = document.createElement(tag); if (cls) node.className = cls; if (text !== undefined) node.textContent = text; return node; }
+  function skeleton(closed = false) {
+    const node = el('div', 'recruitment-skeleton' + (closed ? ' recruitment-skeleton-closed' : ''));
+    node.setAttribute('aria-hidden', 'true');
+    for (const kind of ['badge', 'title', 'text', 'text', 'short', 'button']) {
+      node.append(el('span', 'skeleton-line skeleton-' + kind));
+    }
+    return node;
+  }
   function card(job, index) {
     const d = data(job), open = job.status === 'open';
     const article = el('article', open ? 'job-item reveal show' : 'past-intake-item');
@@ -32,6 +40,13 @@
     return article;
   }
   function render() {
+    $('#recruitmentStatus').textContent = loadFailed ? labels().error : (!loaded && busy ? labels().loading : '');
+    if (!loaded) {
+      $('.jobs-grid').replaceChildren(...(busy ? Array.from({length: 3}, () => skeleton()) : []));
+      $('.past-intake-grid').replaceChildren(...(busy ? Array.from({length: 3}, () => skeleton(true)) : []));
+      $('#recruitmentEmpty').hidden = true;
+      return;
+    }
     const open = jobs.filter(j=>j.status==='open'), closed=jobs.filter(j=>j.status==='closed');
     const visible = open.filter(j=>openFilter==='all'||j.category===openFilter);
     const past = closed.filter(j=>closedFilter==='all'||j.category===closedFilter);
@@ -40,7 +55,6 @@
     if (!past.length && loaded) $('.past-intake-grid').append(el('p','',labels().empty));
     $('#roleCount').textContent=visible.length; $('#heroRoleCount').textContent=open.length;
     $('#recruitmentEmpty').hidden=!loaded||visible.length!==0;
-    $('#recruitmentRetry').textContent=labels().retry;
     if(selected) { const latest=jobs.find(j=>j.id===selected.id); if(latest){selected=latest;fillModal(latest);} else closeModal(); }
   }
   function fillModal(job) {
@@ -68,18 +82,22 @@
     buttons.forEach(button=>{button.setAttribute('aria-pressed',String(button.classList.contains('active')));button.addEventListener('click',()=>{buttons.forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});if(key==='filter')openFilter=button.dataset[key];else closedFilter=button.dataset[key];render();});});
   }
   async function refresh(){
-    if(busy)return;busy=true;$('.jobs-grid').setAttribute('aria-busy','true');
-    if(!loaded)$('#recruitmentStatus').textContent=labels().loading;
+    if(busy)return;busy=true;loadFailed=false;
+    for(const grid of ['.jobs-grid','.past-intake-grid'])$(grid).setAttribute('aria-busy','true');
+    if(!loaded)render();
     try{
       const response=await fetch('api/jobs.php',{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(15000)});
       if(!response.ok)throw Error('Listing unavailable');
       const payload=await response.json();if(!Array.isArray(payload.jobs))throw Error('Invalid listing');
-      jobs=payload.jobs;loaded=true;$('#recruitmentStatus').textContent='';$('#recruitmentRetry').hidden=true;render();
-    }catch{ $('#recruitmentStatus').textContent=labels().error;$('#recruitmentRetry').hidden=false; }
-    finally{busy=false;$('.jobs-grid').setAttribute('aria-busy','false');}
+      jobs=payload.jobs;loaded=true;
+    }catch{ loadFailed=true; }
+    finally{
+      busy=false;
+      for(const grid of ['.jobs-grid','.past-intake-grid'])$(grid).setAttribute('aria-busy','false');
+      render();
+    }
   }
-  $('#recruitmentRetry').addEventListener('click',refresh);
-  for(const event of ['i18n:ready','i18n:languagechanged'])document.addEventListener(event,()=>{render();if(!loaded)$('#recruitmentStatus').textContent=labels().loading;});
+  for(const event of ['i18n:ready','i18n:languagechanged'])document.addEventListener(event,render);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
   setInterval(()=>{if(!document.hidden)refresh();},60000);
   refresh();
