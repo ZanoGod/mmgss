@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+# Keep private application code, migrations, tests, docs and nested admin roots off the public host.
+RewriteRule ^(?:recruitment-app|database|scripts|tests|docs|admin)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:\.git|\.vscode)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:composer\.(?:json|lock))$ - [F,L,NC]
+RewriteRule ^recruitment/$ /recruitment [R=308,L]
+RewriteRule ^recruitment$ recruitment.html [L]

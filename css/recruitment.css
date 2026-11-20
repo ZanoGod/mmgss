@@ -1571,3 +1571,6 @@ body.modal-open {
     gap: 0.875rem;
   }
 }
+.modal-copy p { white-space: pre-line; overflow-wrap: anywhere; }
+.job-item h3, .past-intake-item h3, #modalRole { overflow-wrap: anywhere; }
+.jobs-grid [hidden], .past-intake-grid [hidden] { display: none !important; }

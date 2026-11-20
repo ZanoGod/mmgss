@@ -340,6 +340,7 @@
      RECRUITMENT FILTERS
      ========================================================= */
 
+  if (!document.body.hasAttribute("data-dynamic-recruitment")) {
   const filters = $$(".filter[data-filter]");
 
   const jobs = $$(".jobs-grid .job-item");
@@ -643,9 +644,13 @@
       if (modal && !modal.hidden) {
         closeModal();
       }
-
-      closeNavigation();
     }
+  });
+
+  } // Dynamic recruitment page uses recruitment.js.
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNavigation();
   });
 
   /* =========================================================

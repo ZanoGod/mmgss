@@ -1,1 +1,4 @@
 *.zip
+recruitment-app/config.local.php
+*.log
+tests/.runtime/
