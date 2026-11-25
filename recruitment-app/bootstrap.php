@@ -109,8 +109,8 @@ function audit(int $actor, string $action, ?int $target = null): void
 }
 function passwordCheck(string $password): void
 {
-    if (strlen($password) < 14 || strlen($password) > 72) {
-        throw new InvalidArgumentException('Use a password of 14–72 bytes, preferably a unique passphrase.');
+    if (strlen($password) < 8 || strlen($password) > 16) {
+        throw new InvalidArgumentException('Use a password of 8–16 bytes, preferably a unique passphrase.');
     }
 }
 function passwordHash(string $password): string
