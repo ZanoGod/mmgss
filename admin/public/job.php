@@ -42,12 +42,14 @@ layoutStart($id ? 'Edit opportunity' : 'Create an opportunity', $user);
             <div class="col-md-6"><label for="category" class="form-label">Category</label><select class="form-select"
                     name="category" id="category"><?php foreach (CATEGORIES as $key => $label): ?>
                         <option value="<?= e($key) ?>" <?= value('category', $job['category']) === $key ? 'selected' : '' ?>>
-                            <?= e($label) ?></option><?php endforeach ?>
+                            <?= e($label) ?>
+                        </option><?php endforeach ?>
                 </select></div>
             <div class="col-md-6"><label for="status" class="form-label">Publication status</label><select
                     class="form-select" name="status" id="status"><?php foreach (STATUSES as $s): ?>
                         <option value="<?= e($s) ?>" <?= value('status', $job['status']) === $s ? 'selected' : '' ?>>
-                            <?= e(ucfirst($s)) ?></option><?php endforeach ?>
+                            <?= e(ucfirst($s)) ?>
+                        </option><?php endforeach ?>
                 </select><small class="text-secondary">Open accepts applications; closed remains visible as a previous
                     intake.</small></div>
         </div>
@@ -72,7 +74,7 @@ layoutStart($id ? 'Edit opportunity' : 'Create an opportunity', $user);
                 </section>
             </div><?php endforeach ?>
     </div>
-    <div class="form-actions"><a href="index.php" class="btn btn-outline-secondary">Back to jobs</a><button
+    <div class="form-actions"><a href="index.php" class="btn btn-outline-secondary">Back</a><button
             class="btn btn-primary">Save opportunity</button></div>
 </form>
 <?php layoutEnd(); ?>

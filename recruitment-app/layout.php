@@ -46,8 +46,9 @@ function layoutStart(string $title, ?array $user = null): void
         <?php endif ?>
         <main class="<?= $user ? 'workspace' : 'login-shell' ?>">
             <header class="topbar"><span class="eyebrow">MYANMAR GSS ·
-                    <?= e(strtoupper($config['environment'])) ?></span><?php if ($user): ?><span
-                        class="text-secondary small">Recruitment workspace</span><?php endif ?></header>
+                    <?= e(strtoupper($config['environment'])) ?></span><?php if ($user): ?>
+                <?php endif ?>
+            </header>
             <div class="page-content">
                 <h1><?= e($title) ?></h1>
                 <?php if ($notice): ?>

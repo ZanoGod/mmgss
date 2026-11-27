@@ -125,6 +125,7 @@ layoutStart('Recruitment overview', $user);
         <?php for ($i = max(1, $page - 2); $i <= min($pages, $page + 2); $i++): ?><a
                 class="btn btn-sm <?= $i === $page ? 'btn-primary' : 'btn-outline-secondary' ?>" <?= $i === $page ? 'aria-current="page"' : '' ?>
                 href="?<?= e(http_build_query(['q' => $search, 'status' => $status, 'category' => $category, 'page' => $i])) ?>"><?= $i ?></a><?php endfor ?><span
-            class="small text-secondary align-self-center">Page <?= $page ?> of <?= $pages ?></span></nav>
+            class="small text-secondary align-self-center">Page <?= $page ?> of <?= $pages ?></span>
+    </nav>
 </section>
 <?php layoutEnd(); ?>

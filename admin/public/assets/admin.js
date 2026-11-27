@@ -23,3 +23,36 @@
     for (const button of form.querySelectorAll('button[type="submit"], button:not([type])')) { button.disabled = true; button.textContent = 'Please wait…'; }
   });
 })();
+
+(() => {
+  'use strict';
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+  let navigating = false;
+
+  document.addEventListener('click', event => {
+    const origin = event.target instanceof Element ? event.target : event.target.parentElement;
+    const link = origin?.closest('a[href]');
+    if (!link) {
+      return;
+    }
+    if (navigating) {
+      event.preventDefault();
+      return;
+    }
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion?.matches || link.hasAttribute('download') || (link.target && link.target !== '_self') || link.dataset.noPageTransition !== undefined) {
+      return;
+    }
+
+    const destination = new URL(link.href, window.location.href);
+    const current = new URL(window.location.href);
+    const isHashOnly = destination.pathname === current.pathname && destination.search === current.search && destination.hash !== current.hash;
+    if (!['http:', 'https:'].includes(destination.protocol) || destination.origin !== current.origin || destination.href === current.href || isHashOnly) {
+      return;
+    }
+
+    event.preventDefault();
+    navigating = true;
+    document.documentElement.classList.add('page-leaving');
+    window.setTimeout(() => window.location.assign(destination.href), 180);
+  });
+})();

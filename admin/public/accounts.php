@@ -75,15 +75,19 @@ errorAlert($error);
             </thead>
             <tbody><?php foreach ($accounts as $account): ?>
                     <tr>
-                        <td><?= e($account['username']) ?><?= $account['is_test'] ? ' · local test' : '' ?><?= (int) $account['id'] === (int) $user['id'] ? ' · you' : '' ?></td>
+                        <td><?= e($account['username']) ?><?= $account['is_test'] ? ' · local test' : '' ?><?= (int) $account['id'] === (int) $user['id'] ? ' · you' : '' ?>
+                        </td>
                         <td><?= e(ucfirst($account['role'])) ?></td>
                         <td><?= $account['active'] ? 'Enabled' : 'Disabled' ?></td>
                         <td>
                             <form method="post"
                                 data-confirm="Change access for <?= e($account['username']) ?>? Existing sessions will be invalidated.">
                                 <?php csrfField(); ?><input type="hidden" name="action" value="toggle"><input type="hidden"
-                                    name="id" value="<?= $account['id'] ?>"><button
-                                    class="btn btn-sm btn-outline-secondary" <?= (int) $account['id'] === (int) $user['id'] ? 'disabled title="You cannot change access for your own account."' : '' ?>><?= $account['active'] ? 'Disable' : 'Enable' ?></button>
+                                    name="id" value="<?= $account['id'] ?>">
+                                <button class="btn btn-sm <?= $account['active'] ? 'btn-disable' : 'btn-enable' ?>" <?= (int) $account['id'] === (int) $user['id'] ? 'disabled title="You cannot change access for your own account."' : '' ?>>
+                                    <?= $account['active'] ? 'Disable' : 'Enable' ?>
+                                </button>
+
                             </form>
                         </td>
                     </tr><?php endforeach ?>
